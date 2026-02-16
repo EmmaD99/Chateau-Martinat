@@ -8,7 +8,7 @@
   bottom: 0;
   left: 0;
   width: 100%;
-  background: linear-gradient(90deg, rgba(105, 28, 51, 0.9) 0%, rgba(139, 46, 77, 0.9) 50%, rgba(105, 28, 51, 0.9) 100%);
+  background: #ffffff;
   padding: 0.75rem 0;
   overflow: hidden;
   box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.3);
@@ -37,7 +37,7 @@
   font-family: var(--font-primary);
   font-size: 0.95rem;
   font-weight: 600;
-  color: #ffffff;
+  color: #b8860b; /* doré foncé, très lisible sur fond blanc */
   text-transform: uppercase;
   letter-spacing: 1.5px;
   padding: 0 1.5rem;
