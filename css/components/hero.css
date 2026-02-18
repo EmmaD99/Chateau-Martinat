@@ -7,7 +7,7 @@
   position: relative;
   height: 100vh;
   min-height: 600px;
-  background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('../../images/general/barrique.jpg');
+  background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('../../pictures/general/barrel.jpg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
