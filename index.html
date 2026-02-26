@@ -98,7 +98,7 @@
     <li><a href="#propriete" data-i18n="nav.property">Propriété</a></li>
     <li><a href="#actualites" data-i18n="nav.news">Actualités et Presse</a></li>
     <li><a href="#bon-cadeau" data-i18n="nav.gift">Bon Cadeau</a></li>
-    <li><a href="#contact">Contact</a></li>
+    <li><a href="#contact" data-i18n="nav.contact">Contact</a></li>
   </ul>
 </nav>
 
@@ -252,35 +252,77 @@
       <p class="section-intro" data-i18n="gift.intro">Offrez une expérience unique au Château Martinat</p>
 
       <div class="gift-grid">
+
+        <!-- Carte 1 — Dégustation -->
         <article class="gift-card">
           <figure class="gift-figure">
-            <img src="pictures/general/vineyards.jpg" alt="Bon Dégustation Gourmande" loading="lazy">
-            <figcaption class="gift-title" data-i18n="gift.card1.title">Dégustation Gourmande</figcaption>
+            <img src="pictures/general/vineyards.jpg" alt="Dégustation Gourmande" loading="lazy">
+            <figcaption class="gift-card-title" data-i18n="gift.card1.title">Dégustation Gourmande</figcaption>
           </figure>
-          <p class="gift-description" data-i18n="gift.card1.desc" data-i18n-html>
-            Ce bon donne droit à une dégustation privée de nos vins (3 cuvées) pour 2 personnes,
-            avec assortiment de fromages et pains.<br>
-            Réservation obligatoire (mail ou tel).<br>
-            Valeur 25.00€.<br>
-            Validité : 6 mois. Non remboursable.
-          </p>
+          <div class="gift-card-body">
+            <div class="gift-price lang-fr">25 €</div>
+            <div class="gift-price lang-en" style="display:none;">€25</div>
+            <ul class="gift-list lang-fr">
+              <li>Dégustation privée de 3 cuvées pour 2 personnes</li>
+              <li>Assortiment de fromages et pains</li>
+              <li>Réservation obligatoire (mail ou tél.)</li>
+            </ul>
+            <ul class="gift-list lang-en" style="display:none;">
+              <li>Private tasting of 3 cuvées for 2 people</li>
+              <li>Cheese and bread selection</li>
+              <li>Reservation required (email or phone)</li>
+            </ul>
+            <p class="gift-validity lang-fr">Valable 6 mois · Non remboursable</p>
+            <p class="gift-validity lang-en" style="display:none;">Valid 6 months · Non-refundable</p>
+          </div>
         </article>
 
+        <!-- Carte 2 — Coffret -->
         <article class="gift-card">
           <figure class="gift-figure">
             <img src="pictures/general/sign.jpg" alt="Coffret Flacons Martinat" loading="lazy">
-            <figcaption class="gift-title" data-i18n="gift.card2.title">Coffret Flacons Martinat</figcaption>
+            <figcaption class="gift-card-title" data-i18n="gift.card2.title">Coffret Flacons Martinat</figcaption>
           </figure>
-          <p class="gift-description" data-i18n="gift.card2.desc" data-i18n-html>
-            Assortiment de 6 bouteilles de vins.<br>
-            Le coffret « Côtes à Côtes ».<br>
-            3 Côtes de Bourg +3 Blayes Côtes de Bordeaux 64.00€.<br>
-            Le coffret « Cépages ».<br>
-            2 bouteilles 100% Merlot + 2 bouteilles 100% Malbec +2 bouteilles assemblage merlot / malbec 70.00€.<br>
-            Possibilité caisse bois + 10.00€ bon Valable 12 mois.
-          </p>
+          <div class="gift-card-body">
+            <div class="gift-coffret lang-fr">
+              <div class="gift-coffret-row">
+                <span class="gift-coffret-name">« Côtes à Côtes »</span>
+                <span class="gift-coffret-price">64 €</span>
+                <p>3 Côtes de Bourg + 3 Blaye Côtes de Bordeaux</p>
+              </div>
+              <div class="gift-coffret-row">
+                <span class="gift-coffret-name">« Cépages »</span>
+                <span class="gift-coffret-price">70 €</span>
+                <p>2× Merlot 100% + 2× Malbec 100% + 2× assemblage</p>
+              </div>
+            </div>
+            <div class="gift-coffret lang-en" style="display:none;">
+              <div class="gift-coffret-row">
+                <span class="gift-coffret-name">"Côtes à Côtes"</span>
+                <span class="gift-coffret-price">€64</span>
+                <p>3 Côtes de Bourg + 3 Blaye Côtes de Bordeaux</p>
+              </div>
+              <div class="gift-coffret-row">
+                <span class="gift-coffret-name">"Cépages"</span>
+                <span class="gift-coffret-price">€70</span>
+                <p>2× Merlot 100% + 2× Malbec 100% + 2× blend</p>
+              </div>
+            </div>
+            <p class="gift-validity lang-fr">Caisse bois en option +10 € · Valable 12 mois</p>
+            <p class="gift-validity lang-en" style="display:none;">Wooden case option +€10 · Valid 12 months</p>
+          </div>
         </article>
+
       </div>
+
+      <!-- CTA -->
+      <div class="gift-cta">
+        <a href="#contact" class="btn-primary">
+          <span class="lang-fr">Commander un bon cadeau</span>
+          <span class="lang-en" style="display:none;">Order a gift voucher</span>
+        </a>
+      </div>
+
     </div>
   </section>
 <!-- 
@@ -293,11 +335,11 @@
 <!-- CONTACT -->
 <section id="contact" class="section contact-section reveal">
   <div class="container">
+    <h2 class="section-title" data-i18n="contact.title">Contact</h2>
     <div class="contact-content">
 
       <!-- BLOC INFORMATIONS -->
-      <div class="contact-info">
-        <h2 class="section-title" data-i18n="contact.title">Contact</h2>
+      <div class="contact-text">
 
         <div class="contact-details">
 
@@ -314,8 +356,8 @@
           <div class="contact-item">
             <h3 data-i18n="contact.email">Email</h3>
             <p>
-              <a href="mailto:contact@chateaumartinat.fr">
-                contact@chateaumartinat.fr
+              <a href="/cdn-cgi/l/email-protection#75161a1b0114160135161d1401101400181407011c1b14015b1307">
+                <span class="__cf_email__" data-cfemail="b8dbd7d6ccd9dbccf8dbd0d9ccddd9cdd5d9caccd1d6d9cc96deca">[email&#160;protected]</span>
               </a>
             </p>
           </div>
@@ -334,8 +376,7 @@
 
         </div>
 
-        <!-- CTA — clé i18n à ajouter dans i18n.js (voir note) -->
-        <a href="mailto:contact@chateaumartinat.fr" class="contact-cta-badge" data-i18n="contact.cta">
+        <a href="/cdn-cgi/l/email-protection#d6b5b9b8a2b7b5a296b5beb7a2b3b7a3bbb7a4a2bfb8b7a2f8b0a4" class="contact-cta-badge" data-i18n="contact.cta">
           Nous écrire
         </a>
       </div>
@@ -345,7 +386,7 @@
         <iframe
           src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3271.170246967585!2d-0.5515331847682614!3d45.063120979098756!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x48002b926c5fc42f%3A0xce54150184a7dcd4!2sSCEV%20Marsaux%20Donze%20%2F%20Ch%C3%A2teau%20Martinat!5e0!3m2!1sfr!2sfr!4v1706946912345!5m2!1sfr!2sfr"
           width="100%"
-          height="460"
+          height="100%"
           style="border:0;"
           allowfullscreen=""
           loading="lazy"
@@ -373,5 +414,6 @@
 
 <script src="js/i18n.js"></script>
 <script src="js/main.js"></script>
+
 </body>
 </html>

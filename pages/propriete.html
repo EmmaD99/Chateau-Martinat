@@ -20,6 +20,7 @@
   <link rel="stylesheet" href="../css/components/header.css">
   <link rel="stylesheet" href="../css/components/menu.css">
   <link rel="stylesheet" href="../css/components/footer.css">
+  <link rel="stylesheet" href="../css/sections/contact.css">
 
   <style>
     /* --- Back Button --- */
@@ -73,7 +74,32 @@
 
     /* --- Sections --- */
     .property-section { padding: var(--spacing-3xl) 0; }
-    .property-section:nth-child(even) { background: var(--background-dark); }
+    #galerie.property-section { padding: 0; }
+    .property-section.section-bordeaux { background: var(--background-bordeaux); }
+    .property-section.section-white { background: var(--background-white); }
+
+    /* Titres et textes sur fond bordeaux */
+    .property-section.section-bordeaux .section-title { color: #ffffff; }
+    .property-section.section-bordeaux .section-title::after { background-color: var(--accent); }
+    .property-section.section-bordeaux p,
+    .property-section.section-bordeaux li,
+    .property-section.section-bordeaux .stat-value,
+    .property-section.section-bordeaux .stat-label { color: var(--text-light); }
+    .property-section.section-bordeaux .vineyard-stat { border-color: rgba(255,255,255,0.15); }
+    .property-section.section-bordeaux .philosophy-card { background: rgba(255,255,255,0.07); border-color: rgba(184,134,11,0.3); }
+    .property-section.section-bordeaux .philosophy-card h3 { color: var(--accent-light); }
+    .property-section.section-bordeaux .region-card { background: rgba(255,255,255,0.06); }
+    .property-section.section-bordeaux .region-card h3 { color: var(--accent-light); }
+    /* Cartes internes en blanc : garder le texte sombre */
+    .property-section.section-bordeaux .philosophy-highlight p { color: var(--text-dark); }
+    .property-section.section-bordeaux .region-info p { color: var(--text-gray); }
+    .property-section.section-bordeaux .region-info h3 { color: var(--primary); }
+
+    /* Titres et textes sur fond blanc */
+    .property-section.section-white .section-title { color: var(--primary); }
+    .property-section.section-white .section-title::after { background-color: var(--accent); }
+    .property-section.section-white p,
+    .property-section.section-white li { color: var(--text-dark); }
 
     /* --- Équipe --- */
     .team-intro-section {
@@ -218,162 +244,6 @@
     .section-image:hover img { transform: scale(1.05); }
 
     /* ================================================
-       SECTION CONTACT — Design luxe / raffiné
-       ================================================ */
-    #contact.contact-section-page {
-      position: relative;
-      background: #1a0a10;
-      overflow: hidden;
-      padding: var(--spacing-3xl) 0;
-    }
-    #contact.contact-section-page::before {
-      content: '';
-      position: absolute; inset: 0;
-      background-image:
-        radial-gradient(ellipse 80% 60% at 10% 50%, rgba(105, 28, 51, 0.45) 0%, transparent 60%),
-        radial-gradient(ellipse 60% 80% at 90% 30%, rgba(184, 134, 11, 0.08) 0%, transparent 50%);
-      pointer-events: none; z-index: 0;
-    }
-    #contact.contact-section-page::after {
-      content: '';
-      position: absolute;
-      top: 10%; left: 0;
-      width: 3px; height: 80%;
-      background: linear-gradient(to bottom, transparent, #b8860b 30%, #b8860b 70%, transparent);
-      opacity: 0.6; z-index: 1;
-    }
-    #contact.contact-section-page .container { position: relative; z-index: 2; }
-    #contact.contact-section-page .contact-title {
-      font-family: 'Cormorant Garamond', Georgia, serif;
-      font-size: clamp(2.4rem, 5vw, 3.6rem);
-      font-weight: 300; color: #f0e6d0;
-      letter-spacing: 0.08em; text-align: left;
-      margin-bottom: 0.4rem; line-height: 1.1;
-    }
-    #contact.contact-section-page .contact-title::after {
-      display: block; content: '';
-      width: 48px; height: 1px;
-      background: linear-gradient(to right, #b8860b, transparent);
-      margin: 1rem 0 0;
-    }
-    #contact.contact-section-page .contact-content {
-      display: grid; grid-template-columns: 1fr 1.6fr;
-      gap: 5rem; margin-top: var(--spacing-2xl); align-items: start;
-    }
-    #contact.contact-section-page .contact-info { padding: 0; }
-    #contact.contact-section-page .contact-info::before {
-      content: '— Nous trouver';
-      display: block;
-      font-family: 'Montserrat', sans-serif;
-      font-size: 0.68rem; font-weight: 500;
-      letter-spacing: 0.25em; text-transform: uppercase;
-      color: #b8860b; margin-bottom: 1.2rem; opacity: 0.85;
-    }
-    #contact.contact-section-page .contact-details {
-      display: flex; flex-direction: column; gap: 0;
-      margin-top: var(--spacing-xl);
-      border-top: 1px solid rgba(184, 134, 11, 0.2);
-    }
-    #contact.contact-section-page .contact-item {
-      padding: 1.4rem 0;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.06);
-      display: grid; grid-template-columns: 110px 1fr;
-      gap: 1.5rem; align-items: baseline;
-      transition: background 0.25s ease, padding-left 0.25s ease;
-    }
-    #contact.contact-section-page .contact-item:hover {
-      background: rgba(184, 134, 11, 0.04);
-      padding-left: 0.5rem; border-radius: 4px;
-    }
-    #contact.contact-section-page .contact-item h3 {
-      font-family: 'Montserrat', sans-serif;
-      font-size: 0.62rem; font-weight: 600;
-      color: #b8860b; text-transform: uppercase;
-      letter-spacing: 0.2em; margin: 0; padding-top: 0.2rem;
-    }
-    #contact.contact-section-page .contact-item p {
-      font-family: 'Cormorant Garamond', Georgia, serif;
-      font-size: 1.05rem; font-weight: 300;
-      color: rgba(240, 230, 208, 0.85);
-      line-height: 1.75; margin: 0; text-align: left;
-    }
-    #contact.contact-section-page .contact-item a {
-      color: #daa520; font-weight: 400; text-decoration: none;
-      position: relative; transition: color 0.2s ease;
-    }
-    #contact.contact-section-page .contact-item a::after {
-      content: ''; position: absolute;
-      left: 0; bottom: -2px; width: 0; height: 1px;
-      background: #daa520; transition: width 0.3s ease;
-    }
-    #contact.contact-section-page .contact-item a:hover { color: #f0d060; }
-    #contact.contact-section-page .contact-item a:hover::after { width: 100%; }
-    #contact.contact-section-page .contact-item.gps p {
-      font-family: 'Montserrat', monospace;
-      font-size: 0.88rem; letter-spacing: 0.05em;
-      color: rgba(184, 134, 11, 0.8);
-    }
-    #contact.contact-section-page .contact-item.horaires p {
-      font-style: italic; color: rgba(240, 230, 208, 0.7); font-size: 0.98rem;
-    }
-    #contact.contact-section-page .btn-contact-primary {
-      display: inline-flex; align-items: center; gap: 0.7rem;
-      margin-top: 2.2rem; padding: 0.9rem 1.8rem;
-      background: linear-gradient(135deg, #b8860b 0%, #8b6510 100%);
-      color: #f0e6d0; border-radius: 2px;
-      font-family: 'Montserrat', sans-serif;
-      font-size: 0.72rem; font-weight: 600;
-      letter-spacing: 0.2em; text-transform: uppercase;
-      text-decoration: none; transition: all 0.3s ease;
-      box-shadow: 0 4px 20px rgba(184, 134, 11, 0.3);
-      position: relative; overflow: hidden;
-    }
-    #contact.contact-section-page .btn-contact-primary::before {
-      content: ''; position: absolute; inset: 0;
-      background: linear-gradient(135deg, #daa520 0%, #b8860b 100%);
-      opacity: 0; transition: opacity 0.3s ease;
-    }
-    #contact.contact-section-page .btn-contact-primary:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 8px 30px rgba(184, 134, 11, 0.45); color: #fff;
-    }
-    #contact.contact-section-page .btn-contact-primary:hover::before { opacity: 1; }
-    #contact.contact-section-page .btn-contact-primary span { position: relative; z-index: 1; }
-    #contact.contact-section-page .btn-contact-primary .btn-arrow {
-      font-size: 1rem; position: relative; z-index: 1;
-      transition: transform 0.3s ease;
-    }
-    #contact.contact-section-page .btn-contact-primary:hover .btn-arrow { transform: translateX(4px); }
-    #contact.contact-section-page .contact-map {
-      position: relative; border-radius: 2px; overflow: hidden;
-      box-shadow: 0 0 0 1px rgba(184, 134, 11, 0.25), 0 20px 60px rgba(0, 0, 0, 0.5);
-      height: 100%; min-height: 500px; transition: box-shadow 0.4s ease;
-    }
-    #contact.contact-section-page .contact-map::before {
-      content: ''; position: absolute;
-      top: -1px; right: -1px; width: 32px; height: 32px;
-      border-top: 2px solid #b8860b; border-right: 2px solid #b8860b;
-      z-index: 10; pointer-events: none;
-    }
-    #contact.contact-section-page .contact-map::after {
-      content: ''; position: absolute;
-      bottom: -1px; left: -1px; width: 32px; height: 32px;
-      border-bottom: 2px solid #b8860b; border-left: 2px solid #b8860b;
-      z-index: 10; pointer-events: none;
-    }
-    #contact.contact-section-page .contact-map:hover {
-      box-shadow: 0 0 0 1px rgba(184, 134, 11, 0.5), 0 24px 80px rgba(0, 0, 0, 0.6);
-    }
-    #contact.contact-section-page .contact-map iframe {
-      width: 100%; height: 100%; border: none; display: block;
-      filter: grayscale(20%) sepia(15%) contrast(1.05);
-      transition: filter 0.4s ease; min-height: 500px;
-    }
-    #contact.contact-section-page .contact-map:hover iframe {
-      filter: grayscale(0%) sepia(5%) contrast(1.0);
-    }
-
-    /* ================================================
        RESPONSIVE
        ================================================ */
     @media (max-width: 968px) {
@@ -386,7 +256,6 @@
       .carousel-btn { width: 40px; height: 40px; font-size: var(--font-size-lg); }
       .carousel-btn-prev { left: var(--spacing-md); }
       .carousel-btn-next { right: var(--spacing-md); }
-      #contact.contact-section-page .contact-content { gap: 3rem; }
     }
     @media (max-width: 768px) {
       .property-hero { height: 50vh; min-height: 300px; }
@@ -398,19 +267,10 @@
       .carousel-btn { width: 36px; height: 36px; }
       .back-btn { width: 36px; height: 36px; }
       .back-arrow { font-size: var(--font-size-lg); }
-      #contact.contact-section-page { padding: var(--spacing-2xl) 0; }
-      #contact.contact-section-page .contact-content { grid-template-columns: 1fr; gap: var(--spacing-xl); }
-      #contact.contact-section-page .contact-title { text-align: center; }
-      #contact.contact-section-page .contact-title::after { margin: 1rem auto 0; }
-      #contact.contact-section-page .contact-info::before { text-align: center; }
-      #contact.contact-section-page .contact-item { grid-template-columns: 1fr; gap: 0.3rem; padding: 1.1rem 0; }
-      #contact.contact-section-page .contact-map { min-height: 360px; }
-      #contact.contact-section-page .contact-map iframe { min-height: 360px; }
     }
     @media (max-width: 480px) {
       .carousel-caption h3 { font-size: var(--font-size-lg); }
       .carousel-slide img { height: 250px; }
-      #contact.contact-section-page::after { display: none; }
     }
   </style>
 </head>
@@ -425,7 +285,7 @@
       </span>
     </button>
 
-    <a href="../index.html" class="back-btn" aria-label="Retour à l'accueil">
+    <a href="../index.html" class="back-btn" aria-label="Retour à l'accueil" data-i18n-aria="nav.home">
       <span class="back-arrow">←</span>
     </a>
 
@@ -492,7 +352,7 @@
   </section>
 
   <!-- NOTRE ÉQUIPE -->
-  <section id="equipe" class="property-section">
+  <section id="equipe" class="property-section section-bordeaux">
     <div class="container">
       <h2 class="section-title" data-i18n="prop.team.title">Notre Équipe</h2>
 
@@ -532,7 +392,12 @@
         </div>
       </div>
 
-      <!-- Carousel -->
+    </div>
+  </section>
+
+  <!-- GALERIE PHOTOS -->
+  <section id="galerie" class="property-section section-white">
+    <div class="container">
       <div class="carousel-container" role="region" aria-label="Galerie photos du domaine">
         <div class="carousel-wrapper">
           <div class="carousel-track" id="carouselTrack">
@@ -574,7 +439,7 @@
   </section>
 
   <!-- NOS VIGNES -->
-  <section id="vignoble" class="property-section">
+  <section id="vignoble" class="property-section section-bordeaux">
     <div class="container">
       <h2 class="section-title" data-i18n="prop.vineyard.title">Les Vignes</h2>
       <div class="vineyard-content">
@@ -599,7 +464,7 @@
   </section>
 
   <!-- PHILOSOPHIE -->
-  <section id="philosophie" class="property-section">
+  <section id="philosophie" class="property-section section-white">
     <div class="container">
       <h2 class="section-title" data-i18n="prop.philosophy.title">Philosophie</h2>
       <div class="philosophy-content">
@@ -613,7 +478,7 @@
   </section>
 
   <!-- NOTRE CHAI -->
-  <section id="chai" class="property-section">
+  <section id="chai" class="property-section section-bordeaux">
     <div class="container">
       <h2 class="section-title" data-i18n="prop.cellar.title">Notre Chai</h2>
       <div class="cellar-content">
@@ -628,7 +493,7 @@
   </section>
 
   <!-- DÉCOUVRIR NOTRE RÉGION -->
-  <section id="region" class="property-section">
+  <section id="region" class="property-section section-white">
     <div class="container">
       <h2 class="section-title" data-i18n="prop.region.title">Découvrir notre Région</h2>
       <div class="region-content">
@@ -682,29 +547,35 @@
   </section>
 
   <!-- NOUS CONTACTER -->
-  <section id="contact" class="contact-section-page">
+  <section id="contact" class="section contact-section">
     <div class="container">
+      <h2 class="section-title" data-i18n="prop.contact.title">Nous Contacter</h2>
       <div class="contact-content">
-        <div class="contact-info">
-          <h2 class="contact-title" data-i18n="prop.contact.title">Nous Contacter</h2>
+
+        <div class="contact-text">
           <div class="contact-details">
+
             <div class="contact-item">
               <h3 data-i18n="prop.contact.address">Adresse</h3>
               <p>Château Martinat<br>Lansac<br>33710 Côtes de Bourg<br>France</p>
             </div>
+
             <div class="contact-item">
               <h3 data-i18n="prop.contact.email">Email</h3>
-              <p><a href="mailto:contact@chateaumartinat.fr">contact@chateaumartinat.fr</a></p>
+              <p><a href="/cdn-cgi/l/email-protection#62010d0c1603011622010a03160703170f0310160b0c03164c0410"><span class="__cf_email__" data-cfemail="ee8d81809a8f8d9aae8d868f9a8b8f9b838f9c9a87808f9ac0889c">[email&#160;protected]</span></a></p>
             </div>
+
             <div class="contact-item">
               <h3 data-i18n="prop.contact.phone">Téléphone</h3>
               <p><a href="tel:+33557683498">+33 (0)5 57 68 34 98</a></p>
             </div>
+
             <div class="contact-item gps">
               <h3 data-i18n="prop.contact.gps">GPS</h3>
               <p>45.063121, -0.549345</p>
             </div>
-            <div class="contact-item horaires">
+
+            <div class="contact-item">
               <h3 data-i18n="prop.contact.hours">Horaires</h3>
               <p data-i18n="prop.contact.hours.val" data-i18n-html>
                 Lundi – Samedi : 10h – 18h<br>
@@ -713,22 +584,24 @@
                 Visite sur rendez-vous
               </p>
             </div>
+
           </div>
-          <a href="mailto:contact@chateaumartinat.fr?subject=Demande de tarifs" class="btn-contact-primary">
+
+          <a href="/cdn-cgi/l/email-protection#13707c7d6772706753707b72677672667e7261677a7d72673d75612c606671797670672e57767e727d7776337776336772617a7560" class="contact-cta-badge">
             <span data-i18n="prop.contact.cta">Demander nos tarifs</span>
-            <span class="btn-arrow">→</span>
           </a>
         </div>
 
         <div class="contact-map">
           <iframe
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3271.170246967585!2d-0.5515331847682614!3d45.063120979098756!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x48002b926c5fc42f%3A0xce54150184a7dcd4!2sSCEV%20Marsaux%20Donze%20%2F%20Ch%C3%A2teau%20Martinat!5e0!3m2!1sfr!2sfr!4v1706946912345!5m2!1sfr!2sfr"
-            width="100%" height="500" style="border:0;" allowfullscreen="" loading="lazy"
+            width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"
             referrerpolicy="no-referrer-when-downgrade"
             title="Localisation du Château Martinat — Lansac, Côtes de Bourg"
             aria-label="Carte Google Maps de Château Martinat">
           </iframe>
         </div>
+
       </div>
     </div>
   </section>
@@ -745,7 +618,7 @@
   </div>
 </footer>
 
-<script src="../js/i18n.js"></script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="../js/i18n.js"></script>
 <script src="../js/main.js"></script>
 
 <script>
@@ -798,19 +671,33 @@
     wrap.addEventListener('touchstart', e => { tx = e.changedTouches[0].screenX; stop(); }, { passive: true });
     wrap.addEventListener('touchend',   e => {
       const dx = e.changedTouches[0].screenX - tx;
-      if (dx < -50) next();
-      if (dx >  50) prev();
+      if (Math.abs(dx) > 50) { dx < 0 ? next() : prev(); reset(); }
       start();
-    });
+    }, { passive: true });
 
-    document.addEventListener('keydown', e => {
-      if (e.key === 'ArrowLeft')  { prev(); reset(); }
-      if (e.key === 'ArrowRight') { next(); reset(); }
-    });
-
+    update();
     start();
   })();
 </script>
 
+
+<script>
+// Handle .lang-fr / .lang-en visibility in sync with i18n.js
+(function () {
+  function syncLangClasses(lang) {
+    document.querySelectorAll('.lang-fr').forEach(el => el.style.display = lang === 'fr' ? '' : 'none');
+    document.querySelectorAll('.lang-en').forEach(el => el.style.display = lang === 'en' ? '' : 'none');
+  }
+  // Apply on load
+  const lang = localStorage.getItem('martinat_lang') || 'fr';
+  document.addEventListener('DOMContentLoaded', () => syncLangClasses(lang));
+  // Patch i18n to also call syncLangClasses when language changes
+  document.addEventListener('DOMContentLoaded', () => {
+    document.querySelectorAll('.lang-btn').forEach(btn => {
+      btn.addEventListener('click', () => syncLangClasses(btn.dataset.lang));
+    });
+  });
+})();
+</script>
 </body>
 </html>

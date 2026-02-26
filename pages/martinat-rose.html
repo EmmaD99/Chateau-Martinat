@@ -212,7 +212,7 @@
 
 <header class="topbar">
   <div class="topbar-left">
-    <a href="../index.html#vins" class="back-btn" aria-label="Retour">
+    <a href="../index.html#vins" class="back-btn" aria-label="Retour" data-i18n="wine.back">
       <span class="back-arrow">←</span>
     </a>
     <div class="lang-switcher">
@@ -307,29 +307,26 @@
 
 <script src="../js/i18n.js"></script>
 <script>
-// Apply language to this page
+// Apply language to this page — uses same localStorage key as i18n.js
 document.addEventListener('DOMContentLoaded', () => {
-  const saved = sessionStorage.getItem('lang') || 'fr';
-
   function applyLang(lang) {
     document.documentElement.lang = lang;
-    // Show/hide lang-specific elements
     document.querySelectorAll('.lang-fr').forEach(el => el.style.display = lang === 'fr' ? '' : 'none');
     document.querySelectorAll('.lang-en').forEach(el => el.style.display = lang === 'en' ? '' : 'none');
     document.querySelectorAll('.awards-fr').forEach(el => el.style.display = lang === 'fr' ? '' : 'none');
     document.querySelectorAll('.awards-en').forEach(el => el.style.display = lang === 'en' ? '' : 'none');
-    // i18n keys
-    if (typeof i18n !== 'undefined') i18n.setLang(lang);
-    // update buttons
+    if (typeof i18n !== 'undefined') i18n.applyLang(lang, false);
     document.querySelectorAll('.lang-btn').forEach(btn => btn.classList.toggle('active', btn.dataset.lang === lang));
   }
 
+  // i18n.js already initialises itself via IIFE; sync visibility classes with it
+  const saved = localStorage.getItem('martinat_lang') || 'fr';
   applyLang(saved);
 
   document.querySelectorAll('.lang-btn').forEach(btn => {
     btn.addEventListener('click', () => {
       const lang = btn.dataset.lang;
-      sessionStorage.setItem('lang', lang);
+      localStorage.setItem('martinat_lang', lang);
       applyLang(lang);
     });
   });
