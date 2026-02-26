@@ -283,44 +283,81 @@
       </div>
     </div>
   </section>
+<!-- 
+  ============================================================
+  SECTION CONTACT — Château Martinat
+  Remplacez l'ancienne section #contact par ce bloc
+  ============================================================
+-->
 
-  <!-- CONTACT -->
-  <section id="contact" class="section contact-section reveal">
-    <div class="container">
-      <div class="contact-content">
-        <div class="contact-info">
-          <h2 class="section-title" data-i18n="contact.title">Contact</h2>
-          <div class="contact-details">
-            <div class="contact-item">
-              <h3 data-i18n="contact.address">Adresse</h3>
-              <p>Château Martinat<br>1 Route des Demoiselles<br>33710 Lansac<br>France</p>
-            </div>
-            <div class="contact-item">
-              <h3 data-i18n="contact.email">Email</h3>
-              <p><a href="mailto:l.donze@chateau-martinat.com">l.donze@chateau-martinat.com</a></p>
-              <p><a href="mailto:s.donze@chateau-martinat.com">s.donze@chateau-martinat.com</a></p>
-            </div>
-            <div class="contact-item">
-              <h3 data-i18n="contact.phone">Téléphone</h3>
-              <p><a href="tel:+33 6 23 76 79 46">+33 6 23 76 79 46</a></p>
-              <p><a href="tel:+33 6 11 17 08 28">+33 6 11 17 08 28</a></p>
-            </div>
-            <div class="contact-item">
-              <h3 data-i18n="contact.gps">Coordonnées GPS</h3>
-              <p>45.063121, -0.549345</p>
-            </div>
+<!-- CONTACT -->
+<section id="contact" class="section contact-section reveal">
+  <div class="container">
+    <div class="contact-content">
+
+      <!-- BLOC INFORMATIONS -->
+      <div class="contact-info">
+        <h2 class="section-title" data-i18n="contact.title">Contact</h2>
+
+        <div class="contact-details">
+
+          <div class="contact-item">
+            <h3 data-i18n="contact.address">Adresse</h3>
+            <p>
+              Château Martinat<br>
+              Lansac<br>
+              33710 Côtes de Bourg<br>
+              France
+            </p>
           </div>
+
+          <div class="contact-item">
+            <h3 data-i18n="contact.email">Email</h3>
+            <p>
+              <a href="mailto:contact@chateaumartinat.fr">
+                contact@chateaumartinat.fr
+              </a>
+            </p>
+          </div>
+
+          <div class="contact-item">
+            <h3 data-i18n="contact.phone">Téléphone</h3>
+            <p>
+              <a href="tel:+33557683498">+33 (0)5 57 68 34 98</a>
+            </p>
+          </div>
+
+          <div class="contact-item gps">
+            <h3 data-i18n="contact.gps">Coordonnées GPS</h3>
+            <p>45.063121, -0.549345</p>
+          </div>
+
         </div>
-        <div class="contact-map">
-          <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3271.170246967585!2d-0.5515331847682614!3d45.063120979098756!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x48002b926c5fc42f%3A0xce54150184a7dcd4!2sSCEV%20Marsaux%20Donze%20%2F%20Ch%C3%A2teau%20Martinat!5e0!3m2!1sfr!2sfr!4v1706946912345!5m2!1sfr!2sfr"
-            width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy"
-            referrerpolicy="no-referrer-when-downgrade" title="Localisation du Château Martinat">
-          </iframe>
-        </div>
+
+        <!-- CTA — clé i18n à ajouter dans i18n.js (voir note) -->
+        <a href="mailto:contact@chateaumartinat.fr" class="contact-cta-badge" data-i18n="contact.cta">
+          Nous écrire
+        </a>
       </div>
+
+      <!-- CARTE GOOGLE MAPS -->
+      <div class="contact-map">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3271.170246967585!2d-0.5515331847682614!3d45.063120979098756!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x48002b926c5fc42f%3A0xce54150184a7dcd4!2sSCEV%20Marsaux%20Donze%20%2F%20Ch%C3%A2teau%20Martinat!5e0!3m2!1sfr!2sfr!4v1706946912345!5m2!1sfr!2sfr"
+          width="100%"
+          height="460"
+          style="border:0;"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          title="Localisation du Château Martinat — Lansac, Côtes de Bourg"
+          aria-label="Carte Google Maps de Château Martinat">
+        </iframe>
+      </div>
+
     </div>
-  </section>
+  </div>
+</section>
 
 </main>
 

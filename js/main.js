@@ -6,11 +6,14 @@
 // AGE VERIFICATION
 // ============================================
 const ageVerification = {
-  popup: document.getElementById('age-verification-popup'),
+  popup:  document.getElementById('age-verification-popup'),
   yesBtn: document.getElementById('verify-button-yes'),
-  noBtn: document.getElementById('verify-button-no'),
+  noBtn:  document.getElementById('verify-button-no'),
 
   init() {
+    // Absent sur les sous-pages → on sort silencieusement
+    if (!this.popup || !this.yesBtn || !this.noBtn) return;
+
     const isVerified = sessionStorage.getItem('ageVerified');
     if (isVerified === 'true') {
       this.hidePopup();
@@ -18,7 +21,7 @@ const ageVerification = {
       this.showPopup();
     }
     this.yesBtn.addEventListener('click', () => this.verifyAge(true));
-    this.noBtn.addEventListener('click', () => this.verifyAge(false));
+    this.noBtn.addEventListener('click',  () => this.verifyAge(false));
   },
 
   verifyAge(isAdult) {
@@ -43,17 +46,21 @@ const ageVerification = {
 // MENU NAVIGATION
 // ============================================
 const menuNav = {
-  openBtn: document.getElementById('openMenu'),
-  closeBtn: document.getElementById('closeMenu'),
-  menu: document.getElementById('menu'),
+  openBtn:   document.getElementById('openMenu'),
+  closeBtn:  document.getElementById('closeMenu'),
+  menu:      document.getElementById('menu'),
   menuLinks: document.querySelectorAll('.menu-links a'),
 
   init() {
-    this.openBtn.addEventListener('click', () => this.openMenu());
+    if (!this.openBtn || !this.closeBtn || !this.menu) return;
+
+    this.openBtn.addEventListener('click',  () => this.openMenu());
     this.closeBtn.addEventListener('click', () => this.closeMenu());
+
     this.menuLinks.forEach(link => {
       link.addEventListener('click', () => this.closeMenu());
     });
+
     document.addEventListener('keydown', (e) => {
       if (e.key === 'Escape' && this.menu.getAttribute('aria-hidden') === 'false') {
         this.closeMenu();
@@ -102,11 +109,14 @@ const smoothScroll = {
 const revealOnScroll = {
   init() {
     const reveals = document.querySelectorAll('.reveal');
+    if (!reveals.length) return;
+
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) entry.target.classList.add('active');
       });
     }, { threshold: 0.15, rootMargin: '0px 0px -50px 0px' });
+
     reveals.forEach(reveal => observer.observe(reveal));
   }
 };
@@ -117,6 +127,7 @@ const revealOnScroll = {
 const headerScroll = {
   header: document.querySelector('.topbar'),
   init() {
+    if (!this.header) return;
     window.addEventListener('scroll', () => {
       this.header.style.boxShadow = window.scrollY > 100
         ? '0 4px 12px rgba(0, 0, 0, 0.15)'
@@ -155,7 +166,8 @@ document.addEventListener('DOMContentLoaded', () => {
   revealOnScroll.init();
   headerScroll.init();
   lazyLoadImages.init();
-  // Bilinguisme
+
+  // Bilinguisme — chargé uniquement si i18n.js est présent
   if (typeof i18n !== 'undefined') i18n.init();
 
   console.log('🍷 Château Martinat website loaded successfully!');
