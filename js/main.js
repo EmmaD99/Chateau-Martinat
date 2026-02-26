@@ -166,9 +166,7 @@ document.addEventListener('DOMContentLoaded', () => {
   revealOnScroll.init();
   headerScroll.init();
   lazyLoadImages.init();
-
-  // Bilinguisme — chargé uniquement si i18n.js est présent
-  if (typeof i18n !== 'undefined') i18n.init();
+  // i18n s'initialise automatiquement via i18n.js — pas besoin de l'appeler ici
 
   console.log('🍷 Château Martinat website loaded successfully!');
 });

@@ -266,45 +266,57 @@ const translations = {
   }
 };
 
-/* ── Language switcher ── */
+/* ════════════════════════════════════════
+   MOTEUR i18n
+   - localStorage : persiste entre pages,
+     onglets et sessions (≠ sessionStorage)
+   - Auto-exécution immédiate : applique la
+     langue avant le rendu visible du DOM
+   ════════════════════════════════════════ */
 const i18n = {
   current: 'fr',
 
   init() {
-    const saved = sessionStorage.getItem('lang') || 'fr';
-    this.setLang(saved, false);
+    // Lire depuis localStorage (persiste entre toutes les pages)
+    const saved = localStorage.getItem('martinat_lang') || 'fr';
+    this.applyLang(saved, false);
 
+    // Attacher les boutons de langue
     document.querySelectorAll('.lang-btn').forEach(btn => {
-      btn.addEventListener('click', () => {
-        this.setLang(btn.dataset.lang);
-      });
+      // Supprimer l'ancien listener si init() est rappelé
+      btn.removeEventListener('click', btn._langHandler);
+      btn._langHandler = () => this.applyLang(btn.dataset.lang, true);
+      btn.addEventListener('click', btn._langHandler);
     });
   },
 
-  setLang(lang, save = true) {
+  applyLang(lang, save) {
     this.current = lang;
-    if (save) sessionStorage.setItem('lang', lang);
+    if (save) localStorage.setItem('martinat_lang', lang);
 
+    // SEO + accessibilité
     document.documentElement.lang = lang;
 
+    // Traduire tous les éléments [data-i18n]
     document.querySelectorAll('[data-i18n]').forEach(el => {
-      const key = el.getAttribute('data-i18n');
+      const key  = el.getAttribute('data-i18n');
       const text = this.t(key);
-      if (text !== undefined) {
-        if (el.getAttribute('data-i18n-html') !== null) {
-          el.innerHTML = text;
-        } else {
-          el.textContent = text;
-        }
+      if (text === undefined) return;
+      if (el.hasAttribute('data-i18n-html')) {
+        el.innerHTML = text;
+      } else {
+        el.textContent = text;
       }
     });
 
+    // Traduire les placeholders
     document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
-      const key = el.getAttribute('data-i18n-placeholder');
+      const key  = el.getAttribute('data-i18n-placeholder');
       const text = this.t(key);
       if (text !== undefined) el.placeholder = text;
     });
 
+    // Bouton actif
     document.querySelectorAll('.lang-btn').forEach(btn => {
       btn.classList.toggle('active', btn.dataset.lang === lang);
     });
@@ -314,3 +326,19 @@ const i18n = {
     return translations[this.current]?.[key] ?? translations['fr']?.[key] ?? key;
   }
 };
+
+/* ════════════════════════════════════════
+   EXÉCUTION IMMÉDIATE
+   Applique la langue sauvegardée dès que
+   le DOM est parsé, sur TOUTES les pages.
+   ════════════════════════════════════════ */
+(function () {
+  const lang = localStorage.getItem('martinat_lang') || 'fr';
+  document.documentElement.lang = lang;
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', () => i18n.init());
+  } else {
+    i18n.init();
+  }
+})();
