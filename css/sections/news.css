@@ -3,7 +3,7 @@
    ======================================== */
 
 .news-section {
-  background: var(--background-light);
+  background: var(--background-bordeaux);
 }
 
 .news-content {
@@ -22,7 +22,7 @@
   margin-bottom: var(--spacing-md);
   line-height: 1.8;
   font-size: var(--font-size-md);
-  color: var(--text-dark);
+  color: var(--text-light);
 }
 
 .news-contact {

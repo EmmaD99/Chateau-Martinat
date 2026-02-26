@@ -3,7 +3,7 @@
    ======================================== */
 
 .contact-section {
-  background: var(--background-light);
+  background: var(--background-bordeaux);
 }
 
 .contact-content {
@@ -42,7 +42,7 @@
 }
 
 .contact-item p {
-  color: var(--text-dark);
+  color: var(--text-white);
   line-height: 1.8;
   margin: 0;
 }
