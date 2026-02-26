@@ -209,46 +209,86 @@
 
 <body>
 
+
 <header class="topbar">
-  <a href="../index.html#vins" class="back-btn" aria-label="Retour aux vins">
-    <span class="back-arrow">←</span>
-  </a>
+  <div class="topbar-left">
+    <a href="../index.html#vins" class="back-btn" aria-label="Retour">
+      <span class="back-arrow">←</span>
+    </a>
+    <div class="lang-switcher">
+      <button class="lang-btn active" data-lang="fr" aria-label="Français">
+        <svg class="lang-flag" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 3 2">
+          <rect width="1" height="2" fill="#002395"/>
+          <rect x="1" width="1" height="2" fill="#fff"/>
+          <rect x="2" width="1" height="2" fill="#ED2939"/>
+        </svg>
+        <span>FR</span>
+      </button>
+      <div class="lang-divider"></div>
+      <button class="lang-btn" data-lang="en" aria-label="English">
+        <svg class="lang-flag" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 30">
+          <clipPath id="a"><path d="M0 0v30h60V0z"/></clipPath>
+          <clipPath id="b"><path d="M30 15h30v15zv15H0zH0V0zV0h30z"/></clipPath>
+          <g clip-path="url(#a)">
+            <path d="M0 0v30h60V0z" fill="#012169"/>
+            <path d="M0 0l60 30m0-30L0 30" stroke="#fff" stroke-width="6"/>
+            <path d="M0 0l60 30m0-30L0 30" clip-path="url(#b)" stroke="#C8102E" stroke-width="4"/>
+            <path d="M30 0v30M0 15h60" stroke="#fff" stroke-width="10"/>
+            <path d="M30 0v30M0 15h60" stroke="#C8102E" stroke-width="6"/>
+          </g>
+        </svg>
+        <span>EN</span>
+      </button>
+    </div>
+  </div>
   <div class="logo">
-    <a href="../index.html" style="color: inherit; text-decoration: none;">Château Martinat</a>
+    <a href="../index.html" style="color:inherit;text-decoration:none;">Château Martinat</a>
+  </div>
+  <div class="topbar-right">
+    <a href="https://www.instagram.com/chateaumartinat" target="_blank" rel="noopener noreferrer" class="ig-link" aria-label="Instagram">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+        <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+        <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
+        <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
+      </svg>
+    </a>
   </div>
 </header>
 
 <main class="wine-page">
   <div class="wine-container">
-    
+
     <div class="wine-header">
-      <h1 class="wine-title">Martinat Rosé</h1>
-      <p class="wine-subtitle">GRAND VIN DE BORDEAUX</p>
+      <h1 class="wine-title">
+        <span class="lang-fr">Martinat Rosé</span>
+        <span class="lang-en" style="display:none;">Martinat Rosé</span>
+      </h1>
+      <p class="wine-subtitle" data-i18n="wine.subtitle">GRAND VIN DE BORDEAUX</p>
     </div>
 
     <div class="wine-content">
-
       <div class="wine-image-container">
-        <img src="../pictures/wines/martinat-rose-label.jpg" alt="Le Rosé de Martinat - Label" class="wine-image">
+        <img src="../pictures/wines/martinat-rose-label.jpg" alt="Martinat Rosé - Label" class="wine-image">
       </div>
 
       <div class="wine-description">
-
         <div class="wine-title-wrapper">
-          <h2>Martinat Rosé</h2>
+          <h2>
+            <span class="lang-fr">Martinat Rosé</span>
+            <span class="lang-en" style="display:none;">Martinat Rosé</span>
+          </h2>
           <p class="wine-appellation">Rosé</p>
         </div>
 
-        <p>
-          Un vin à la robe rose pâle et brillante qui se caractérise par une bouche fruitée et gourmande ; 
-          un vin vif et friand qui accompagnera joyeusement vos repas d’été…
-        </p>
+        <p class="lang-fr">Un vin à la robe rose pâle et brillante qui se caractérise par une bouche fruitée et gourmande ; un vin vif et friand qui accompagnera joyeusement vos repas d'été…</p>
+        <p class="lang-en" style="display:none;">A wine with a pale, brilliant pink robe characterised by a fruity, moreish palate; a lively and appetising wine that will happily accompany your summer meals…</p>
 
+        
       </div>
     </div>
 
     <div class="wine-actions">
-      <a href="../technical-specifications/martinat-rose.pdf" class="btn-download" download>
+      <a href="../technical-specifications/martinat-rose.pdf" class="btn-download" download data-i18n="wine.download">
         Télécharger la fiche technique
       </a>
     </div>
@@ -259,11 +299,41 @@
 <footer class="footer">
   <div class="container">
     <div class="footer-content">
-      <p class="footer-copyright">© 2024 Château Martinat — Tous droits réservés</p>
-      <p class="footer-legal">L'abus d'alcool est dangereux pour la santé. À consommer avec modération.</p>
+      <p class="footer-copyright" data-i18n="footer.rights">© 2024 Château Martinat – Tous droits réservés</p>
+      <p class="footer-legal" data-i18n="footer.legal">L'abus d'alcool est dangereux pour la santé. À consommer avec modération.</p>
     </div>
   </div>
 </footer>
 
+<script src="../js/i18n.js"></script>
+<script>
+// Apply language to this page
+document.addEventListener('DOMContentLoaded', () => {
+  const saved = sessionStorage.getItem('lang') || 'fr';
+
+  function applyLang(lang) {
+    document.documentElement.lang = lang;
+    // Show/hide lang-specific elements
+    document.querySelectorAll('.lang-fr').forEach(el => el.style.display = lang === 'fr' ? '' : 'none');
+    document.querySelectorAll('.lang-en').forEach(el => el.style.display = lang === 'en' ? '' : 'none');
+    document.querySelectorAll('.awards-fr').forEach(el => el.style.display = lang === 'fr' ? '' : 'none');
+    document.querySelectorAll('.awards-en').forEach(el => el.style.display = lang === 'en' ? '' : 'none');
+    // i18n keys
+    if (typeof i18n !== 'undefined') i18n.setLang(lang);
+    // update buttons
+    document.querySelectorAll('.lang-btn').forEach(btn => btn.classList.toggle('active', btn.dataset.lang === lang));
+  }
+
+  applyLang(saved);
+
+  document.querySelectorAll('.lang-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const lang = btn.dataset.lang;
+      sessionStorage.setItem('lang', lang);
+      applyLang(lang);
+    });
+  });
+});
+</script>
 </body>
 </html>
