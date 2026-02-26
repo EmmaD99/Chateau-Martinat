@@ -13,6 +13,10 @@
   margin-top: var(--spacing-xl);
 }
 
+.contact-section .section-title {
+  color: var(--text-light);
+}
+
 .contact-info {
   padding: var(--spacing-lg);
 }
@@ -42,7 +46,7 @@
 }
 
 .contact-item p {
-  color: var(--text-white);
+  color: var(--text-light);
   line-height: 1.8;
   margin: 0;
 }

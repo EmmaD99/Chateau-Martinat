@@ -14,6 +14,13 @@
   margin-top: var(--spacing-xl);
 }
 
+.news-section .section-title {
+  color: #ffffff;
+}
+
+.news-section .section-title::after {
+  background-color: #ffffff;
+}
 .news-text {
   padding: var(--spacing-lg);
 }
