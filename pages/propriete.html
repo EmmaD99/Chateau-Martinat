@@ -218,7 +218,7 @@
       border-radius: var(--radius-md); text-align: center; box-shadow: var(--shadow-sm);
     }
     .stat-number { font-size: var(--font-size-sm); font-weight: 700; color: var(--accent); font-family: var(--font-primary); line-height: 1.4; }
-    .stat-label { color: var(--text-gray); margin-top: var(--spacing-xs); font-size: var(--font-size-sm); }
+    .stat-label { color: var(--text-dark) !important; margin-top: var(--spacing-xs); font-size: var(--font-size-sm); }
 
     /* --- Philosophie --- */
     .philosophy-content { max-width: 900px; margin: var(--spacing-xl) auto 0; text-align: center; }
@@ -712,17 +712,14 @@
     document.querySelectorAll('.lang-fr').forEach(el => el.style.display = lang === 'fr' ? '' : 'none');
     document.querySelectorAll('.lang-en').forEach(el => el.style.display = lang === 'en' ? '' : 'none');
   }
-  // Apply on load
   const lang = localStorage.getItem('martinat_lang') || 'fr';
   document.addEventListener('DOMContentLoaded', () => syncLangClasses(lang));
-  // Patch i18n to also call syncLangClasses when language changes
   document.addEventListener('DOMContentLoaded', () => {
     const origApply = i18n.applyLang.bind(i18n);
     i18n.applyLang = function(l, save) {
       origApply(l, save);
       syncLangClasses(l);
     };
-    // Re-apply with current lang to ensure classes are in sync after i18n.init()
     syncLangClasses(localStorage.getItem('martinat_lang') || 'fr');
   });
 })();
