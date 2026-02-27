@@ -580,12 +580,18 @@
 
             <div class="contact-item">
               <h3 data-i18n="prop.contact.email">Email</h3>
-              <p><a href="l.donze@chateau-martinat.com"><span class="__cf_email__" data-cfemail="l.donze@chateau-martinat.com">l.donze@chateau-martinat.com</span></a></p>
+              <p>
+                <a href="mailto:l.donze@chateau-martinat.com">l.donze@chateau-martinat.com</a><br>
+                <a href="mailto:s.donze@chateau-martinat.com">s.donze@chateau-martinat.com</a>
+              </p>
             </div>
 
             <div class="contact-item">
               <h3 data-i18n="prop.contact.phone">Téléphone</h3>
-              <p><a href="tel:+33623767946">+33 6 23 76 79 46</a></p>
+              <p>
+                <a href="tel:+33623767946">+33 6 23 76 79 46</a><br>
+                <a href="tel:+33557682014">+33 5 57 68 20 14</a>
+              </p>
             </div>
 
             <div class="contact-item gps">
@@ -605,7 +611,7 @@
 
           </div>
 
-          <a href="/cdn-cgi/l/email-protection#13707c7d6772706753707b72677672667e7261677a7d72673d75612c606671797670672e57767e727d7776337776336772617a7560" class="contact-cta-badge">
+          <a href="mailto:l.donze@chateau-martinat.com" class="contact-cta-badge">
             <span data-i18n="prop.contact.cta">Demander nos tarifs</span>
           </a>
         </div>
@@ -636,7 +642,7 @@
   </div>
 </footer>
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="../js/i18n.js"></script>
+<script src="../js/i18n.js"></script>
 <script src="../js/main.js"></script>
 
 <script>
@@ -711,11 +717,16 @@
   document.addEventListener('DOMContentLoaded', () => syncLangClasses(lang));
   // Patch i18n to also call syncLangClasses when language changes
   document.addEventListener('DOMContentLoaded', () => {
-    document.querySelectorAll('.lang-btn').forEach(btn => {
-      btn.addEventListener('click', () => syncLangClasses(btn.dataset.lang));
-    });
+    const origApply = i18n.applyLang.bind(i18n);
+    i18n.applyLang = function(l, save) {
+      origApply(l, save);
+      syncLangClasses(l);
+    };
+    // Re-apply with current lang to ensure classes are in sync after i18n.init()
+    syncLangClasses(localStorage.getItem('martinat_lang') || 'fr');
   });
 })();
 </script>
+
 </body>
 </html>

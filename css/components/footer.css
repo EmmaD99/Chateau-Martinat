@@ -3,7 +3,7 @@
    ======================================== */
 
 .footer {
-  background: var(--white);
+  background: var(--background-white);
   color: var(--text-dark);
   padding: var(--spacing-xl) 0;
 }
@@ -20,11 +20,12 @@
   font-weight: 600;
   letter-spacing: 0.5px;
   margin: 0;
+  color: var(--text-dark);
 }
 
 .footer-legal {
   font-size: var(--font-size-xs);
-  color: rgba(255, 255, 255, 0.8);
+  color: var(--text-gray);
   margin: 0;
 }
 
