@@ -74,7 +74,25 @@
 
     /* --- Sections --- */
     .property-section { padding: var(--spacing-3xl) 0; }
-    #galerie.property-section { padding: 0; }
+    #galerie.property-section {
+      padding: 0;
+    }
+    #galerie.property-section .container {
+      max-width: 100%;
+      padding: 0;
+      width: 100%;
+    }
+    #galerie .carousel-container {
+      margin: 0;
+      border-radius: 0;
+      box-shadow: none;
+    }
+    #galerie .carousel-slide img {
+      height: clamp(300px, 60vh, 680px);
+      width: 100%;
+      object-fit: cover;
+      display: block;
+    }
     .property-section.section-bordeaux { background: var(--background-bordeaux); }
     .property-section.section-white { background: var(--background-white); }
 
