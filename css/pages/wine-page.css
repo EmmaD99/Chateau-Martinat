@@ -1,0 +1,252 @@
+/* ========================================
+   WINE PAGE — CSS PARTAGÉ
+   Utilisé par toutes les pages /pages/*.html
+   ======================================== */
+
+/* ── Bouton retour ── */
+.back-btn {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--accent);
+  border-radius: var(--radius-sm);
+  transition: all var(--transition-normal);
+  text-decoration: none;
+}
+.back-btn:hover {
+  background: var(--accent-light);
+  transform: translateX(-3px);
+}
+.back-arrow {
+  color: white;
+  font-size: var(--font-size-xl);
+  font-weight: bold;
+  line-height: 1;
+}
+
+/* ── Layout ── */
+.wine-page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  padding-top: var(--header-height);
+}
+.wine-container {
+  flex: 1;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: var(--spacing-3xl) var(--spacing-xl);
+  width: 100%;
+}
+
+/* ── En-tête ── */
+.wine-header {
+  text-align: center;
+  margin-bottom: var(--spacing-3xl);
+  animation: fadeInUp 0.8s ease;
+}
+.wine-title {
+  font-family: var(--font-primary);
+  font-size: clamp(2.5rem, 5vw, 3.5rem);
+  color: var(--primary);
+  margin-bottom: var(--spacing-md);
+  letter-spacing: 1px;
+}
+.wine-subtitle {
+  font-size: var(--font-size-md);
+  color: var(--accent);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+/* ── Contenu ── */
+.wine-content {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: var(--spacing-3xl);
+  align-items: start;
+  margin-bottom: var(--spacing-3xl);
+  animation: fadeInUp 0.8s ease 0.2s backwards;
+}
+
+/* ── Image ── */
+.wine-image-container {
+  position: sticky;
+  top: calc(var(--header-height) + var(--spacing-lg));
+  background: var(--background-dark);
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-xl);
+  box-shadow: var(--shadow-lg);
+  transition: all var(--transition-normal);
+}
+.wine-image-container:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-lg), 0 0 40px rgba(184, 134, 11, 0.2);
+}
+.wine-image {
+  width: 100%;
+  max-width: 400px;
+  margin: 0 auto;
+  display: block;
+  animation: float 3s ease-in-out infinite;
+}
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50%       { transform: translateY(-10px); }
+}
+
+/* ── Description ── */
+.wine-description {
+  background: white;
+  padding: var(--spacing-xl);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+}
+.wine-title-wrapper {
+  border-bottom: 3px solid var(--accent);
+  padding-bottom: var(--spacing-sm);
+  margin-bottom: var(--spacing-lg);
+}
+.wine-description h2 {
+  font-family: var(--font-primary);
+  font-size: var(--font-size-xl);
+  color: var(--primary);
+  margin: 0;
+  line-height: 1.15;
+}
+.wine-appellation {
+  font-size: 0.85rem;
+  font-style: italic;
+  letter-spacing: 0.5px;
+  color: rgba(0, 0, 0, 0.65);
+  margin: 2px 0 0;
+  line-height: 1.3;
+}
+.wine-description p {
+  line-height: 1.8;
+  font-size: var(--font-size-md);
+  color: var(--text-dark);
+  margin-bottom: var(--spacing-md);
+  text-align: justify;
+}
+.wine-description p:last-child { margin-bottom: 0; }
+
+/* ── Distinctions ── */
+.wine-awards {
+  margin-top: var(--spacing-xl);
+  padding-top: var(--spacing-md);
+  border-top: 1px solid rgba(0, 0, 0, 0.08);
+}
+.awards-title {
+  font-family: var(--font-primary);
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: var(--primary);
+  margin-bottom: var(--spacing-sm);
+}
+.awards-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.awards-list li {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-sm);
+  margin-bottom: 8px;
+  font-size: var(--font-size-md);
+  color: var(--text-dark);
+}
+.award-year {
+  font-weight: 600;
+  color: var(--accent);
+  min-width: 55px;
+}
+.award-text { opacity: 0.85; }
+
+/* ── Notice disponibilité (pas une distinction) ── */
+.wine-availability {
+  margin-top: var(--spacing-xl);
+  padding: var(--spacing-md) var(--spacing-lg);
+  background: var(--background-dark);
+  border-left: 3px solid var(--accent);
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+  font-size: var(--font-size-md);
+  color: var(--text-dark);
+  font-style: italic;
+}
+
+/* ── Actions ── */
+.wine-actions {
+  display: flex;
+  gap: var(--spacing-lg);
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: var(--spacing-3xl);
+  animation: fadeInUp 0.8s ease 0.4s backwards;
+}
+.btn-download {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  padding: var(--spacing-md) var(--spacing-xl);
+  background: var(--accent);
+  color: white;
+  border-radius: var(--radius-sm);
+  font-weight: 600;
+  font-size: var(--font-size-md);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  transition: all var(--transition-normal);
+  box-shadow: var(--shadow-sm);
+  text-decoration: none;
+}
+.btn-download:hover {
+  background: var(--accent-light);
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-lg);
+  color: white;
+}
+.btn-download::before {
+  content: '⬇';
+  font-size: var(--font-size-lg);
+}
+
+/* ── Animation ── */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ── Responsive ── */
+@media (max-width: 968px) {
+  .wine-content {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-xl);
+  }
+  .wine-image-container {
+    position: relative;
+    top: 0;
+    max-width: 400px;
+    margin: 0 auto;
+  }
+}
+@media (max-width: 768px) {
+  .wine-container {
+    padding: var(--spacing-2xl) var(--spacing-md);
+  }
+  .wine-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .btn-download {
+    width: 100%;
+    justify-content: center;
+  }
+  .back-btn  { width: 36px; height: 36px; }
+  .back-arrow { font-size: var(--font-size-lg); }
+}

@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+
+  <url>
+    <loc>https://www.chateau-martinat.com/</loc>
+    <lastmod>2026-02-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.chateau-martinat.com/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.chateau-martinat.com/"/>
+  </url>
+
+  <url>
+    <loc>https://www.chateau-martinat.com/pages/propriete.html</loc>
+    <lastmod>2026-02-27</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.chateau-martinat.com/pages/chateau-martinat.html</loc>
+    <lastmod>2026-02-27</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://www.chateau-martinat.com/pages/chateau-martinat-blanc.html</loc>
+    <lastmod>2026-02-27</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.chateau-martinat.com/pages/epicurea-de-chateau-martinat.html</loc>
+    <lastmod>2026-02-27</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.chateau-martinat.com/pages/malbec-100-de-chateau-martinat.html</loc>
+    <lastmod>2026-02-27</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.chateau-martinat.com/pages/martinat-rose.html</loc>
+    <lastmod>2026-02-27</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://www.chateau-martinat.com/pages/chateau-les-donats.html</loc>
+    <lastmod>2026-02-27</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://www.chateau-martinat.com/pages/chateau-belair-l-escudier.html</loc>
+    <lastmod>2026-02-27</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+</urlset>

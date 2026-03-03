@@ -3,289 +3,50 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Château Belair l'Escudier">
-  <title>Château Belair l'Escudier</title>
-  
+
+  <!-- SEO -->
+  <meta name="description" content="Château Belair l'Escudier, 100% Merlot en Côtes de Bourg. Nez de fruits rouges, tanins mûrs et soyeux sur un terroir argilo-graveleux unique à Lansac. Grand Vin de Bordeaux.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://www.chateau-martinat.com/pages/chateau-belair-l-escudier.html">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Château Belair l'Escudier | Château Martinat — Côtes de Bourg">
+  <meta property="og:description" content="Château Belair l'Escudier, 100% Merlot en Côtes de Bourg. Nez de fruits rouges, tanins mûrs et soyeux sur un terroir argilo-graveleux unique à Lansac. Grand Vin de Bordeaux.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://www.chateau-martinat.com/pictures/wines/chateau-belair-l'-escudier-label.jpg">
+  <meta property="og:url" content="https://www.chateau-martinat.com/pages/chateau-belair-l-escudier.html">
+  <meta property="og:locale" content="fr_FR">
+  <meta property="og:locale:alternate" content="en_GB">
+
+  <title>Château Belair l'Escudier | Château Martinat — Grand Vin de Bordeaux, Côtes de Bourg</title>
+
   <!-- Styles -->
   <link rel="stylesheet" href="../css/reset.css">
   <link rel="stylesheet" href="../css/variables.css">
   <link rel="stylesheet" href="../css/main.css">
   <link rel="stylesheet" href="../css/components/header.css">
   <link rel="stylesheet" href="../css/components/footer.css">
-  
-  <style>
-    .back-btn {
-      width: 40px;
-      height: 40px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background: var(--accent);
-      border-radius: var(--radius-sm);
-      transition: all var(--transition-normal);
-      text-decoration: none;
-    }
-
-    .back-btn:hover {
-      background: var(--accent-light);
-      transform: translateX(-3px);
-    }
-
-    .back-arrow {
-      color: white;
-      font-size: var(--font-size-xl);
-      font-weight: bold;
-      line-height: 1;
-    }
-
-    .wine-page {
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      padding-top: var(--header-height);
-    }
-
-    .wine-container {
-      flex: 1;
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: var(--spacing-3xl) var(--spacing-xl);
-      width: 100%;
-    }
-
-    .wine-header {
-      text-align: center;
-      margin-bottom: var(--spacing-3xl);
-      animation: fadeInUp 0.8s ease;
-    }
-
-    .wine-title {
-      font-family: var(--font-primary);
-      font-size: clamp(2.5rem, 5vw, 3.5rem);
-      color: var(--primary);
-      margin-bottom: var(--spacing-md);
-      letter-spacing: 1px;
-    }
-
-    .wine-subtitle {
-      font-size: var(--font-size-md);
-      color: var(--accent);
-      font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: 2px;
-    }
-
-    .wine-content {
-      display: grid;
-      grid-template-columns: 1fr 1.2fr;
-      gap: var(--spacing-3xl);
-      align-items: start;
-      margin-bottom: var(--spacing-3xl);
-      animation: fadeInUp 0.8s ease 0.2s backwards;
-    }
-
-    .wine-image-container {
-      position: sticky;
-      top: calc(var(--header-height) + var(--spacing-lg));
-      background: var(--background-dark);
-      border-radius: var(--radius-lg);
-      padding: var(--spacing-xl);
-      box-shadow: var(--shadow-lg);
-      transition: all var(--transition-normal);
-    }
-
-    .wine-image-container:hover {
-      transform: translateY(-5px);
-      box-shadow: var(--shadow-lg), 0 0 40px rgba(184, 134, 11, 0.2);
-    }
-
-    .wine-image {
-      width: 100%;
-      max-width: 400px;
-      margin: 0 auto;
-      display: block;
-      animation: float 3s ease-in-out infinite;
-    }
-
-    @keyframes float {
-      0%, 100% { transform: translateY(0px); }
-      50% { transform: translateY(-10px); }
-    }
-
-    .wine-description {
-      background: white;
-      padding: var(--spacing-xl);
-      border-radius: var(--radius-lg);
-      box-shadow: var(--shadow-md);
-    }
-
-    .wine-title-wrapper {
-      border-bottom: 3px solid var(--accent);
-      padding-bottom: var(--spacing-sm);
-      margin-bottom: var(--spacing-lg);
-    }
-
-    .wine-description h2 {
-      font-family: var(--font-primary);
-      font-size: var(--font-size-xl);
-      color: var(--primary);
-      margin: 0;
-      line-height: 1.15;
-    }
-
-    .wine-appellation {
-      font-size: 0.85rem;
-      font-style: italic;
-      letter-spacing: 0.5px;
-      color: rgba(0, 0, 0, 0.65);
-      margin: 2px 0 0 0;
-      line-height: 1.3;
-    }
-
-    .wine-description p {
-      line-height: 1.8;
-      font-size: var(--font-size-md);
-      color: var(--text-dark);
-      margin-bottom: var(--spacing-md);
-      text-align: justify;
-    }
-
-    .wine-description p:last-child {
-      margin-bottom: 0;
-    }
-
-    .wine-awards {
-      margin-top: var(--spacing-xl);
-      padding-top: var(--spacing-md);
-      border-top: 1px solid rgba(0, 0, 0, 0.08);
-    }
-
-    .awards-title {
-      font-family: var(--font-primary);
-      font-size: 0.9rem;
-      text-transform: uppercase;
-      letter-spacing: 2px;
-      color: var(--primary);
-      margin-bottom: var(--spacing-sm);
-    }
-
-    .awards-list {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-    }
-
-    .awards-list li {
-      display: flex;
-      gap: var(--spacing-sm);
-      margin-bottom: 8px;
-      font-size: var(--font-size-md);
-      color: var(--text-dark);
-    }
-
-    .award-year {
-      font-weight: 600;
-      color: var(--accent);
-      min-width: 55px;
-    }
-
-    .award-text {
-      opacity: 0.85;
-    }
-
-    .wine-actions {
-      display: flex;
-      gap: var(--spacing-lg);
-      justify-content: center;
-      flex-wrap: wrap;
-      margin-bottom: var(--spacing-3xl);
-      animation: fadeInUp 0.8s ease 0.4s backwards;
-    }
-
-    .btn-download {
-      display: inline-flex;
-      align-items: center;
-      gap: var(--spacing-sm);
-      padding: var(--spacing-md) var(--spacing-xl);
-      background: var(--accent);
-      color: white;
-      border-radius: var(--radius-sm);
-      font-weight: 600;
-      font-size: var(--font-size-md);
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
-      transition: all var(--transition-normal);
-      box-shadow: var(--shadow-sm);
-      text-decoration: none;
-    }
-
-    .btn-download:hover {
-      background: var(--accent-light);
-      transform: translateY(-3px);
-      box-shadow: var(--shadow-lg);
-      color: white;
-    }
-
-    .btn-download::before {
-      content: '⬇';
-      font-size: var(--font-size-lg);
-    }
-
-    @keyframes fadeInUp {
-      from { opacity: 0; transform: translateY(30px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    @media (max-width: 968px) {
-      .wine-content {
-        grid-template-columns: 1fr;
-        gap: var(--spacing-xl);
-      }
-
-      .wine-image-container {
-        position: relative;
-        top: 0;
-        max-width: 400px;
-        margin: 0 auto;
-      }
-    }
-
-    @media (max-width: 768px) {
-      .wine-container {
-        padding: var(--spacing-2xl) var(--spacing-md);
-      }
-
-      .wine-actions {
-        flex-direction: column;
-        align-items: stretch;
-      }
-
-      .btn-download {
-        width: 100%;
-        justify-content: center;
-      }
-    }
-  </style>
+  <link rel="stylesheet" href="../css/pages/wine-page.css">
 </head>
 <body>
 
 <header class="topbar">
   <div class="topbar-left">
-    <a href="../index.html#vins" class="back-btn" aria-label="Retour" data-i18n="wine.back">
-      <span class="back-arrow">←</span>
+    <a href="../index.html#vins" class="back-btn" aria-label="Retour à la liste des vins">
+      <span class="back-arrow" aria-hidden="true">←</span>
     </a>
     <div class="lang-switcher">
-      <button class="lang-btn active" data-lang="fr" aria-label="Français">
-        <svg class="lang-flag" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 3 2">
+      <button class="lang-btn active" data-lang="fr" aria-label="Passer en français">
+        <svg class="lang-flag" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 3 2" aria-hidden="true">
           <rect width="1" height="2" fill="#002395"/>
           <rect x="1" width="1" height="2" fill="#fff"/>
           <rect x="2" width="1" height="2" fill="#ED2939"/>
         </svg>
         <span>FR</span>
       </button>
-      <div class="lang-divider"></div>
-      <button class="lang-btn" data-lang="en" aria-label="English">
-        <svg class="lang-flag" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 30">
+      <div class="lang-divider" aria-hidden="true"></div>
+      <button class="lang-btn" data-lang="en" aria-label="Switch to English">
+        <svg class="lang-flag" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 30" aria-hidden="true">
           <clipPath id="a"><path d="M0 0v30h60V0z"/></clipPath>
           <clipPath id="b"><path d="M30 15h30v15zv15H0zH0V0zV0h30z"/></clipPath>
           <g clip-path="url(#a)">
@@ -300,12 +61,15 @@
       </button>
     </div>
   </div>
+
   <div class="logo">
-    <a href="../index.html" style="color:inherit;text-decoration:none;">Château Martinat</a>
+    <a href="../index.html" aria-label="Accueil Château Martinat">Château Martinat</a>
   </div>
+
   <div class="topbar-right">
-    <a href="https://www.instagram.com/chateaumartinat" target="_blank" rel="noopener noreferrer" class="ig-link" aria-label="Instagram">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+    <a href="https://www.instagram.com/chateaumartinat" target="_blank" rel="noopener noreferrer"
+       class="ig-link" aria-label="Instagram Château Martinat (nouvelle fenêtre)">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true">
         <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
         <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
         <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
@@ -317,17 +81,24 @@
 <main class="wine-page">
   <div class="wine-container">
 
-    <div class="wine-header">
+    <header class="wine-header">
       <h1 class="wine-title">
         <span class="lang-fr">Château Belair l'Escudier</span>
         <span class="lang-en" style="display:none;">Château Belair l'Escudier</span>
       </h1>
-      <p class="wine-subtitle" data-i18n="wine.subtitle">GRAND VIN DE BORDEAUX</p>
-    </div>
+      <p class="wine-subtitle">GRAND VIN DE BORDEAUX</p>
+    </header>
 
     <div class="wine-content">
       <div class="wine-image-container">
-        <img src="../pictures/wines/chateau-belair-l'-escudier-label.jpg" alt="Château Belair l'Escudier - Label" class="wine-image">
+        <img
+          src="../pictures/wines/chateau-belair-l'-escudier-label.jpg"
+          alt="Château Belair l'Escudier — étiquette, Grand Vin de Bordeaux"
+          class="wine-image"
+          width="400"
+          height="530"
+          loading="eager"
+        >
       </div>
 
       <div class="wine-description">
@@ -341,14 +112,15 @@
 
         <p class="lang-fr">Le millésime se caractérise par un nez de fruits rouges, des tanins mûrs et soyeux, des notes boisées qui se fondent subtilement dans une matière élégante et gourmande.</p>
         <p class="lang-en" style="display:none;">The vintage is characterised by a nose of red fruits, ripe and silky tannins, and woody notes that blend subtly into an elegant, moreish palate.</p>
-
         
       </div>
     </div>
 
     <div class="wine-actions">
-      <a href="../technical-specifications/chateau-belair-l'-escudier.pdf" class="btn-download" download data-i18n="wine.download">
-        Télécharger la fiche technique
+      <a href="../technical-specifications/chateau-belair-l-escudier.pdf" class="btn-download" download
+         aria-label="Télécharger la fiche technique de Château Belair l'Escudier (PDF)">
+        <span class="lang-fr">Télécharger la fiche technique</span>
+        <span class="lang-en" style="display:none;">Download technical sheet</span>
       </a>
     </div>
 
@@ -358,38 +130,14 @@
 <footer class="footer">
   <div class="container">
     <div class="footer-content">
-      <p class="footer-copyright" data-i18n="footer.rights">© 2024 Château Martinat – Tous droits réservés</p>
-      <p class="footer-legal" data-i18n="footer.legal">L'abus d'alcool est dangereux pour la santé. À consommer avec modération.</p>
+      <p class="footer-copyright">© 2026 Château Martinat – Tous droits réservés</p>
+      <p class="footer-legal">L'abus d'alcool est dangereux pour la santé. À consommer avec modération.</p>
     </div>
   </div>
 </footer>
 
 <script src="../js/i18n.js"></script>
-<script>
-// Apply language to this page — uses same localStorage key as i18n.js
-document.addEventListener('DOMContentLoaded', () => {
-  function applyLang(lang) {
-    document.documentElement.lang = lang;
-    document.querySelectorAll('.lang-fr').forEach(el => el.style.display = lang === 'fr' ? '' : 'none');
-    document.querySelectorAll('.lang-en').forEach(el => el.style.display = lang === 'en' ? '' : 'none');
-    document.querySelectorAll('.awards-fr').forEach(el => el.style.display = lang === 'fr' ? '' : 'none');
-    document.querySelectorAll('.awards-en').forEach(el => el.style.display = lang === 'en' ? '' : 'none');
-    if (typeof i18n !== 'undefined') i18n.applyLang(lang, false);
-    document.querySelectorAll('.lang-btn').forEach(btn => btn.classList.toggle('active', btn.dataset.lang === lang));
-  }
+<script src="../js/wine.js"></script>
 
-  // i18n.js already initialises itself via IIFE; sync visibility classes with it
-  const saved = localStorage.getItem('martinat_lang') || 'fr';
-  applyLang(saved);
-
-  document.querySelectorAll('.lang-btn').forEach(btn => {
-    btn.addEventListener('click', () => {
-      const lang = btn.dataset.lang;
-      localStorage.setItem('martinat_lang', lang);
-      applyLang(lang);
-    });
-  });
-});
-</script>
 </body>
 </html>

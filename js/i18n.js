@@ -124,7 +124,7 @@ const translations = {
     'contact.cta':     'Nous écrire',
 
     /* Footer */
-    'footer.rights': '© 2024 Château Martinat – Tous droits réservés',
+    'footer.rights': '© 2026 Château Martinat – Tous droits réservés',
     'footer.legal':  "L'abus d'alcool est dangereux pour la santé. À consommer avec modération.",
 
     /* Wine pages */
@@ -255,7 +255,7 @@ const translations = {
     'contact.cta':     'Send us a message',
 
     /* Footer */
-    'footer.rights': '© 2024 Château Martinat – All rights reserved',
+    'footer.rights': '© 2026 Château Martinat – All rights reserved',
     'footer.legal':  'Drink responsibly. Alcohol abuse is dangerous to your health.',
 
     /* Wine pages */

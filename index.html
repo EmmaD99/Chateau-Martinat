@@ -3,9 +3,46 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Château Martinat - Vignerons indépendants en Côtes de Bourg">
-  <title>Château Martinat | Vignerons en Côtes de Bourg</title>
 
+  <!-- SEO -->
+  <meta name="description" content="Château Martinat, vignerons indépendants en Côtes de Bourg à Lansac. Découvrez nos Grands Vins de Bordeaux : rouge, blanc, rosé, Malbec 100%, Epicurea. Certification HVE 4.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://www.chateau-martinat.com/">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Château Martinat — Vignerons indépendants en Côtes de Bourg">
+  <meta property="og:description" content="Grands Vins de Bordeaux issus d'un terroir argilo-graveleux d'exception à Lansac. Vignerons indépendants certifiés HVE 4. Rouge, blanc, rosé, Malbec 100%, Epicurea.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://www.chateau-martinat.com/pictures/general/martinat.jpg">
+  <meta property="og:url" content="https://www.chateau-martinat.com/">
+  <meta property="og:locale" content="fr_FR">
+  <meta property="og:locale:alternate" content="en_GB">
+
+  <!-- Schema.org structured data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Winery",
+    "name": "Château Martinat",
+    "url": "https://www.chateau-martinat.com",
+    "logo": "https://www.chateau-martinat.com/pictures/general/martinat.jpg",
+    "description": "Vignerons indépendants en Côtes de Bourg, certifiés HVE 4, produisant des Grands Vins de Bordeaux à Lansac, Gironde.",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "1 Route des Demoiselles",
+      "addressLocality": "Lansac",
+      "postalCode": "33710",
+      "addressCountry": "FR"
+    },
+    "telephone": "+33623767946",
+    "email": "l.donze@chateau-martinat.com",
+    "sameAs": ["https://www.instagram.com/chateaumartinat"]
+  }
+  </script>
+
+  <title>Château Martinat | Vignerons indépendants — Grand Vin de Bordeaux, Côtes de Bourg</title>
+
+  <!-- Styles -->
   <link rel="stylesheet" href="css/reset.css">
   <link rel="stylesheet" href="css/variables.css">
   <link rel="stylesheet" href="css/main.css">
@@ -23,42 +60,38 @@
 </head>
 <body>
 
-<!-- POP-UP VERIFICATION D'ÂGE -->
+<!-- VÉRIFICATION D'ÂGE -->
 <div id="age-verification-popup" class="age-verification-overlay" role="dialog" aria-modal="true" aria-labelledby="age-verification-title">
   <div class="popup-content">
     <h2 id="age-verification-title" data-i18n="age.title">Êtes-vous âgé(e) de 18 ans ou plus ?</h2>
     <p class="popup-subtitle" data-i18n="age.subtitle">L'abus d'alcool est dangereux pour la santé. À consommer avec modération.</p>
     <div class="buttons">
       <button id="verify-button-yes" class="btn-verify btn-yes" data-i18n="age.yes">Oui, j'ai 18 ans ou plus</button>
-      <button id="verify-button-no" class="btn-verify btn-no" data-i18n="age.no">Non</button>
+      <button id="verify-button-no"  class="btn-verify btn-no"  data-i18n="age.no">Non</button>
     </div>
   </div>
 </div>
 
 <!-- HEADER -->
 <header class="topbar">
-  <!-- Gauche : hamburger + sélecteur de langue -->
   <div class="topbar-left">
-    <button class="menu-btn" id="openMenu" aria-controls="menu" aria-expanded="false" aria-label="Ouvrir le menu">
-      <span class="hamburger-icon">
+    <button class="menu-btn" id="openMenu" aria-controls="menu" aria-expanded="false" aria-label="Ouvrir le menu de navigation">
+      <span class="hamburger-icon" aria-hidden="true">
         <span></span><span></span><span></span>
       </span>
     </button>
-
     <div class="lang-switcher">
-      <button class="lang-btn active" data-lang="fr" aria-label="Français">
-        <!-- Drapeau FR inline SVG -->
-        <svg class="lang-flag" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 3 2">
+      <button class="lang-btn active" data-lang="fr" aria-label="Passer en français">
+        <svg class="lang-flag" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 3 2" aria-hidden="true">
           <rect width="1" height="2" fill="#002395"/>
           <rect x="1" width="1" height="2" fill="#fff"/>
           <rect x="2" width="1" height="2" fill="#ED2939"/>
         </svg>
         <span>FR</span>
       </button>
-      <div class="lang-divider"></div>
-      <button class="lang-btn" data-lang="en" aria-label="English">
-        <!-- Drapeau UK inline SVG -->
-        <svg class="lang-flag" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 30">
+      <div class="lang-divider" aria-hidden="true"></div>
+      <button class="lang-btn" data-lang="en" aria-label="Switch to English">
+        <svg class="lang-flag" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 30" aria-hidden="true">
           <clipPath id="a"><path d="M0 0v30h60V0z"/></clipPath>
           <clipPath id="b"><path d="M30 15h30v15zv15H0zH0V0zV0h30z"/></clipPath>
           <g clip-path="url(#a)">
@@ -74,13 +107,12 @@
     </div>
   </div>
 
-  <!-- Centre : Logo -->
-  <div class="logo">Château Martinat</div>
+  <div class="logo" aria-label="Château Martinat — Accueil">Château Martinat</div>
 
-  <!-- Droite : Instagram -->
   <div class="topbar-right">
-    <a href="https://www.instagram.com/chateaumartinat" target="_blank" rel="noopener noreferrer" class="ig-link" aria-label="Instagram Château Martinat">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+    <a href="https://www.instagram.com/chateaumartinat" target="_blank" rel="noopener noreferrer"
+       class="ig-link" aria-label="Instagram Château Martinat (nouvelle fenêtre)">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true">
         <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
         <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
         <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
@@ -90,32 +122,32 @@
 </header>
 
 <!-- MENU OVERLAY -->
-<nav class="menu-overlay" id="menu" aria-hidden="true">
+<nav class="menu-overlay" id="menu" aria-hidden="true" aria-label="Menu principal">
   <button class="close-btn" id="closeMenu" aria-label="Fermer le menu">×</button>
   <ul class="menu-links">
-    <li><a href="#accueil" data-i18n="nav.home">Accueil</a></li>
-    <li><a href="#vins" data-i18n="nav.wines">Nos Vins</a></li>
-    <li><a href="#propriete" data-i18n="nav.property">Propriété</a></li>
+    <li><a href="#accueil"    data-i18n="nav.home">Accueil</a></li>
+    <li><a href="#vins"       data-i18n="nav.wines">Nos Vins</a></li>
+    <li><a href="#propriete"  data-i18n="nav.property">Propriété</a></li>
     <li><a href="#actualites" data-i18n="nav.news">Actualités et Presse</a></li>
     <li><a href="#bon-cadeau" data-i18n="nav.gift">Bon Cadeau</a></li>
-    <li><a href="#contact" data-i18n="nav.contact">Contact</a></li>
+    <li><a href="#contact"    data-i18n="nav.contact">Contact</a></li>
   </ul>
 </nav>
 
 <main>
 
   <!-- HERO -->
-  <section id="accueil" class="hero reveal">
+  <section id="accueil" class="hero reveal" aria-label="Bienvenue au Château Martinat">
     <div class="hero-overlay">
       <h1>Château Martinat</h1>
       <p class="hero-subtitle" data-i18n="hero.subtitle">Vignerons indépendants en Côtes de Bourg</p>
     </div>
-    <div class="image-banner">
+    <div class="image-banner" aria-hidden="true">
       <div class="banner-content">
-        <span class="banner-text" data-i18n="hero.banner">🍷 Certification HVE - Haute Valeur Environnementale</span>
-        <span class="banner-text" data-i18n="hero.banner">🍷 Certification HVE - Haute Valeur Environnementale</span>
-        <span class="banner-text" data-i18n="hero.banner">🍷 Certification HVE - Haute Valeur Environnementale</span>
-        <span class="banner-text" data-i18n="hero.banner">🍷 Certification HVE - Haute Valeur Environnementale</span>
+        <span class="banner-text" data-i18n="hero.banner">🍷 Certification HVE — Haute Valeur Environnementale</span>
+        <span class="banner-text" data-i18n="hero.banner">🍷 Certification HVE — Haute Valeur Environnementale</span>
+        <span class="banner-text" data-i18n="hero.banner">🍷 Certification HVE — Haute Valeur Environnementale</span>
+        <span class="banner-text" data-i18n="hero.banner">🍷 Certification HVE — Haute Valeur Environnementale</span>
       </div>
     </div>
   </section>
@@ -127,10 +159,13 @@
       <p class="section-intro" data-i18n="wines.intro">Découvrez notre collection de vins d'exception, fruits d'un terroir unique et d'un savoir-faire transmis de génération en génération.</p>
 
       <div class="wines-grid">
+
         <article class="wine-card">
-          <a href="pages/chateau-martinat.html" class="wine-link">
+          <a href="pages/chateau-martinat.html" class="wine-link" aria-label="Voir Château Martinat — Côtes de Bourg Rouge">
             <figure class="wine-figure">
-              <img src="pictures/wines/chateau-martinat-label.jpg" alt="Château Martinat - Label" loading="lazy">
+              <img src="pictures/wines/chateau-martinat-label.jpg"
+                   alt="Château Martinat — Grand Vin de Bordeaux, Côtes de Bourg Rouge"
+                   width="280" height="373" loading="lazy">
               <div class="wine-overlay"><span class="wine-cta" data-i18n="wines.cta">Voir la fiche technique</span></div>
             </figure>
             <figcaption class="wine-name">Château Martinat</figcaption>
@@ -138,9 +173,11 @@
         </article>
 
         <article class="wine-card">
-          <a href="pages/chateau-les-donats.html" class="wine-link">
+          <a href="pages/chateau-les-donats.html" class="wine-link" aria-label="Voir Château Les Donats — Blaye Côtes de Bordeaux">
             <figure class="wine-figure">
-              <img src="pictures/wines/chateau-les-donats-label.jpg" alt="Château Les Donats - Label" loading="lazy">
+              <img src="pictures/wines/chateau-les-donats-label.jpg"
+                   alt="Château Les Donats — 100% Merlot, Blaye Côtes de Bordeaux"
+                   width="280" height="373" loading="lazy">
               <div class="wine-overlay"><span class="wine-cta" data-i18n="wines.cta">Voir la fiche technique</span></div>
             </figure>
             <figcaption class="wine-name">Château Les Donats</figcaption>
@@ -148,9 +185,11 @@
         </article>
 
         <article class="wine-card">
-          <a href="pages/epicurea-de-chateau-martinat.html" class="wine-link">
+          <a href="pages/epicurea-de-chateau-martinat.html" class="wine-link" aria-label="Voir Epicurea de Château Martinat — Cuvée prestige">
             <figure class="wine-figure">
-              <img src="pictures/wines/epicurea-de-chateau-martinat-label.jpg" alt="Epicurea de Château Martinat - Label" loading="lazy">
+              <img src="pictures/wines/epicurea-de-chateau-martinat-label.jpg"
+                   alt="Epicurea de Château Martinat — Cuvée prestige Merlot-Malbec, Côtes de Bourg"
+                   width="280" height="373" loading="lazy">
               <div class="wine-overlay"><span class="wine-cta" data-i18n="wines.cta">Voir la fiche technique</span></div>
             </figure>
             <figcaption class="wine-name">Epicurea de Château Martinat</figcaption>
@@ -158,9 +197,11 @@
         </article>
 
         <article class="wine-card">
-          <a href="pages/martinat-rose.html" class="wine-link">
+          <a href="pages/martinat-rose.html" class="wine-link" aria-label="Voir Martinat Rosé">
             <figure class="wine-figure">
-              <img src="pictures/wines/martinat-rose-label.jpg" alt="Martinat Rosé - Label" loading="lazy">
+              <img src="pictures/wines/martinat-rose-label.jpg"
+                   alt="Martinat Rosé — Cabernet Sauvignon et Merlot"
+                   width="280" height="373" loading="lazy">
               <div class="wine-overlay"><span class="wine-cta" data-i18n="wines.cta">Voir la fiche technique</span></div>
             </figure>
             <figcaption class="wine-name">Martinat Rosé</figcaption>
@@ -168,9 +209,11 @@
         </article>
 
         <article class="wine-card">
-          <a href="pages/chateau-martinat-blanc.html" class="wine-link">
+          <a href="pages/chateau-martinat-blanc.html" class="wine-link" aria-label="Voir Château Martinat Blanc — Côtes de Bourg Blanc">
             <figure class="wine-figure">
-              <img src="pictures/wines/chateau-martinat-blanc-label.jpg" alt="Château Martinat Blanc - Label" loading="lazy">
+              <img src="pictures/wines/chateau-martinat-blanc-label.jpg"
+                   alt="Château Martinat Blanc — Sauvignon Blanc et Sauvignon Gris, Côtes de Bourg"
+                   width="280" height="373" loading="lazy">
               <div class="wine-overlay"><span class="wine-cta" data-i18n="wines.cta">Voir la fiche technique</span></div>
             </figure>
             <figcaption class="wine-name">Château Martinat Blanc</figcaption>
@@ -178,20 +221,23 @@
         </article>
 
         <article class="wine-card">
-          <a href="pages/malbec-100-de-chateau-martinat.html" class="wine-link">
+          <a href="pages/malbec-100-de-chateau-martinat.html" class="wine-link" aria-label="Voir Malbec 100% de Château Martinat">
             <figure class="wine-figure">
-              <img src="pictures/wines/malbec-100-de-chateau-martinat-label.jpg" alt="Malbec 100 de Château Martinat - Label" loading="lazy">
+              <img src="pictures/wines/malbec-100-de-chateau-martinat-label.jpg"
+                   alt="Malbec 100% de Château Martinat — Côtes de Bourg"
+                   width="280" height="373" loading="lazy">
               <div class="wine-overlay"><span class="wine-cta" data-i18n="wines.cta">Voir la fiche technique</span></div>
             </figure>
             <figcaption class="wine-name">Malbec 100% de Château Martinat</figcaption>
           </a>
         </article>
+
       </div>
 
       <div class="belair-button-container">
-        <a href="pages/chateau-belair-l'-escudier.html" class="btn-belair">
+        <a href="pages/chateau-belair-l'-escudier.html" class="btn-belair" aria-label="Voir Château Belair l'Escudier — Côtes de Bourg">
           <span class="btn-belair-text" data-i18n="wines.belair">Château Belair l'Escudier</span>
-          <span class="btn-belair-arrow">→</span>
+          <span class="btn-belair-arrow" aria-hidden="true">→</span>
         </a>
       </div>
     </div>
@@ -204,14 +250,14 @@
         <div class="property-text">
           <h2 class="section-title" data-i18n="property.title">Propriété</h2>
           <div class="property-description">
-            <p data-i18n="property.p1" data-i18n-html>
+            <p data-i18n="property.p1">
               Le vignoble de Château Martinat est situé sur la commune de Lansac,
               au cœur de l'appellation Côtes de Bourg,
               dans un paysage vallonné à proximité du fleuve de la Gironde.
               Cette situation géographique offre au domaine un climat tempéré et un ensoleillement favorable.
-              Une belle veine de grave blanche traverse la propriété et enrichie le terroir de cette propriété.
+              Une belle veine de grave blanche traverse la propriété et enrichit le terroir.
             </p>
-            <p data-i18n="property.p2" data-i18n-html>
+            <p data-i18n="property.p2">
               Reprise en 1994 avec l'ambition de révéler tout le potentiel de son terroir,
               la propriété est aujourd'hui certifiée <strong>HVE 4</strong>
               (Haute Valeur Environnementale).
@@ -220,8 +266,9 @@
           <a href="pages/propriete.html" class="btn-primary" data-i18n="property.btn">En savoir plus sur le domaine</a>
         </div>
         <div class="property-image">
-          <!-- Photo du château — chemin corrigé -->
-          <img src="pictures/general/martinat.jpg" alt="Vue du domaine Château Martinat" loading="lazy">
+          <img src="pictures/general/martinat.jpg"
+               alt="Vue de face du Château Martinat, propriété viticole à Lansac en Côtes de Bourg"
+               width="600" height="450" loading="lazy">
         </div>
       </div>
     </div>
@@ -235,11 +282,12 @@
         <div class="news-text">
           <p data-i18n="news.p1">Retrouvez ici toutes les dernières nouvelles du Château Martinat, nos participations aux salons, récompenses et articles dans la presse spécialisée.</p>
           <p data-i18n="news.p2">Chaque événement et chaque parution témoigne de la passion que nous mettons dans nos vins.</p>
-          <p class="news-contact" data-i18n="news.p3" data-i18n-html>Pour plus d'informations, vous pouvez <a href="#contact">nous contacter</a>.</p>
+          <p class="news-contact" data-i18n="news.p3">Pour plus d'informations, vous pouvez <a href="#contact">nous contacter</a>.</p>
         </div>
         <div class="news-image">
-          <!-- Photo du chai/barrel — chemin corrigé -->
-          <img src="pictures/general/barrel.jpg" alt="Chai Château Martinat" loading="lazy">
+          <img src="pictures/general/barrel.jpg"
+               alt="Fût de chêne dans le chai de Château Martinat — élevage en barriques"
+               width="600" height="450" loading="lazy">
         </div>
       </div>
     </div>
@@ -256,7 +304,9 @@
         <!-- Carte 1 — Dégustation -->
         <article class="gift-card">
           <figure class="gift-figure">
-            <img src="pictures/general/vineyards.jpg" alt="Dégustation Gourmande" loading="lazy">
+            <img src="pictures/general/vineyards.jpg"
+                 alt="Vignes de Château Martinat — Dégustation Gourmande"
+                 width="600" height="400" loading="lazy">
             <figcaption class="gift-card-title" data-i18n="gift.card1.title">Dégustation Gourmande</figcaption>
           </figure>
           <div class="gift-card-body">
@@ -280,7 +330,9 @@
         <!-- Carte 2 — Coffret -->
         <article class="gift-card">
           <figure class="gift-figure">
-            <img src="pictures/general/sign.jpg" alt="Coffret Flacons Martinat" loading="lazy">
+            <img src="pictures/general/sign.jpg"
+                 alt="Panneau Château Martinat — Coffret Flacons Martinat"
+                 width="600" height="400" loading="lazy">
             <figcaption class="gift-card-title" data-i18n="gift.card2.title">Coffret Flacons Martinat</figcaption>
           </figure>
           <div class="gift-card-body">
@@ -315,101 +367,86 @@
 
       </div>
 
-      <!-- CTA -->
       <div class="gift-cta">
         <a href="#contact" class="btn-primary">
           <span class="lang-fr">Commander un bon cadeau</span>
           <span class="lang-en" style="display:none;">Order a gift voucher</span>
         </a>
       </div>
-
     </div>
   </section>
-<!-- 
-  ============================================================
-  SECTION CONTACT — Château Martinat
-  Remplacez l'ancienne section #contact par ce bloc
-  ============================================================
--->
 
-<!-- CONTACT -->
-<section id="contact" class="section contact-section reveal">
-  <div class="container">
-    <h2 class="section-title" data-i18n="contact.title">Contact</h2>
-    <div class="contact-content">
+  <!-- CONTACT -->
+  <section id="contact" class="section contact-section reveal">
+    <div class="container">
+      <h2 class="section-title" data-i18n="contact.title">Contact</h2>
+      <div class="contact-content">
 
-      <!-- BLOC INFORMATIONS -->
-      <div class="contact-text">
+        <div class="contact-text">
+          <div class="contact-details">
 
-        <div class="contact-details">
+            <div class="contact-item">
+              <h3 data-i18n="contact.address">Adresse</h3>
+              <p>
+                Château Martinat<br>
+                1 Route des Demoiselles<br>
+                33710 Lansac<br>
+                France
+              </p>
+            </div>
 
-          <div class="contact-item">
-            <h3 data-i18n="contact.address">Adresse</h3>
-            <p>
-              Château Martinat<br>
-              1 Route des Demoiselles<br>
-              33710 Lansac<br>
-              France
-            </p>
+            <div class="contact-item">
+              <h3 data-i18n="contact.email">Email</h3>
+              <p>
+                <a href="mailto:l.donze@chateau-martinat.com">l.donze@chateau-martinat.com</a><br>
+                <a href="mailto:s.donze@chateau-martinat.com">s.donze@chateau-martinat.com</a>
+              </p>
+            </div>
+
+            <div class="contact-item">
+              <h3 data-i18n="contact.phone">Téléphone</h3>
+              <p>
+                <a href="tel:+33623767946">+33 6 23 76 79 46</a><br>
+                <a href="tel:+33611170828">+33 6 11 17 08 28</a>
+              </p>
+            </div>
+
+            <div class="contact-item gps">
+              <h3 data-i18n="contact.gps">Coordonnées GPS</h3>
+              <p>45.063121, -0.549345</p>
+            </div>
+
           </div>
 
-          <div class="contact-item">
-            <h3 data-i18n="contact.email">Email</h3>
-            <p>
-              <a href="l.donze@chateau-martinat.com">
-                <span class="__cf_email__" data-cfemail="l.donze@chateau-martinat.com">l.donze@chateau-martinat.com</span><br>
-                <span class="__cf_email__" data-cfemail="s.donze@chateau-martinat.com">s.donze@chateau-martinat.com</span>
-              </a>
-            </p>
-          </div>
-
-          <div class="contact-item">
-            <h3 data-i18n="contact.phone">Téléphone</h3>
-            <p>
-              <a href="tel:+33623767946">+33 6 23 76 79 46</a><br>
-              <a href="tel:+33611170829">+33 6 11 17 08 28</a>
-
-            </p>
-          </div>
-
-          <div class="contact-item gps">
-            <h3 data-i18n="contact.gps">Coordonnées GPS</h3>
-            <p>45.063121, -0.549345</p>
-          </div>
-
+          <a href="mailto:l.donze@chateau-martinat.com" class="contact-cta-badge" data-i18n="contact.cta">
+            Nous écrire
+          </a>
         </div>
 
-        <a href="l.donze@chateau-martinat.com" class="contact-cta-badge" data-i18n="contact.cta">
-          Nous écrire
-        </a>
-      </div>
+        <div class="contact-map">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3271.170246967585!2d-0.5515331847682614!3d45.063120979098756!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x48002b926c5fc42f%3A0xce54150184a7dcd4!2sSCEV%20Marsaux%20Donze%20%2F%20Ch%C3%A2teau%20Martinat!5e0!3m2!1sfr!2sfr!4v1706946912345!5m2!1sfr!2sfr"
+            width="100%"
+            height="100%"
+            style="border:0;"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            title="Localisation du Château Martinat — Lansac, Côtes de Bourg"
+            aria-label="Carte Google Maps de Château Martinat">
+          </iframe>
+        </div>
 
-      <!-- CARTE GOOGLE MAPS -->
-      <div class="contact-map">
-        <iframe
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3271.170246967585!2d-0.5515331847682614!3d45.063120979098756!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x48002b926c5fc42f%3A0xce54150184a7dcd4!2sSCEV%20Marsaux%20Donze%20%2F%20Ch%C3%A2teau%20Martinat!5e0!3m2!1sfr!2sfr!4v1706946912345!5m2!1sfr!2sfr"
-          width="100%"
-          height="100%"
-          style="border:0;"
-          allowfullscreen=""
-          loading="lazy"
-          referrerpolicy="no-referrer-when-downgrade"
-          title="Localisation du Château Martinat — Lansac, Côtes de Bourg"
-          aria-label="Carte Google Maps de Château Martinat">
-        </iframe>
       </div>
-
     </div>
-  </div>
-</section>
+  </section>
 
 </main>
 
-<!-- FOOTER -->
 <footer class="footer">
   <div class="container">
     <div class="footer-content">
-      <p class="footer-copyright" data-i18n="footer.rights">© 2024 Château Martinat – Tous droits réservés</p>
+      <p class="footer-copyright" data-i18n="footer.rights">© 2026 Château Martinat – Tous droits réservés</p>
       <p class="footer-legal" data-i18n="footer.legal">L'abus d'alcool est dangereux pour la santé. À consommer avec modération.</p>
     </div>
   </div>
