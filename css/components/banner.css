@@ -25,6 +25,7 @@
 .banner-content {
   display: flex;
   width: max-content;
+  will-change: transform;
   animation: scroll-banner 30s linear infinite;
   gap: 3rem;
 }
