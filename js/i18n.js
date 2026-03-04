@@ -123,6 +123,28 @@ const translations = {
     'contact.gps':     'Coordonnées GPS',
     'contact.cta':     'Nous écrire',
 
+
+    /* Formulaire de contact */
+    'contact.form.title':                'Envoyer un message',
+    'contact.form.firstname':            'Prénom',
+    'contact.form.lastname':             'Nom',
+    'contact.form.email':                'Email',
+    'contact.form.phone':                'Téléphone',
+    'contact.form.subject':              'Objet',
+    'contact.form.subject.placeholder':  '— Choisir un objet —',
+    'contact.form.subject.order':        'Commande de vins',
+    'contact.form.subject.prices':       'Demande de tarifs',
+    'contact.form.subject.visit':        'Visite & dégustation',
+    'contact.form.subject.futures':      'Réservation primeurs',
+    'contact.form.subject.gift':         'Bon cadeau',
+    'contact.form.subject.pro':          'Professionnel / importateur',
+    'contact.form.subject.press':        'Presse & médias',
+    'contact.form.subject.other':        'Autre',
+    'contact.form.message':              'Message',
+    'contact.form.message.placeholder':  'Votre message…',
+    'contact.form.send':                 'Envoyer le message',
+    'contact.form.rgpd':                 'Vos données sont utilisées uniquement pour répondre à votre demande et ne sont jamais transmises à des tiers.',
+
     /* Footer */
     'footer.rights': '© 2026 Château Martinat – Tous droits réservés',
     'footer.legal':  "L'abus d'alcool est dangereux pour la santé. À consommer avec modération.",
@@ -253,6 +275,28 @@ const translations = {
     'contact.phone':   'Phone',
     'contact.gps':     'GPS Coordinates',
     'contact.cta':     'Send us a message',
+
+
+    /* Formulaire de contact */
+    'contact.form.title':                'Send a message',
+    'contact.form.firstname':            'First name',
+    'contact.form.lastname':             'Last name',
+    'contact.form.email':                'Email',
+    'contact.form.phone':                'Phone',
+    'contact.form.subject':              'Subject',
+    'contact.form.subject.placeholder':  '— Choose a subject —',
+    'contact.form.subject.order':        'Wine order',
+    'contact.form.subject.prices':       'Price list request',
+    'contact.form.subject.visit':        'Visit & tasting',
+    'contact.form.subject.futures':      'Futures reservation',
+    'contact.form.subject.gift':         'Gift voucher',
+    'contact.form.subject.pro':          'Professional / importer',
+    'contact.form.subject.press':        'Press & media',
+    'contact.form.subject.other':        'Other',
+    'contact.form.message':              'Message',
+    'contact.form.message.placeholder':  'Your message…',
+    'contact.form.send':                 'Send message',
+    'contact.form.rgpd':                 'Your data is used solely to respond to your enquiry and is never shared with third parties.',
 
     /* Footer */
     'footer.rights': '© 2026 Château Martinat – All rights reserved',
