@@ -231,13 +231,28 @@
   .wine-image-container {
     position: relative;
     top: 0;
-    max-width: 400px;
+    max-width: 360px;
     margin: 0 auto;
+    padding: var(--spacing-md);
   }
 }
+
 @media (max-width: 768px) {
   .wine-container {
-    padding: var(--spacing-2xl) var(--spacing-md);
+    padding: var(--spacing-xl) var(--spacing-md);
+  }
+  .wine-header {
+    margin-bottom: var(--spacing-xl);
+  }
+  .wine-title {
+    font-size: clamp(1.8rem, 8vw, 2.5rem);
+  }
+  .wine-image-container {
+    padding: var(--spacing-sm);
+    max-width: 280px;
+  }
+  .wine-image {
+    animation: none;
   }
   .wine-actions {
     flex-direction: column;
@@ -249,4 +264,20 @@
   }
   .back-btn  { width: 36px; height: 36px; }
   .back-arrow { font-size: var(--font-size-lg); }
+}
+
+@media (max-width: 480px) {
+  .wine-container {
+    padding: var(--spacing-lg) var(--spacing-sm);
+  }
+  .wine-header {
+    margin-bottom: var(--spacing-lg);
+  }
+  .wine-image-container {
+    max-width: 220px;
+    padding: var(--spacing-xs);
+  }
+  .wine-description {
+    padding: var(--spacing-md);
+  }
 }

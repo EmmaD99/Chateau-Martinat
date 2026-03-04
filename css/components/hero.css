@@ -5,13 +5,13 @@
 /* Section Hero avec image de fond */
 .hero {
   position: relative;
-  height: 100vh;
+  height: 100svh;
   min-height: 600px;
   background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('../../pictures/general/barrel.jpg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  background-attachment: fixed;
+  background-attachment: scroll;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -48,9 +48,8 @@
 /* Responsive */
 @media (max-width: 768px) {
   .hero {
-    min-height: 500px;
-    height: 80vh;
-    background-attachment: scroll;
+    min-height: 420px;
+    height: 70svh;
   }
   
   .hero-overlay {
@@ -61,6 +60,6 @@
 @media (max-width: 480px) {
   .hero {
     min-height: 400px;
-    height: 70vh;
+    height: 60svh;
   }
 }
