@@ -147,7 +147,7 @@ a:hover {
     font-size: var(--font-size-2xl);
   }
 
-  /* Désactiver l'animation reveal sur mobile — tout visible immédiatement */
+  /* Désactiver reveal sur mobile — tout visible immédiatement */
   .reveal {
     opacity: 1;
     transform: none;
