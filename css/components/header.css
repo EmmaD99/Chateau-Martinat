@@ -89,13 +89,6 @@
   display: block;
 }
 
-.lang-flag-emoji {
-  font-size: 16px;
-  line-height: 1;
-  display: block;
-  width: 22px;
-  text-align: center;
-}
 
 .lang-divider {
   width: 1px;
@@ -208,9 +201,6 @@
     height: 15px;
   }
 
-  .lang-flag-emoji {
-    font-size: 20px;
-  }
 
   .lang-divider {
     display: none;
