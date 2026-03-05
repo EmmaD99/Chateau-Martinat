@@ -36,6 +36,7 @@
   display: flex;
   align-items: center;
   gap: var(--spacing-sm);
+  z-index: 1;
 }
 
 /* ── Côté droit : Instagram ── */
@@ -43,6 +44,7 @@
   display: flex;
   align-items: center;
   gap: var(--spacing-sm);
+  z-index: 1;
 }
 
 /* ── Boutons de langue ── */
@@ -89,7 +91,6 @@
   display: block;
   flex-shrink: 0;
 }
-
 
 .lang-divider {
   width: 1px;
@@ -163,24 +164,47 @@
   transition: all var(--transition-normal);
 }
 
+/* ── MOBILE ── */
 @media (max-width: 768px) {
+  .topbar {
+    padding: 0 10px;
+  }
+
+  /* Logo : taille réduite + décalé légèrement à droite
+     pour laisser de la place aux drapeaux à gauche */
   .logo {
-    font-size: var(--font-size-md);
+    font-size: 1rem;
+    left: 50%;
+    transform: translateX(-50%);
+    max-width: 180px;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
 
   .menu-btn {
-    width: 36px;
-    height: 36px;
+    width: 34px;
+    height: 34px;
+    flex-shrink: 0;
+  }
+
+  .hamburger-icon {
+    width: 18px;
   }
 
   .ig-link {
-    width: 32px;
-    height: 32px;
+    width: 30px;
+    height: 30px;
+    flex-shrink: 0;
   }
 
-  /* Switcher de langue — drapeaux seuls, compacts */
+  .ig-link svg {
+    width: 15px;
+    height: 15px;
+  }
+
+  /* Drapeaux : juste les images, sans texte, compacts */
   .topbar-left {
-    gap: var(--spacing-xs);
+    gap: 6px;
   }
 
   .lang-switcher {
@@ -188,9 +212,9 @@
   }
 
   .lang-btn {
-    padding: 4px 6px;
+    padding: 3px 4px;
     gap: 0;
-    overflow: visible;
+    border-radius: 3px;
   }
 
   .lang-btn span {
@@ -198,10 +222,10 @@
   }
 
   .lang-flag {
-    width: 18px;
-    height: 12px;
+    width: 24px;
+    height: 16px;
+    border-radius: 2px;
   }
-
 
   .lang-divider {
     display: none;
