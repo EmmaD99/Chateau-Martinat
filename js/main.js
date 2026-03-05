@@ -6,12 +6,15 @@
 // AGE VERIFICATION
 // ============================================
 const ageVerification = {
-  popup:  document.getElementById('age-verification-popup'),
-  yesBtn: document.getElementById('verify-button-yes'),
-  noBtn:  document.getElementById('verify-button-no'),
+  popup:  null,
+  yesBtn: null,
+  noBtn:  null,
 
   init() {
-    // Absent sur les sous-pages → on sort silencieusement
+    this.popup  = document.getElementById('age-verification-popup');
+    this.yesBtn = document.getElementById('verify-button-yes');
+    this.noBtn  = document.getElementById('verify-button-no');
+
     if (!this.popup || !this.yesBtn || !this.noBtn) return;
 
     const isVerified = sessionStorage.getItem('ageVerified');
@@ -20,6 +23,15 @@ const ageVerification = {
     } else {
       this.showPopup();
     }
+
+    // Cloner les boutons pour supprimer tout listener parasite (ex: i18n)
+    const yesClone = this.yesBtn.cloneNode(true);
+    const noClone  = this.noBtn.cloneNode(true);
+    this.yesBtn.parentNode.replaceChild(yesClone, this.yesBtn);
+    this.noBtn.parentNode.replaceChild(noClone,  this.noBtn);
+    this.yesBtn = yesClone;
+    this.noBtn  = noClone;
+
     this.yesBtn.addEventListener('click', () => this.verifyAge(true));
     this.noBtn.addEventListener('click',  () => this.verifyAge(false));
   },
@@ -44,12 +56,17 @@ const ageVerification = {
 // MENU NAVIGATION
 // ============================================
 const menuNav = {
-  openBtn:   document.getElementById('openMenu'),
-  closeBtn:  document.getElementById('closeMenu'),
-  menu:      document.getElementById('menu'),
-  menuLinks: document.querySelectorAll('.menu-links a'),
+  openBtn:   null,
+  closeBtn:  null,
+  menu:      null,
+  menuLinks: null,
 
   init() {
+    this.openBtn   = document.getElementById('openMenu');
+    this.closeBtn  = document.getElementById('closeMenu');
+    this.menu      = document.getElementById('menu');
+    this.menuLinks = document.querySelectorAll('.menu-links a');
+
     if (!this.openBtn || !this.closeBtn || !this.menu) return;
 
     this.openBtn.addEventListener('click',  () => this.openMenu());
@@ -123,8 +140,9 @@ const revealOnScroll = {
 // HEADER SCROLL EFFECT
 // ============================================
 const headerScroll = {
-  header: document.querySelector('.topbar'),
+  header: null,
   init() {
+    this.header = document.querySelector('.topbar');
     if (!this.header) return;
     window.addEventListener('scroll', () => {
       this.header.style.boxShadow = window.scrollY > 100
@@ -158,13 +176,14 @@ const lazyLoadImages = {
 // INITIALIZATION
 // ============================================
 document.addEventListener('DOMContentLoaded', () => {
+  // i18n s'initialise en premier via i18n.js
+  // On initialise le popup APRÈS i18n pour éviter les conflits de listeners
   ageVerification.init();
   menuNav.init();
   smoothScroll.init();
   revealOnScroll.init();
   headerScroll.init();
   lazyLoadImages.init();
-  // i18n s'initialise automatiquement via i18n.js — pas besoin de l'appeler ici
 
   console.log('🍷 Château Martinat website loaded successfully!');
 });
