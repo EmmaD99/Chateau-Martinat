@@ -24,6 +24,23 @@ const ageVerification = {
       this.showPopup();
     }
 
+    // ── Sélecteur de langue dans le popup ──
+    const currentLang = localStorage.getItem('martinat_lang') || 'fr';
+    this.popup.querySelectorAll('.popup-lang-btn').forEach(btn => {
+      btn.classList.toggle('active', btn.dataset.popupLang === currentLang);
+      btn.addEventListener('click', () => {
+        const lang = btn.dataset.popupLang;
+        localStorage.setItem('martinat_lang', lang);
+        this.popup.querySelectorAll('.popup-lang-btn').forEach(b => {
+          b.classList.toggle('active', b.dataset.popupLang === lang);
+        });
+        document.querySelectorAll('.lang-btn').forEach(b => {
+          b.classList.toggle('active', b.dataset.lang === lang);
+        });
+        if (typeof i18n !== 'undefined') i18n.applyLang(lang, false);
+      });
+    });
+
     // Cloner les boutons pour supprimer tout listener parasite (ex: i18n)
     const yesClone = this.yesBtn.cloneNode(true);
     const noClone  = this.noBtn.cloneNode(true);

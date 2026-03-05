@@ -94,6 +94,59 @@
   }
 }
 
+/* ── Sélecteur de langue dans le popup ── */
+.popup-lang-switcher {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  margin-bottom: var(--spacing-md);
+}
+
+.popup-lang-btn {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  padding: 5px 10px;
+  background: none;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  font-family: var(--font-secondary);
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--text-gray);
+  transition: all var(--transition-fast);
+}
+
+.popup-lang-btn:hover {
+  border-color: var(--accent);
+  color: var(--primary);
+}
+
+.popup-lang-btn.active {
+  background: var(--accent);
+  color: white;
+  border-color: var(--accent);
+}
+
+.popup-lang-divider {
+  width: 1px;
+  height: 18px;
+  background: var(--border-color);
+  margin: 0 2px;
+}
+
+.popup-lang-btn .lang-flag {
+  width: 20px;
+  height: 14px;
+  border-radius: 2px;
+  display: block;
+  flex-shrink: 0;
+}
+
 @media (max-width: 768px) {
   .popup-content {
     padding: var(--spacing-md);

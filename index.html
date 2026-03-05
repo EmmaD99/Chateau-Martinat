@@ -62,6 +62,32 @@
 <!-- VÉRIFICATION D'ÂGE -->
 <div id="age-verification-popup" class="age-verification-overlay" role="dialog" aria-modal="true" aria-labelledby="age-verification-title">
   <div class="popup-content">
+    <!-- Sélecteur de langue -->
+    <div class="popup-lang-switcher">
+      <button class="popup-lang-btn active" data-popup-lang="fr" aria-label="Français">
+        <svg class="lang-flag" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 3 2" aria-hidden="true">
+          <rect width="1" height="2" fill="#002395"/>
+          <rect x="1" width="1" height="2" fill="#fff"/>
+          <rect x="2" width="1" height="2" fill="#ED2939"/>
+        </svg>
+        <span>FR</span>
+      </button>
+      <div class="popup-lang-divider"></div>
+      <button class="popup-lang-btn" data-popup-lang="en" aria-label="English">
+        <svg class="lang-flag" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 30" aria-hidden="true">
+          <clipPath id="pa"><path d="M0 0v30h60V0z"/></clipPath>
+          <clipPath id="pb"><path d="M30 15h30v15zv15H0zH0V0zV0h30z"/></clipPath>
+          <g clip-path="url(#pa)">
+            <path d="M0 0v30h60V0z" fill="#012169"/>
+            <path d="M0 0l60 30m0-30L0 30" stroke="#fff" stroke-width="6"/>
+            <path d="M0 0l60 30m0-30L0 30" clip-path="url(#pb)" stroke="#C8102E" stroke-width="4"/>
+            <path d="M30 0v30M0 15h60" stroke="#fff" stroke-width="10"/>
+            <path d="M30 0v30M0 15h60" stroke="#C8102E" stroke-width="6"/>
+          </g>
+        </svg>
+        <span>EN</span>
+      </button>
+    </div>
     <h2 id="age-verification-title" data-i18n="age.title">Êtes-vous âgé(e) de 18 ans ou plus ?</h2>
     <p class="popup-subtitle" data-i18n="age.subtitle">L'abus d'alcool est dangereux pour la santé. À consommer avec modération.</p>
     <div class="buttons">
