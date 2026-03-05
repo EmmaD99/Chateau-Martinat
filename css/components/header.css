@@ -90,9 +90,11 @@
 }
 
 .lang-flag-emoji {
-  font-size: 18px;
+  font-size: 16px;
   line-height: 1;
   display: block;
+  width: 22px;
+  text-align: center;
 }
 
 .lang-divider {
@@ -192,8 +194,9 @@
   }
 
   .lang-btn {
-    padding: 4px 5px;
+    padding: 4px 6px;
     gap: 0;
+    overflow: visible;
   }
 
   .lang-btn span {
