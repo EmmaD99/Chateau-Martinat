@@ -35,30 +35,6 @@
   text-shadow: 3px 3px 8px rgba(0, 0, 0, 0.7);
   letter-spacing: 2px;
   color: white;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 0;
-  line-height: 1;
-}
-
-.hero-chateau {
-  font-size: clamp(1rem, 2.5vw, 1.8rem);
-  font-weight: 400;
-  letter-spacing: 6px;
-  text-transform: uppercase;
-  opacity: 0.85;
-  display: block;
-  margin-bottom: 0.15em;
-}
-
-.hero-name {
-  font-size: clamp(3.5rem, 10vw, 7rem);
-  font-weight: 700;
-  letter-spacing: 3px;
-  text-transform: uppercase;
-  display: block;
-  line-height: 0.9;
 }
 
 .hero-subtitle {
