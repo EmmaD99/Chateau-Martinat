@@ -168,7 +168,7 @@
 }
 .award-text { opacity: 0.85; }
 
-/* ── Notice disponibilité (pas une distinction) ── */
+/* ── Notice disponibilité ── */
 .wine-availability {
   margin-top: var(--spacing-xl);
   padding: var(--spacing-md) var(--spacing-lg);

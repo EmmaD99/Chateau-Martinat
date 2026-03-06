@@ -14,13 +14,13 @@
   --background-light: #fdfbf7;
   --background-dark: #f4efe6;
   --background-white: #ffffff;
-  --background-bordeaux: #691C33;
+  --background-bordeaux: #2c1810;
   --border-color: #ddd;
   --overlay: rgba(0, 0, 0, 0.6);
   
   /* Typography */
-  --font-primary: 'Georgia', 'Times New Roman', serif;
-  --font-secondary: 'Helvetica Neue', Arial, sans-serif;
+  --font-primary: 'Cormorant Garamond', 'Playfair Display', 'Georgia', serif;
+  --font-secondary: 'Montserrat', 'Helvetica Neue', Arial, sans-serif;
   
   /* Font Sizes */
   --font-size-xs: 0.875rem;    /* 14px */

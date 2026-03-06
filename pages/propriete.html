@@ -20,6 +20,9 @@
 
   <title>Notre Propriété | Château Martinat — Vignerons en Côtes de Bourg, Lansac</title>
 
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../css/reset.css">
   <link rel="stylesheet" href="../css/variables.css">
   <link rel="stylesheet" href="../css/main.css">
@@ -197,8 +200,11 @@
     }
     .region-card:hover { transform: translateY(-5px); box-shadow: var(--shadow-lg); }
     .region-image {
-      height: 200px; background: var(--background-dark);
-      display: flex; align-items: center; justify-content: center;
+      height: 200px;
+      background: var(--background-dark);
+      display: flex;
+      align-items: center;
+      justify-content: center;
       font-size: var(--font-size-3xl);
     }
     .region-info { padding: var(--spacing-lg); }
@@ -475,10 +481,10 @@
             </div>
           </div>
           <div class="region-card">
-            <div class="region-image" aria-hidden="true">🚣</div>
+            <div class="region-image" aria-hidden="true">⚙️</div>
             <div class="region-info">
-              <h3 data-i18n="prop.region.card3.title">Estuaire de la Gironde</h3>
-              <p data-i18n="prop.region.card3.desc">Le plus grand estuaire d'Europe, idéal pour les balades en bateau et l'observation de la nature.</p>
+              <h3 data-i18n="prop.region.card3.title">Moulin de Lansac</h3>
+              <p data-i18n="prop.region.card3.desc">Moulin à vent historique emblématique de Lansac, offrant un panorama remarquable sur les vignes de Côtes de Bourg et la vallée de la Gironde.</p>
             </div>
           </div>
           <div class="region-card">
@@ -511,10 +517,10 @@
   <section id="contact" class="section contact-section">
     <div class="container">
       <h2 class="section-title" data-i18n="prop.contact.title">Nous Contacter</h2>
-      <div class="contact-content">
 
-        <!-- Colonne gauche : infos + formulaire -->
-        <div class="contact-text">
+      <!-- BLOC SUPÉRIEUR : Adresse + Map côte à côte -->
+      <div class="contact-top">
+        <div class="contact-info-block">
           <div class="contact-details">
             <div class="contact-item">
               <h3 data-i18n="prop.contact.address">Adresse</h3>
@@ -524,7 +530,7 @@
               <h3 data-i18n="prop.contact.email">Email</h3>
               <p>
                 <a href="mailto:l.donze@chateau-martinat.com">l.donze@chateau-martinat.com</a><br>
-                <a href="mailto:s.donze@chateau-martinat.com">s.donze@chateau-martinat.com</a>
+                <a href="mailto:contact@chateau-martinat.com">contact@chateau-martinat.com</a>
               </p>
             </div>
             <div class="contact-item">
@@ -548,78 +554,77 @@
               </p>
             </div>
           </div>
+        </div>
 
-          <!-- Formulaire de contact -->
-          <div class="contact-form-wrapper">
-            <h3 class="contact-form-title" data-i18n="contact.form.title">Envoyer un message</h3>
-            <form class="contact-form" id="contactFormProp" novalidate aria-label="Formulaire de contact Château Martinat">
-              <div class="form-group">
-                <label for="cfp-firstname"><span data-i18n="contact.form.firstname">Prénom</span><span class="required-star" aria-hidden="true">*</span></label>
-                <input type="text" id="cfp-firstname" name="prenom" autocomplete="given-name" required placeholder="Lucie" aria-required="true">
-                <span class="form-error-msg" role="alert"></span>
-              </div>
-              <div class="form-group">
-                <label for="cfp-lastname"><span data-i18n="contact.form.lastname">Nom</span><span class="required-star" aria-hidden="true">*</span></label>
-                <input type="text" id="cfp-lastname" name="nom" autocomplete="family-name" required placeholder="Donze" aria-required="true">
-                <span class="form-error-msg" role="alert"></span>
-              </div>
-              <div class="form-group">
-                <label for="cfp-email"><span data-i18n="contact.form.email">Email</span><span class="required-star" aria-hidden="true">*</span></label>
-                <input type="email" id="cfp-email" name="email" autocomplete="email" required placeholder="exemple@email.com" aria-required="true">
-                <span class="form-error-msg" role="alert"></span>
-              </div>
-              <div class="form-group">
-                <label for="cfp-phone"><span data-i18n="contact.form.phone">Téléphone</span></label>
-                <input type="tel" id="cfp-phone" name="telephone" autocomplete="tel" placeholder="+33 6 00 00 00 00">
-                <span class="form-error-msg" role="alert"></span>
-              </div>
-              <div class="form-group full-width">
-                <label for="cfp-subject"><span data-i18n="contact.form.subject">Objet</span><span class="required-star" aria-hidden="true">*</span></label>
-                <select id="cfp-subject" name="objet" required aria-required="true">
-                  <option value="" data-i18n="contact.form.subject.placeholder">— Choisir un objet —</option>
-                  <option value="commande"   data-i18n="contact.form.subject.order">Commande de vins</option>
-                  <option value="tarifs"     data-i18n="contact.form.subject.prices">Demande de tarifs</option>
-                  <option value="visite"     data-i18n="contact.form.subject.visit">Visite et dégustation</option>
-                  <option value="primeurs"   data-i18n="contact.form.subject.futures">Réservation primeurs</option>
-                  <option value="bon-cadeau" data-i18n="contact.form.subject.gift">Bon cadeau</option>
-                  <option value="pro"        data-i18n="contact.form.subject.pro">Professionnel / importateur</option>
-                  <option value="presse"     data-i18n="contact.form.subject.press">Presse et médias</option>
-                  <option value="autre"      data-i18n="contact.form.subject.other">Autre</option>
-                </select>
-                <span class="form-error-msg" role="alert"></span>
-              </div>
-              <div class="form-group full-width">
-                <label for="cfp-message"><span data-i18n="contact.form.message">Message</span><span class="required-star" aria-hidden="true">*</span></label>
-                <textarea id="cfp-message" name="message" required aria-required="true"
-                          data-i18n-placeholder="contact.form.message.placeholder" minlength="10"></textarea>
-                <span class="form-error-msg" role="alert"></span>
-              </div>
-              <div class="form-submit-row">
-                <button type="submit" class="btn-submit">
-                  <span class="btn-label" data-i18n="contact.form.send">Envoyer le message</span>
-                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
-                  <span class="btn-loader" aria-hidden="true"></span>
-                </button>
-                <p class="form-rgpd" data-i18n="contact.form.rgpd">Vos données sont utilisées uniquement pour répondre à votre demande et ne sont jamais transmises à des tiers.</p>
-              </div>
-              <div class="form-feedback" role="alert" aria-live="polite">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
-                <span class="feedback-text"></span>
-              </div>
-            </form>
-          </div>
-        </div><!-- /.contact-text -->
-
-        <!-- Colonne droite : carte -->
         <div class="contact-map">
           <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3271.170246967585!2d-0.5515331847682614!3d45.063120979098756!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x48002b926c5fc42f%3A0xce54150184a7dcd4!2sSCEV%20Marsaux%20Donze%20%2F%20Ch%C3%A2teau%20Martinat!5e0!3m2!1sfr!2sfr!4v1706946912345!5m2!1sfr!2sfr"
             width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"
             referrerpolicy="no-referrer-when-downgrade"
             title="Localisation du Château Martinat — Lansac, Côtes de Bourg"
             aria-label="Carte Google Maps de Château Martinat"></iframe>
-        </div><!-- /.contact-map -->
+        </div>
+      </div>
 
-      </div><!-- /.contact-content -->
+      <!-- BLOC INFÉRIEUR : Formulaire pleine largeur -->
+      <div class="contact-form-wrapper">
+        <h3 class="contact-form-title" data-i18n="contact.form.title">Envoyer un message</h3>
+        <form class="contact-form" id="contactFormProp" novalidate aria-label="Formulaire de contact Château Martinat">
+          <div class="form-group">
+            <label for="cfp-firstname"><span data-i18n="contact.form.firstname">Prénom</span><span class="required-star" aria-hidden="true">*</span></label>
+            <input type="text" id="cfp-firstname" name="prenom" autocomplete="given-name" required placeholder="Lucie" aria-required="true">
+            <span class="form-error-msg" role="alert"></span>
+          </div>
+          <div class="form-group">
+            <label for="cfp-lastname"><span data-i18n="contact.form.lastname">Nom</span><span class="required-star" aria-hidden="true">*</span></label>
+            <input type="text" id="cfp-lastname" name="nom" autocomplete="family-name" required placeholder="Donze" aria-required="true">
+            <span class="form-error-msg" role="alert"></span>
+          </div>
+          <div class="form-group">
+            <label for="cfp-email"><span data-i18n="contact.form.email">Email</span><span class="required-star" aria-hidden="true">*</span></label>
+            <input type="email" id="cfp-email" name="email" autocomplete="email" required placeholder="exemple@email.com" aria-required="true">
+            <span class="form-error-msg" role="alert"></span>
+          </div>
+          <div class="form-group">
+            <label for="cfp-phone"><span data-i18n="contact.form.phone">Téléphone</span></label>
+            <input type="tel" id="cfp-phone" name="telephone" autocomplete="tel" placeholder="+33 6 00 00 00 00">
+            <span class="form-error-msg" role="alert"></span>
+          </div>
+          <div class="form-group full-width">
+            <label for="cfp-subject"><span data-i18n="contact.form.subject">Objet</span><span class="required-star" aria-hidden="true">*</span></label>
+            <select id="cfp-subject" name="objet" required aria-required="true">
+              <option value="" data-i18n="contact.form.subject.placeholder">— Choisir un objet —</option>
+              <option value="commande"   data-i18n="contact.form.subject.order">Commande de vins</option>
+              <option value="tarifs"     data-i18n="contact.form.subject.prices">Demande de tarifs</option>
+              <option value="visite"     data-i18n="contact.form.subject.visit">Visite et dégustation</option>
+              <option value="primeurs"   data-i18n="contact.form.subject.futures">Réservation primeurs</option>
+              <option value="bon-cadeau" data-i18n="contact.form.subject.gift">Bon cadeau</option>
+              <option value="pro"        data-i18n="contact.form.subject.pro">Professionnel / importateur</option>
+              <option value="presse"     data-i18n="contact.form.subject.press">Presse et médias</option>
+              <option value="autre"      data-i18n="contact.form.subject.other">Autre</option>
+            </select>
+            <span class="form-error-msg" role="alert"></span>
+          </div>
+          <div class="form-group full-width">
+            <label for="cfp-message"><span data-i18n="contact.form.message">Message</span><span class="required-star" aria-hidden="true">*</span></label>
+            <textarea id="cfp-message" name="message" required aria-required="true"
+                      data-i18n-placeholder="contact.form.message.placeholder" minlength="10"></textarea>
+            <span class="form-error-msg" role="alert"></span>
+          </div>
+          <div class="form-submit-row">
+            <button type="submit" class="btn-submit">
+              <span class="btn-label" data-i18n="contact.form.send">Envoyer le message</span>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+              <span class="btn-loader" aria-hidden="true"></span>
+            </button>
+            <p class="form-rgpd" data-i18n="contact.form.rgpd">Vos données sont utilisées uniquement pour répondre à votre demande et ne sont jamais transmises à des tiers.</p>
+          </div>
+          <div class="form-feedback" role="alert" aria-live="polite">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+            <span class="feedback-text"></span>
+          </div>
+        </form>
+      </div>
+
     </div><!-- /.container -->
   </section>
 
@@ -635,7 +640,7 @@
   </div>
 </footer>
 
-<script src="../js/i18n.js"></script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="../js/i18n.js"></script>
 <script src="../js/contact-form.js"></script>
 <script src="../js/main.js"></script>
 <script>
@@ -706,8 +711,11 @@
     const saved = localStorage.getItem('martinat_lang') || 'fr';
     syncLangClasses(saved);
     document.querySelectorAll('.lang-btn').forEach(btn => {
-      btn.addEventListener('click', function () {
-        syncLangClasses(this.dataset.lang);
+      btn.addEventListener('click', () => {
+        const lang = btn.dataset.lang;
+        localStorage.setItem('martinat_lang', lang);
+        syncLangClasses(lang);
+        document.querySelectorAll('.lang-btn').forEach(b => b.classList.toggle('active', b.dataset.lang === lang));
       });
     });
   })();

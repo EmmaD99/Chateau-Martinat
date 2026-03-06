@@ -36,14 +36,8 @@
   position: relative;
   overflow: hidden;
   aspect-ratio: 3/4;
-
-  /* Fond bois */
-  background-image: url('../../pictures/general/wood.jpeg');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
+  background: #f5f0eb;
 }
-
 
 .wine-figure img {
   width: 100%;
@@ -104,7 +98,37 @@
   color: white;
 }
 
-/* Bouton Belair l'Escudier */
+/* ── Card Belair : texte seul, fond blanc, cliquable ── */
+.wine-card-belair {
+  border: 2px solid #1a1a1a;
+}
+
+.wine-card-belair .wine-link-belair {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 320px;
+  padding: var(--spacing-xl);
+  text-decoration: none;
+  background: white;
+  transition: background var(--transition-normal);
+}
+
+.wine-card-belair:hover .wine-link-belair {
+  background: #f5f5f5;
+}
+
+.wine-belair-label {
+  font-family: var(--font-primary);
+  font-size: var(--font-size-lg);
+  font-weight: 700;
+  color: #1a1a1a;
+  text-align: center;
+  line-height: 1.3;
+  letter-spacing: 0.5px;
+}
+
+/* Bouton Belair — noir et blanc, en dessous de la grille */
 .belair-button-container {
   text-align: center;
   margin-top: var(--spacing-3xl);
@@ -117,8 +141,9 @@
   align-items: center;
   gap: var(--spacing-md);
   padding: var(--spacing-md) var(--spacing-2xl);
-  background: linear-gradient(135deg, var(--accent) 0%, var(--accent-light) 100%);
-  color: white;
+  background: white;
+  color: #1a1a1a;
+  border: 2px solid #1a1a1a;
   border-radius: var(--radius-md);
   font-family: var(--font-primary);
   font-size: var(--font-size-lg);
@@ -126,82 +151,39 @@
   text-transform: uppercase;
   letter-spacing: 1.5px;
   transition: all var(--transition-normal);
-  box-shadow: 0 4px 15px rgba(184, 134, 11, 0.3);
   text-decoration: none;
-  position: relative;
-  overflow: hidden;
-}
-
-.btn-belair::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: -100%;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
-  transition: left 0.5s ease;
-}
-
-.btn-belair:hover::before {
-  left: 100%;
 }
 
 .btn-belair:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 8px 25px rgba(184, 134, 11, 0.5);
+  background: #1a1a1a;
   color: white;
-}
-
-.btn-belair-text {
-  position: relative;
-  z-index: 1;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
 }
 
 .btn-belair-arrow {
   font-size: var(--font-size-xl);
   transition: transform var(--transition-normal);
-  position: relative;
-  z-index: 1;
 }
 
 .btn-belair:hover .btn-belair-arrow {
   transform: translateX(5px);
 }
 
-/* Responsive */
+/* ── Responsive ── */
 @media (max-width: 768px) {
   .wines-grid {
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: var(--spacing-md);
   }
-  
+
   .wine-name {
     font-size: var(--font-size-md);
-  }
-  
-  .belair-button-container {
-    margin-top: var(--spacing-2xl);
-    padding-top: var(--spacing-lg);
-  }
-
-  .btn-belair {
-    width: 100%;
-    max-width: 400px;
-    justify-content: center;
-    font-size: var(--font-size-md);
-    padding: var(--spacing-md) var(--spacing-xl);
   }
 }
 
 @media (max-width: 480px) {
   .wines-grid {
     grid-template-columns: 1fr;
-  }
-  
-  .btn-belair {
-    max-width: 100%;
-    font-size: var(--font-size-sm);
-    letter-spacing: 1px;
   }
 }

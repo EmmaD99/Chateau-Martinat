@@ -15,14 +15,59 @@
   background-color: #ffffff;
 }
 
-/* Layout 2 colonnes : texte | carte  (même ratio que news) */
-.contact-content {
+/* Layout supérieur : adresse | map */
+.contact-top {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr 1.4fr;
   gap: var(--spacing-3xl);
-  align-items: start;
+  align-items: stretch;
   margin-top: var(--spacing-xl);
+  margin-bottom: var(--spacing-2xl);
 }
+
+.contact-info-block {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* ── CARTE MAPS ── */
+.contact-map {
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+  min-height: 340px;
+}
+
+@media (max-width: 968px) {
+  .contact-top {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-xl);
+  }
+  .contact-map {
+    min-height: 300px;
+    height: 300px;
+  }
+}
+
+@media (max-width: 768px) {
+  .contact-map {
+    min-height: 260px;
+    height: 260px;
+    border-radius: var(--radius-md);
+  }
+}
+
+.contact-map iframe {
+  width: 100%;
+  height: 100%;
+  min-height: 340px;
+  border: none;
+  display: block;
+}
+
+/* ── ANCIEN layout supprimé ── */
+.contact-content { display: none; }
 
 /* ── BLOC TEXTE (colonne gauche) ── */
 .contact-text {
@@ -110,38 +155,7 @@
   color: white;
 }
 
-/* ── CARTE MAPS (colonne droite) ── */
-.contact-map {
-  position: sticky;
-  top: calc(var(--header-height, 70px) + 2rem);
-  border-radius: var(--radius-lg);
-  overflow: hidden;
-  box-shadow: var(--shadow-md);
-  height: 480px;
-}
-
-@media (max-width: 968px) {
-  .contact-map {
-    position: relative;
-    top: 0;
-    height: 350px;
-    width: 100%;
-  }
-}
-
-@media (max-width: 768px) {
-  .contact-map {
-    height: 300px;
-    border-radius: var(--radius-md);
-  }
-}
-
-.contact-map iframe {
-  width: 100%;
-  height: 100%;
-  border: none;
-  display: block;
-}
+/* contact-map géré dans le nouveau layout ci-dessus */
 
 /* ── RESPONSIVE ── */
 @media (max-width: 968px) {
