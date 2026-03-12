@@ -360,6 +360,20 @@ const i18n = {
       if (text !== undefined) el.placeholder = text;
     });
 
+    // Blocs de contenu bilingues (.lang-fr / .lang-en)
+    document.querySelectorAll('.lang-fr').forEach(el => {
+      el.style.display = lang === 'fr' ? '' : 'none';
+    });
+    document.querySelectorAll('.lang-en').forEach(el => {
+      el.style.display = lang === 'en' ? '' : 'none';
+    });
+    document.querySelectorAll('.awards-fr').forEach(el => {
+      el.style.display = lang === 'fr' ? '' : 'none';
+    });
+    document.querySelectorAll('.awards-en').forEach(el => {
+      el.style.display = lang === 'en' ? '' : 'none';
+    });
+
     // Bouton actif
     document.querySelectorAll('.lang-btn').forEach(btn => {
       btn.classList.toggle('active', btn.dataset.lang === lang);
@@ -375,14 +389,24 @@ const i18n = {
    EXÉCUTION IMMÉDIATE
    Applique la langue sauvegardée dès que
    le DOM est parsé, sur TOUTES les pages.
+   Masque le body pendant l'initialisation
+   pour éviter tout flash de contenu.
    ════════════════════════════════════════ */
 (function () {
   const lang = localStorage.getItem('martinat_lang') || 'fr';
   document.documentElement.lang = lang;
 
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', () => i18n.init());
-  } else {
+  // Masquer le body immédiatement pour éviter le flash
+  document.documentElement.style.visibility = 'hidden';
+
+  function reveal() {
     i18n.init();
+    document.documentElement.style.visibility = '';
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', reveal);
+  } else {
+    reveal();
   }
 })();

@@ -200,16 +200,16 @@
     }
     .region-card:hover { transform: translateY(-5px); box-shadow: var(--shadow-lg); }
     .region-image {
-      height: 200px;
+      height: 140px;
       background: var(--background-dark);
       display: flex;
       align-items: center;
       justify-content: center;
       font-size: var(--font-size-3xl);
     }
-    .region-info { padding: var(--spacing-lg); }
-    .region-info h3 { color: var(--primary); margin-bottom: var(--spacing-sm); }
-    .region-info p { color: var(--text-gray); font-size: var(--font-size-sm); line-height: 1.6; }
+    .region-info { padding: var(--spacing-md) var(--spacing-md) var(--spacing-sm); }
+    .region-info h3 { color: var(--primary); margin-bottom: var(--spacing-xs); font-size: var(--font-size-md); }
+    .region-info p { color: var(--text-gray); font-size: var(--font-size-sm); line-height: 1.5; text-align: justify; text-justify: inter-word; margin: 0; }
 
     /* ── Image section ── */
     .section-image { border-radius: var(--radius-lg); overflow: hidden; box-shadow: var(--shadow-md); }
@@ -640,7 +640,7 @@
   </div>
 </footer>
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="../js/i18n.js"></script>
+<script src="../js/i18n.js"></script>
 <script src="../js/contact-form.js"></script>
 <script src="../js/main.js"></script>
 <script>
@@ -703,6 +703,7 @@
   })();
 
   /* ── Sync langue ── */
+  /* NOTE: géré directement par i18n.js — ce bloc est conservé pour rétrocompatibilité */
   (function () {
     function syncLangClasses(lang) {
       document.querySelectorAll('.lang-fr').forEach(el => el.style.display = lang === 'fr' ? '' : 'none');
@@ -710,12 +711,10 @@
     }
     const saved = localStorage.getItem('martinat_lang') || 'fr';
     syncLangClasses(saved);
+
     document.querySelectorAll('.lang-btn').forEach(btn => {
-      btn.addEventListener('click', () => {
-        const lang = btn.dataset.lang;
-        localStorage.setItem('martinat_lang', lang);
-        syncLangClasses(lang);
-        document.querySelectorAll('.lang-btn').forEach(b => b.classList.toggle('active', b.dataset.lang === lang));
+      btn.addEventListener('click', function () {
+        syncLangClasses(this.dataset.lang);
       });
     });
   })();
