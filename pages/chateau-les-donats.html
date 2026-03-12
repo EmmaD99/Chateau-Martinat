@@ -3,13 +3,11 @@
 <head>
   <meta charset="UTF-8">
 <style>
-  /* Anti-flash boutons langue — appliqué avant tout rendu */
   .lang-en, .awards-en { display: none; }
   html.lang-active-en .lang-en, html.lang-active-en .awards-en { display: revert; }
   html.lang-active-en .lang-fr, html.lang-active-en .awards-fr { display: none; }
   html.lang-active-fr .lang-fr, html.lang-active-fr .awards-fr { display: revert; }
   html.lang-active-fr .lang-en, html.lang-active-fr .awards-en { display: none; }
-  /* Bouton actif sans attendre le JS */
   html.lang-active-en .lang-btn[data-lang="en"],
   html.lang-active-fr .lang-btn[data-lang="fr"] {
     background: var(--accent, #b8860b);

@@ -3,13 +3,11 @@
 <head>
   <meta charset="UTF-8">
 <style>
-  /* Anti-flash boutons langue — appliqué avant tout rendu */
   .lang-en, .awards-en { display: none; }
   html.lang-active-en .lang-en, html.lang-active-en .awards-en { display: revert; }
   html.lang-active-en .lang-fr, html.lang-active-en .awards-fr { display: none; }
   html.lang-active-fr .lang-fr, html.lang-active-fr .awards-fr { display: revert; }
   html.lang-active-fr .lang-en, html.lang-active-fr .awards-en { display: none; }
-  /* Bouton actif sans attendre le JS */
   html.lang-active-en .lang-btn[data-lang="en"],
   html.lang-active-fr .lang-btn[data-lang="fr"] {
     background: var(--accent, #b8860b);
@@ -58,7 +56,6 @@
   <link rel="stylesheet" href="../css/sections/contact.css">
 
   <style>
-    /* ── Back button ── */
     .back-btn {
       width: 40px; height: 40px;
       display: flex; align-items: center; justify-content: center;
@@ -72,7 +69,6 @@
 
     p { text-align: justify; text-justify: inter-word; line-height: 1.8; }
 
-    /* ── Hero ── */
     .property-hero {
       position: relative;
       height: 60vh; min-height: 400px;
@@ -89,7 +85,6 @@
       letter-spacing: 2px;
     }
 
-    /* ── Sections ── */
     .property-section { padding: var(--spacing-3xl) 0; }
     #galerie.property-section { padding: 0; }
     #galerie.property-section .container { max-width: 100%; padding: 0; width: 100%; }
@@ -114,7 +109,6 @@
     .property-section.section-white p,
     .property-section.section-white li { color: var(--text-dark); }
 
-    /* ── Team ── */
     .team-intro-section {
       display: grid; grid-template-columns: 1.3fr 1fr;
       gap: var(--spacing-2xl); align-items: start; margin-bottom: var(--spacing-3xl);
@@ -137,7 +131,6 @@
     .team-photo-name { font-size: var(--font-size-sm); font-weight: 600; margin-bottom: 2px; line-height: 1.3; }
     .team-photo-role { font-size: var(--font-size-xs); opacity: 0.9; line-height: 1.2; }
 
-    /* ── Carousel ── */
     .carousel-container {
       position: relative; max-width: 100%;
       margin: var(--spacing-2xl) auto 0;
@@ -178,7 +171,6 @@
     }
     .carousel-indicator.active { background: white; width: 30px; border-radius: 6px; }
 
-    /* ── Vineyard ── */
     .vineyard-content {
       display: grid; grid-template-columns: 1.2fr 1fr;
       gap: var(--spacing-3xl); align-items: center; margin-top: var(--spacing-xl);
@@ -194,7 +186,6 @@
     .stat-number { font-size: var(--font-size-sm); font-weight: 700; color: var(--accent); font-family: var(--font-primary); line-height: 1.4; }
     .stat-label { color: var(--text-dark) !important; margin-top: var(--spacing-xs); font-size: var(--font-size-sm); }
 
-    /* ── Philosophy ── */
     .philosophy-content { max-width: 900px; margin: var(--spacing-xl) auto 0; text-align: center; }
     .philosophy-highlight {
       background: white; padding: var(--spacing-xl);
@@ -204,13 +195,11 @@
     .philosophy-highlight strong { color: var(--accent); font-size: var(--font-size-lg); display: block; margin-bottom: var(--spacing-sm); }
     .philosophy-highlight p { hyphens: auto; -webkit-hyphens: auto; line-height: 1.6; }
 
-    /* ── Cellar ── */
     .cellar-content {
       display: grid; grid-template-columns: 1fr 1.2fr;
       gap: var(--spacing-3xl); align-items: center; margin-top: var(--spacing-xl);
     }
 
-    /* ── Region cards avec photos ── */
     .region-content { max-width: 1000px; margin: var(--spacing-xl) auto 0; }
     .region-grid {
       display: grid; grid-template-columns: repeat(3, 1fr);
@@ -223,7 +212,6 @@
     }
     .region-card:hover { transform: translateY(-5px); box-shadow: var(--shadow-lg); }
 
-    /* Photo container remplace l'emoji */
     .region-image {
       height: 160px;
       overflow: hidden;
@@ -239,7 +227,6 @@
     .region-card:hover .region-image img {
       transform: scale(1.08);
     }
-    /* Overlay léger pour lisibilité */
     .region-image::after {
       content: '';
       position: absolute;
@@ -252,12 +239,10 @@
     .region-info h3 { color: var(--primary); margin-bottom: var(--spacing-xs); font-size: var(--font-size-md); }
     .region-info p { color: var(--text-gray); font-size: var(--font-size-sm); line-height: 1.5; text-align: justify; text-justify: inter-word; hyphens: auto; -webkit-hyphens: auto; margin: 0; }
 
-    /* ── Section image ── */
     .section-image { border-radius: var(--radius-lg); overflow: hidden; box-shadow: var(--shadow-md); }
     .section-image img { width: 100%; height: 100%; object-fit: cover; transition: transform var(--transition-slow); }
     .section-image:hover img { transform: scale(1.05); }
 
-    /* ── Responsive ── */
     @media (max-width: 968px) {
       .team-intro-section, .vineyard-content, .cellar-content { grid-template-columns: 1fr; gap: var(--spacing-xl); }
       .region-grid { grid-template-columns: repeat(2, 1fr); }
@@ -331,7 +316,6 @@
     <h1 data-i18n="prop.hero.title">Notre Propriété</h1>
   </section>
 
-  <!-- ÉQUIPE -->
   <section id="equipe" class="property-section section-bordeaux">
     <div class="container">
       <h2 class="section-title" data-i18n="prop.team.title">Notre Équipe</h2>
@@ -380,7 +364,6 @@
     </div>
   </section>
 
-  <!-- GALERIE CAROUSEL -->
   <section id="galerie" class="property-section section-white">
     <div class="container">
       <div class="carousel-container" role="region" aria-label="Galerie photos du domaine">
@@ -431,7 +414,6 @@
     </div>
   </section>
 
-  <!-- VIGNOBLE -->
   <section id="vignoble" class="property-section section-bordeaux">
     <div class="container">
       <h2 class="section-title" data-i18n="prop.vineyard.title">Les Vignes</h2>
@@ -458,7 +440,6 @@
     </div>
   </section>
 
-  <!-- PHILOSOPHIE -->
   <section id="philosophie" class="property-section section-white">
     <div class="container">
       <h2 class="section-title" data-i18n="prop.philosophy.title">Philosophie</h2>
@@ -472,7 +453,6 @@
     </div>
   </section>
 
-  <!-- CHAI -->
   <section id="chai" class="property-section section-bordeaux">
     <div class="container">
       <h2 class="section-title" data-i18n="prop.cellar.title">Notre Chai</h2>
@@ -489,7 +469,6 @@
     </div>
   </section>
 
-  <!-- RÉGION — PHOTOS à la place des emojis -->
   <section id="region" class="property-section section-white">
     <div class="container">
       <h2 class="section-title" data-i18n="prop.region.title">Découvrir notre Région</h2>
@@ -574,7 +553,6 @@
     </div>
   </section>
 
-  <!-- CONTACT -->
   <section id="contact" class="section contact-section">
     <div class="container">
       <h2 class="section-title" data-i18n="prop.contact.title">Nous Contacter</h2>
@@ -702,7 +680,6 @@
 <script src="../js/contact-form.js"></script>
 <script src="../js/main.js"></script>
 <script>
-  /* ── Carousel ── */
   (function () {
     const track        = document.getElementById('carouselTrack');
     const prevBtn      = document.getElementById('prevBtn');
