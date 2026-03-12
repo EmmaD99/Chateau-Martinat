@@ -197,8 +197,8 @@ const translations = {
     'prop.team.title':           'Our Team',
     'prop.team.p1':              '"Martinat team" consists of two collaborators: Cyrille Baillou and Sophie Baraillé. Each year, we also call on a small team for vineyard work, especially during harvest.',
     'prop.team.p2':              'Our passionate team applies their expertise to the quality of our wines, respecting winemaking traditions and our exceptional terroir.',
-    'prop.team.lucie.role':      'Winemaker',
-    'prop.team.stephane.role':   'Winemaker',
+    'prop.team.lucie.role':      'Viticulturist',
+    'prop.team.stephane.role':   'Viticulturist',
 
     /* Carousel */
     'prop.carousel.slide1.title': 'Our Vineyard',
@@ -389,24 +389,14 @@ const i18n = {
    EXÉCUTION IMMÉDIATE
    Applique la langue sauvegardée dès que
    le DOM est parsé, sur TOUTES les pages.
-   Masque le body pendant l'initialisation
-   pour éviter tout flash de contenu.
    ════════════════════════════════════════ */
 (function () {
   const lang = localStorage.getItem('martinat_lang') || 'fr';
   document.documentElement.lang = lang;
 
-  // Masquer le body immédiatement pour éviter le flash
-  document.documentElement.style.visibility = 'hidden';
-
-  function reveal() {
-    i18n.init();
-    document.documentElement.style.visibility = '';
-  }
-
   if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', reveal);
+    document.addEventListener('DOMContentLoaded', () => i18n.init());
   } else {
-    reveal();
+    i18n.init();
   }
 })();

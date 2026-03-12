@@ -20,6 +20,20 @@
 
   <title>Notre Propriété | Château Martinat — Vignerons en Côtes de Bourg, Lansac</title>
 
+  <!-- Langue appliquée immédiatement avant tout rendu pour éviter le flash -->
+  <script>
+    (function(){
+      var lang = localStorage.getItem('martinat_lang') || 'fr';
+      document.documentElement.lang = lang;
+      // On attend le DOM pour appliquer via style inline (compatible avec wine.js)
+      function applyEarly() {
+        document.querySelectorAll('.lang-fr').forEach(function(el){ el.style.display = lang === 'fr' ? '' : 'none'; });
+        document.querySelectorAll('.lang-en').forEach(function(el){ el.style.display = lang === 'en' ? '' : 'none'; });
+      }
+      if (document.readyState === 'loading') { document.addEventListener('DOMContentLoaded', applyEarly); }
+      else { applyEarly(); }
+    })();
+  </script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -529,8 +543,8 @@
             <div class="contact-item">
               <h3 data-i18n="prop.contact.email">Email</h3>
               <p>
-                <a href="mailto:l.donze@chateau-martinat.com">l.donze@chateau-martinat.com</a><br>
-                <a href="mailto:s.donze@chateau-martinat.com">s.donze@chateau-martinat.com</a>
+                <a href="/cdn-cgi/l/email-protection#573b793338392d3217343f36233236227a3a3625233e3936237934383a"><span class="__cf_email__" data-cfemail="a9c587cdc6c7d3cce9cac1c8ddccc8dc84c4c8dbddc0c7c8dd87cac6c4">[email&#160;protected]</span></a><br>
+                <a href="/cdn-cgi/l/email-protection#6a19440e0504100f2a09020b1e0f0b1f47070b181e03040b1e44090507"><span class="__cf_email__" data-cfemail="f281dc969d9c8897b2919a9386979387df9f9380869b9c9386dc919d9f">[email&#160;protected]</span></a>
               </p>
             </div>
             <div class="contact-item">
@@ -640,7 +654,7 @@
   </div>
 </footer>
 
-<script src="../js/i18n.js"></script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="../js/i18n.js"></script>
 <script src="../js/contact-form.js"></script>
 <script src="../js/main.js"></script>
 <script>

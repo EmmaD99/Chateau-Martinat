@@ -24,14 +24,7 @@
       el.style.display = lang === 'en' ? '' : 'none';
     });
 
-    // Bouton téléchargement
-    var dlBtn = document.querySelector('.btn-download');
-    if (dlBtn) {
-      dlBtn.textContent = lang === 'en'
-        ? 'Download technical sheet'
-        : 'Télécharger la fiche technique';
-      // Remettre l'icône (le ::before CSS s'en charge, on garde juste le texte)
-    }
+    // Bouton téléchargement — géré par les spans .lang-fr/.lang-en ci-dessus
 
     // Synchroniser i18n.js si présent
     if (typeof i18n !== 'undefined') { i18n.applyLang(lang, false); }

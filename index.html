@@ -34,6 +34,20 @@
   }
   </script>
   <title>Château Martinat | Vignerons indépendants — Grand Vin de Bordeaux, Côtes de Bourg</title>
+  <!-- Langue appliquée immédiatement avant tout rendu pour éviter le flash -->
+  <script>
+    (function(){
+      var lang = localStorage.getItem('martinat_lang') || 'fr';
+      document.documentElement.lang = lang;
+      // On attend le DOM pour appliquer via style inline (compatible avec wine.js)
+      function applyEarly() {
+        document.querySelectorAll('.lang-fr').forEach(function(el){ el.style.display = lang === 'fr' ? '' : 'none'; });
+        document.querySelectorAll('.lang-en').forEach(function(el){ el.style.display = lang === 'en' ? '' : 'none'; });
+      }
+      if (document.readyState === 'loading') { document.addEventListener('DOMContentLoaded', applyEarly); }
+      else { applyEarly(); }
+    })();
+  </script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -337,8 +351,8 @@
             <div class="contact-item">
               <h3 data-i18n="contact.email">Email</h3>
               <p>
-                <a href="mailto:l.donze@chateau-martinat.com">l.donze@chateau-martinat.com</a><br>
-                <a href="mailto:s.donze@chateau-martinat.com">s.donze@chateau-martinat.com</a>
+                <a href="/cdn-cgi/l/email-protection#c1adefa5aeafbba481a2a9a0b5a4a0b4ecaca0b3b5a8afa0b5efa2aeac"><span class="__cf_email__" data-cfemail="c3afeda7acadb9a683a0aba2b7a6a2b6eeaea2b1b7aaada2b7eda0acae">[email&#160;protected]</span></a><br>
+                <a href="/cdn-cgi/l/email-protection#7f0c511b1011051a3f1c171e0b1a1e0a52121e0d0b16111e0b511c1012"><span class="__cf_email__" data-cfemail="55267b313a3b2f3015363d342130342078383427213c3b34217b363a38">[email&#160;protected]</span></a>
               </p>
             </div>
             <div class="contact-item">

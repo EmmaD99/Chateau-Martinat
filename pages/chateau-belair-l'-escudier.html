@@ -21,6 +21,20 @@
   <title>Château Belair l'Escudier | Château Martinat — Grand Vin de Bordeaux, Côtes de Bourg</title>
 
   <!-- Styles -->
+  <!-- Langue appliquée immédiatement avant tout rendu pour éviter le flash -->
+  <script>
+    (function(){
+      var lang = localStorage.getItem('martinat_lang') || 'fr';
+      document.documentElement.lang = lang;
+      // On attend le DOM pour appliquer via style inline (compatible avec wine.js)
+      function applyEarly() {
+        document.querySelectorAll('.lang-fr').forEach(function(el){ el.style.display = lang === 'fr' ? '' : 'none'; });
+        document.querySelectorAll('.lang-en').forEach(function(el){ el.style.display = lang === 'en' ? '' : 'none'; });
+      }
+      if (document.readyState === 'loading') { document.addEventListener('DOMContentLoaded', applyEarly); }
+      else { applyEarly(); }
+    })();
+  </script>
   <link rel="stylesheet" href="../css/reset.css">
   <link rel="stylesheet" href="../css/variables.css">
   <link rel="stylesheet" href="../css/main.css">
