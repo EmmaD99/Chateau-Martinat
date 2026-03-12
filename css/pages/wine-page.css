@@ -1,9 +1,3 @@
-/* ========================================
-   WINE PAGE — CSS PARTAGÉ
-   Utilisé par toutes les pages /pages/*.html
-   ======================================== */
-
-/* ── Bouton retour ── */
 .back-btn {
   width: 40px;
   height: 40px;
@@ -26,7 +20,6 @@
   line-height: 1;
 }
 
-/* ── Layout ── */
 .wine-page {
   min-height: 100vh;
   display: flex;
@@ -45,7 +38,6 @@
   margin-bottom: var(--spacing-xl);
 }
 
-/* ── En-tête ── */
 .wine-header {
   text-align: center;
   margin-bottom: var(--spacing-3xl);
@@ -66,7 +58,6 @@
   letter-spacing: 2px;
 }
 
-/* ── Contenu ── */
 .wine-content {
   display: grid;
   grid-template-columns: 1fr 1.2fr;
@@ -76,7 +67,6 @@
   animation: fadeInUp 0.8s ease 0.2s backwards;
 }
 
-/* ── Image ── */
 .wine-image-container {
   position: sticky;
   top: calc(var(--header-height) + var(--spacing-lg));
@@ -102,7 +92,6 @@
   50%       { transform: translateY(-10px); }
 }
 
-/* ── Description ── */
 .wine-description {
   background: white;
   padding: var(--spacing-xl);
@@ -138,7 +127,6 @@
 }
 .wine-description p:last-child { margin-bottom: 0; }
 
-/* ── Distinctions ── */
 .wine-awards {
   margin-top: var(--spacing-xl);
   padding-top: var(--spacing-md);
@@ -174,7 +162,6 @@
 }
 .award-text { opacity: 0.85; }
 
-/* ── Notice disponibilité ── */
 .wine-availability {
   margin-top: var(--spacing-xl);
   padding: var(--spacing-md) var(--spacing-lg);
@@ -186,7 +173,6 @@
   font-style: italic;
 }
 
-/* ── Actions ── */
 .wine-actions {
   display: flex;
   gap: var(--spacing-lg);
@@ -222,13 +208,11 @@
   font-size: var(--font-size-lg);
 }
 
-/* ── Animation ── */
 @keyframes fadeInUp {
   from { opacity: 0; transform: translateY(30px); }
   to   { opacity: 1; transform: translateY(0); }
 }
 
-/* ── Responsive ── */
 @media (max-width: 968px) {
   .wine-content {
     grid-template-columns: 1fr;

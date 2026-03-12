@@ -1,14 +1,9 @@
-/* ========================================
-   WINE PAGE — LANGUAGE HANDLER (partagé)
-   Inclus par toutes les pages /pages/*.html
-   ======================================== */
 (function () {
   'use strict';
 
   function applyLang(lang) {
     document.documentElement.lang = lang;
 
-    // Blocs de contenu bilingues
     document.querySelectorAll('.lang-fr').forEach(function (el) {
       el.style.display = lang === 'fr' ? '' : 'none';
     });
@@ -16,7 +11,6 @@
       el.style.display = lang === 'en' ? '' : 'none';
     });
 
-    // Listes de distinctions bilingues
     document.querySelectorAll('.awards-fr').forEach(function (el) {
       el.style.display = lang === 'fr' ? '' : 'none';
     });
@@ -24,12 +18,8 @@
       el.style.display = lang === 'en' ? '' : 'none';
     });
 
-    // Bouton téléchargement — géré par les spans .lang-fr/.lang-en ci-dessus
-
-    // Synchroniser i18n.js si présent
     if (typeof i18n !== 'undefined') { i18n.applyLang(lang, false); }
 
-    // Boutons actifs
     document.querySelectorAll('.lang-btn').forEach(function (btn) {
       btn.classList.toggle('active', btn.dataset.lang === lang);
     });

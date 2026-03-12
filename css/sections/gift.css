@@ -1,12 +1,7 @@
-/* ========================================
-   GIFT SECTION — fond blanc (alternance)
-   ======================================== */
-
 .gift-section {
   background: var(--background-white);
 }
 
-/* Titre et intro en sombre comme propriété */
 .gift-section .section-title {
   color: var(--primary);
 }
@@ -19,7 +14,6 @@
   color: var(--text-gray);
 }
 
-/* ── GRILLE 2 COLONNES ── */
 .gift-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -27,7 +21,6 @@
   margin-top: var(--spacing-xl);
 }
 
-/* ── CARTE ── */
 .gift-card {
   background: white;
   border-radius: var(--radius-md);
@@ -41,7 +34,6 @@
   box-shadow: var(--shadow-lg);
 }
 
-/* ── PHOTO ── */
 .gift-figure {
   position: relative;
   overflow: hidden;
@@ -71,12 +63,10 @@
   font-weight: 600;
 }
 
-/* ── CORPS ── */
 .gift-card-body {
   padding: var(--spacing-lg);
 }
 
-/* Prix badge */
 .gift-price {
   display: inline-block;
   background: var(--accent);
@@ -89,7 +79,6 @@
   margin-bottom: var(--spacing-md);
 }
 
-/* Liste détails */
 .gift-list {
   list-style: none;
   padding: 0;
@@ -116,7 +105,6 @@
   top: 0.45rem;
 }
 
-/* Options coffret */
 .gift-coffret {
   display: flex;
   flex-direction: column;
@@ -153,7 +141,6 @@
   font-size: var(--font-size-md);
 }
 
-/* Validité */
 .gift-validity {
   font-size: var(--font-size-xs);
   color: var(--text-gray);
@@ -163,13 +150,11 @@
   padding-top: var(--spacing-sm);
 }
 
-/* ── CTA ── */
 .gift-cta {
   text-align: center;
   margin-top: var(--spacing-2xl);
 }
 
-/* ── RESPONSIVE ── */
 @media (max-width: 768px) {
   .gift-grid {
     grid-template-columns: 1fr;

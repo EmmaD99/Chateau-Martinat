@@ -34,12 +34,10 @@
   }
   </script>
   <title>Château Martinat | Vignerons indépendants — Grand Vin de Bordeaux, Côtes de Bourg</title>
-  <!-- Langue appliquée immédiatement avant tout rendu pour éviter le flash -->
   <script>
     (function(){
       var lang = localStorage.getItem('martinat_lang') || 'fr';
       document.documentElement.lang = lang;
-      // On attend le DOM pour appliquer via style inline (compatible avec wine.js)
       function applyEarly() {
         document.querySelectorAll('.lang-fr').forEach(function(el){ el.style.display = lang === 'fr' ? '' : 'none'; });
         document.querySelectorAll('.lang-en').forEach(function(el){ el.style.display = lang === 'en' ? '' : 'none'; });
@@ -76,10 +74,8 @@
 </head>
 <body>
 
-<!-- VÉRIFICATION D'ÂGE -->
 <div id="age-verification-popup" class="age-verification-overlay" role="dialog" aria-modal="true" aria-labelledby="age-verification-title">
   <div class="popup-content">
-    <!-- Sélecteur de langue -->
     <div class="popup-lang-switcher">
       <button class="popup-lang-btn active" data-popup-lang="fr" aria-label="Français">
         <svg class="lang-flag" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 3 2" aria-hidden="true">
@@ -114,7 +110,6 @@
   </div>
 </div>
 
-<!-- HEADER -->
 <header class="topbar">
   <div class="topbar-left">
     <button class="menu-btn" id="openMenu" aria-controls="menu" aria-expanded="false" aria-label="Ouvrir le menu de navigation">
@@ -142,7 +137,6 @@
   </div>
 </header>
 
-<!-- MENU -->
 <nav class="menu-overlay" id="menu" aria-hidden="true" aria-label="Menu principal">
   <button class="close-btn" id="closeMenu" aria-label="Fermer le menu">×</button>
   <ul class="menu-links">
@@ -157,7 +151,6 @@
 
 <main>
 
-  <!-- HERO -->
   <section id="accueil" class="hero reveal" aria-label="Bienvenue au Château Martinat">
     <div class="hero-overlay">
       <h1><span class="hero-chateau">Château</span><span class="hero-name">Martinat</span></h1>
@@ -173,7 +166,6 @@
     </div>
   </section>
 
-  <!-- NOS VINS -->
   <section id="vins" class="section wines-section reveal">
     <div class="container">
       <h2 class="section-title" data-i18n="wines.title">Nos Vins</h2>
@@ -243,7 +235,6 @@
     </div>
   </section>
 
-  <!-- PROPRIÉTÉ -->
   <section id="propriete" class="section property-section reveal">
     <div class="container">
       <div class="property-content">
@@ -262,7 +253,6 @@
     </div>
   </section>
 
-  <!-- ACTUALITÉS -->
   <section id="actualites" class="section news-section reveal">
     <div class="container">
       <h2 class="section-title" data-i18n="news.title">Actualités et Presse</h2>
@@ -279,7 +269,6 @@
     </div>
   </section>
 
-  <!-- BON CADEAU -->
   <section id="bon-cadeau" class="section gift-section reveal">
     <div class="container">
       <h2 class="section-title" data-i18n="gift.title">Bon Cadeau</h2>
@@ -335,12 +324,10 @@
     </div>
   </section>
 
-    <!-- CONTACT -->
   <section id="contact" class="section contact-section reveal">
     <div class="container">
       <h2 class="section-title" data-i18n="contact.title">Contact</h2>
 
-      <!-- BLOC SUPÉRIEUR : Adresse + Map côte à côte -->
       <div class="contact-top">
         <div class="contact-info-block">
           <div class="contact-details">
@@ -378,7 +365,6 @@
         </div>
       </div>
 
-      <!-- BLOC INFÉRIEUR : Formulaire pleine largeur -->
       <div class="contact-form-wrapper">
         <h3 class="contact-form-title" data-i18n="contact.form.title">Envoyer un message</h3>
         <form class="contact-form" id="contactForm" novalidate aria-label="Formulaire de contact Château Martinat">
@@ -438,7 +424,7 @@
         </form>
       </div>
 
-    </div><!-- /.container -->
+    </div>
   </section>
 
 

@@ -1,7 +1,3 @@
-/* ========================================
-   WINES SECTION
-   ======================================== */
-
 .wines-section {
   background: var(--background-bordeaux);
 }
@@ -92,13 +88,11 @@
   background: white;
 }
 
-/* Titre et intro en blanc */
 .wines-section .section-title,
 .wines-section .section-intro {
   color: white;
 }
 
-/* ── Card Belair : texte seul, fond blanc, cliquable ── */
 .wine-card-belair {
   border: 2px solid #1a1a1a;
 }
@@ -128,7 +122,6 @@
   letter-spacing: 0.5px;
 }
 
-/* Bouton Belair — noir et blanc, en dessous de la grille */
 .belair-button-container {
   text-align: center;
   margin-top: var(--spacing-3xl);
@@ -170,7 +163,6 @@
   transform: translateX(5px);
 }
 
-/* ── Responsive ── */
 @media (max-width: 768px) {
   .wines-grid {
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));

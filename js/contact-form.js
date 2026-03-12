@@ -1,11 +1,3 @@
-/* ========================================
-   CHÂTEAU MARTINAT — FORMULAIRE DE CONTACT
-   js/contact-form.js
-
-   Utilise Formspree (gratuit, sans backend).
-   Créer un compte sur https://formspree.io
-   puis remplacer REMPLACE_PAR_TON_ID ci-dessous.
-   ======================================== */
 (function () {
   'use strict';
 
@@ -31,7 +23,6 @@
   function lang() { return localStorage.getItem('martinat_lang') || 'fr'; }
   function t(k)   { return MSG[lang()]?.[k] || MSG.fr[k]; }
 
-  /* Valide un champ — retourne true si valide */
   function validateField(input) {
     const group = input.closest('.form-group');
     const errEl = group && group.querySelector('.form-error-msg');

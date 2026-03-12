@@ -4,12 +4,10 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <!-- SEO -->
   <meta name="description" content="Château Les Donats, 100% Merlot en Blaye Côtes de Bordeaux. Vin charmeur, souple et généreux, aux tanins fondus. À déguster dès son plus jeune âge. Le vin des copains !">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://www.chateau-martinat.com/pages/chateau-les-donats.html">
 
-  <!-- Open Graph -->
   <meta property="og:title" content="Château Les Donats | Château Martinat — Côtes de Bourg">
   <meta property="og:description" content="Château Les Donats, 100% Merlot en Blaye Côtes de Bordeaux. Vin charmeur, souple et généreux, aux tanins fondus. À déguster dès son plus jeune âge. Le vin des copains !">
   <meta property="og:type" content="website">
@@ -20,13 +18,10 @@
 
   <title>Château Les Donats | Château Martinat — Grand Vin de Bordeaux, Côtes de Bourg</title>
 
-  <!-- Styles -->
-  <!-- Langue appliquée immédiatement avant tout rendu pour éviter le flash -->
   <script>
     (function(){
       var lang = localStorage.getItem('martinat_lang') || 'fr';
       document.documentElement.lang = lang;
-      // On attend le DOM pour appliquer via style inline (compatible avec wine.js)
       function applyEarly() {
         document.querySelectorAll('.lang-fr').forEach(function(el){ el.style.display = lang === 'fr' ? '' : 'none'; });
         document.querySelectorAll('.lang-en').forEach(function(el){ el.style.display = lang === 'en' ? '' : 'none'; });

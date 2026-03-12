@@ -1,10 +1,3 @@
-/* ========================================
-   CHÂTEAU MARTINAT - MAIN JAVASCRIPT
-   ======================================== */
-
-// ============================================
-// AGE VERIFICATION
-// ============================================
 const ageVerification = {
   popup:  null,
   yesBtn: null,
@@ -24,7 +17,6 @@ const ageVerification = {
       this.showPopup();
     }
 
-    // ── Sélecteur de langue dans le popup ──
     const currentLang = localStorage.getItem('martinat_lang') || 'fr';
     this.popup.querySelectorAll('.popup-lang-btn').forEach(btn => {
       btn.classList.toggle('active', btn.dataset.popupLang === currentLang);
@@ -41,7 +33,6 @@ const ageVerification = {
       });
     });
 
-    // Cloner les boutons pour supprimer tout listener parasite (ex: i18n)
     const yesClone = this.yesBtn.cloneNode(true);
     const noClone  = this.noBtn.cloneNode(true);
     this.yesBtn.parentNode.replaceChild(yesClone, this.yesBtn);
@@ -69,9 +60,6 @@ const ageVerification = {
   hidePopup() { this.popup.style.display = 'none'; }
 };
 
-// ============================================
-// MENU NAVIGATION
-// ============================================
 const menuNav = {
   openBtn:   null,
   closeBtn:  null,
@@ -113,9 +101,6 @@ const menuNav = {
   }
 };
 
-// ============================================
-// SMOOTH SCROLL
-// ============================================
 const smoothScroll = {
   init() {
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -135,9 +120,6 @@ const smoothScroll = {
   }
 };
 
-// ============================================
-// REVEAL ON SCROLL
-// ============================================
 const revealOnScroll = {
   init() {
     const reveals = document.querySelectorAll('.reveal');
@@ -153,9 +135,6 @@ const revealOnScroll = {
   }
 };
 
-// ============================================
-// HEADER SCROLL EFFECT
-// ============================================
 const headerScroll = {
   header: null,
   init() {
@@ -169,9 +148,6 @@ const headerScroll = {
   }
 };
 
-// ============================================
-// LAZY LOADING IMAGES
-// ============================================
 const lazyLoadImages = {
   init() {
     if ('loading' in HTMLImageElement.prototype) return;
@@ -189,12 +165,7 @@ const lazyLoadImages = {
   }
 };
 
-// ============================================
-// INITIALIZATION
-// ============================================
 document.addEventListener('DOMContentLoaded', () => {
-  // i18n s'initialise en premier via i18n.js
-  // On initialise le popup APRÈS i18n pour éviter les conflits de listeners
   ageVerification.init();
   menuNav.init();
   smoothScroll.init();
