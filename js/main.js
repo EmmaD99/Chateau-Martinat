@@ -60,7 +60,7 @@ const ageVerification = {
     } else {
       const msg = (typeof i18n !== 'undefined') ? i18n.t('age.refused') : 'Vous devez avoir 18 ans ou plus pour accéder à ce site.';
       this.popup.innerHTML = `<div class="popup-content" style="border-color:rgba(184,134,11,0.3);">
-        <p style="color:#f5f5f5;font-size:1.1rem;font-family:var(--font-primary);line-height:1.8;">${msg}</p>
+        <p style="color:var(--text-dark,#1a1a1a);font-size:1.1rem;font-family:var(--font-primary);line-height:1.8;text-align:center;">${msg}</p>
       </div>`;
     }
   },
