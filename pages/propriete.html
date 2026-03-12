@@ -2,6 +2,34 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
+<style>
+  /* Anti-flash boutons langue — appliqué avant tout rendu */
+  .lang-en, .awards-en { display: none; }
+  html.lang-active-en .lang-en, html.lang-active-en .awards-en { display: revert; }
+  html.lang-active-en .lang-fr, html.lang-active-en .awards-fr { display: none; }
+  html.lang-active-fr .lang-fr, html.lang-active-fr .awards-fr { display: revert; }
+  html.lang-active-fr .lang-en, html.lang-active-fr .awards-en { display: none; }
+  /* Bouton actif sans attendre le JS */
+  html.lang-active-en .lang-btn[data-lang="en"],
+  html.lang-active-fr .lang-btn[data-lang="fr"] {
+    background: var(--accent, #b8860b);
+    color: white;
+    border-color: var(--accent, #b8860b);
+  }
+  html.lang-active-en .lang-btn[data-lang="fr"],
+  html.lang-active-fr .lang-btn[data-lang="en"] {
+    background: none;
+    color: inherit;
+    border-color: transparent;
+  }
+</style>
+<script>
+  (function(){
+    var lang = localStorage.getItem('martinat_lang') || 'fr';
+    document.documentElement.classList.add('lang-active-' + lang);
+    document.documentElement.lang = lang;
+  })();
+</script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <meta name="description" content="Découvrez la propriété Château Martinat : notre équipe, notre vignoble de 11 hectares certifié HVE 4, notre chai et la région des Côtes de Bourg à Lansac, Gironde.">
@@ -18,18 +46,7 @@
 
   <title>Notre Propriété | Château Martinat — Vignerons en Côtes de Bourg, Lansac</title>
 
-  <script>
-    (function(){
-      var lang = localStorage.getItem('martinat_lang') || 'fr';
-      document.documentElement.lang = lang;
-      function applyEarly() {
-        document.querySelectorAll('.lang-fr').forEach(function(el){ el.style.display = lang === 'fr' ? '' : 'none'; });
-        document.querySelectorAll('.lang-en').forEach(function(el){ el.style.display = lang === 'en' ? '' : 'none'; });
-      }
-      if (document.readyState === 'loading') { document.addEventListener('DOMContentLoaded', applyEarly); }
-      else { applyEarly(); }
-    })();
-  </script>
+  
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -572,8 +589,8 @@
             <div class="contact-item">
               <h3 data-i18n="prop.contact.email">Email</h3>
               <p>
-                <a href="mailto:l.donze@chateau-martinat.com">l.donze@chateau-martinat.com</a><br>
-                <a href="mailto:s.donze@chateau-martinat.com">s.donze@chateau-martinat.com</a>
+                <a href="/cdn-cgi/l/email-protection#7f13511b1011051a3f1c171e0b1a1e0a52121e0d0b16111e0b511c1012"><span class="__cf_email__" data-cfemail="462a682229283c2306252e27322327336b2b2734322f2827326825292b">[email&#160;protected]</span></a><br>
+                <a href="/cdn-cgi/l/email-protection#6d1e4309020317082d0e050c19080c1840000c1f1904030c19430e0200"><span class="__cf_email__" data-cfemail="ddaef3b9b2b3a7b89dbeb5bca9b8bca8f0b0bcafa9b4b3bca9f3beb2b0">[email&#160;protected]</span></a>
               </p>
             </div>
             <div class="contact-item">
@@ -681,7 +698,7 @@
   </div>
 </footer>
 
-<script src="../js/i18n.js"></script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="../js/i18n.js"></script>
 <script src="../js/contact-form.js"></script>
 <script src="../js/main.js"></script>
 <script>
@@ -730,7 +747,6 @@
     const wrap = document.querySelector('.carousel-container');
     wrap.addEventListener('mouseenter', stop);
     wrap.addEventListener('mouseleave', start);
-
     var tx = 0;
     wrap.addEventListener('touchstart', function(e) { tx = e.changedTouches[0].screenX; stop(); }, { passive: true });
     wrap.addEventListener('touchend', function(e) {
@@ -738,7 +754,6 @@
       if (Math.abs(dx) > 50) { dx < 0 ? next() : prev(); reset(); }
       start();
     }, { passive: true });
-
     update();
     start();
   })();

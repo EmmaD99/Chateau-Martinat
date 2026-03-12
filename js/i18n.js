@@ -101,7 +101,6 @@ const translations = {
     'contact.gps':     'Coordonnées GPS',
     'contact.cta':     'Nous écrire',
 
-
     'contact.form.title':                'Envoyer un message',
     'contact.form.firstname':            'Prénom',
     'contact.form.lastname':             'Nom',
@@ -233,7 +232,6 @@ const translations = {
     'contact.gps':     'GPS Coordinates',
     'contact.cta':     'Send us a message',
 
-
     'contact.form.title':                'Send a message',
     'contact.form.firstname':            'First name',
     'contact.form.lastname':             'Last name',
@@ -284,6 +282,14 @@ const i18n = {
 
     document.documentElement.lang = lang;
 
+    // ── Mise à jour des classes sur <html> ──────────────────────────
+    // C'est le CSS (via html.lang-active-XX) qui gère la visibilité,
+    // pas des style= inline. Zéro flash garanti.
+    document.documentElement.classList.remove('lang-active-fr', 'lang-active-en');
+    document.documentElement.classList.add('lang-active-' + lang);
+    // ────────────────────────────────────────────────────────────────
+
+    // Traductions data-i18n
     document.querySelectorAll('[data-i18n]').forEach(el => {
       const key  = el.getAttribute('data-i18n');
       const text = this.t(key);
@@ -301,19 +307,7 @@ const i18n = {
       if (text !== undefined) el.placeholder = text;
     });
 
-    document.querySelectorAll('.lang-fr').forEach(el => {
-      el.style.display = lang === 'fr' ? '' : 'none';
-    });
-    document.querySelectorAll('.lang-en').forEach(el => {
-      el.style.display = lang === 'en' ? '' : 'none';
-    });
-    document.querySelectorAll('.awards-fr').forEach(el => {
-      el.style.display = lang === 'fr' ? '' : 'none';
-    });
-    document.querySelectorAll('.awards-en').forEach(el => {
-      el.style.display = lang === 'en' ? '' : 'none';
-    });
-
+    // Boutons langue actif/inactif
     document.querySelectorAll('.lang-btn').forEach(btn => {
       btn.classList.toggle('active', btn.dataset.lang === lang);
     });
@@ -326,8 +320,8 @@ const i18n = {
 
 (function () {
   const lang = localStorage.getItem('martinat_lang') || 'fr';
-  document.documentElement.lang = lang;
-
+  // La classe lang-active-XX est déjà posée par le script inline du <head>.
+  // On se contente d'initialiser i18n pour les data-i18n et les boutons.
   if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', () => i18n.init());
   } else {

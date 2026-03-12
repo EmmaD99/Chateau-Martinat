@@ -142,3 +142,37 @@ a:hover {
     transition: none;
   }
 }
+
+/* ============================================================
+   LANGUE — anti-flash (FOUC fix)
+   Le script inline dans <head> pose la classe lang-active-fr ou
+   lang-active-en sur <html> AVANT tout rendu du body.
+   Ces règles CSS s'appliquent donc instantanément, sans aucun
+   flash ni manipulation de style= inline.
+   ============================================================ */
+
+/* Valeur par défaut : .lang-en masqué (sécurité si script échoue) */
+.lang-en,
+.awards-en {
+  display: none;
+}
+
+/* FR actif */
+html.lang-active-fr .lang-fr,
+html.lang-active-fr .awards-fr {
+  display: revert;
+}
+html.lang-active-fr .lang-en,
+html.lang-active-fr .awards-en {
+  display: none;
+}
+
+/* EN actif */
+html.lang-active-en .lang-en,
+html.lang-active-en .awards-en {
+  display: revert;
+}
+html.lang-active-en .lang-fr,
+html.lang-active-en .awards-fr {
+  display: none;
+}

@@ -2,6 +2,34 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
+<style>
+  /* Anti-flash boutons langue — appliqué avant tout rendu */
+  .lang-en, .awards-en { display: none; }
+  html.lang-active-en .lang-en, html.lang-active-en .awards-en { display: revert; }
+  html.lang-active-en .lang-fr, html.lang-active-en .awards-fr { display: none; }
+  html.lang-active-fr .lang-fr, html.lang-active-fr .awards-fr { display: revert; }
+  html.lang-active-fr .lang-en, html.lang-active-fr .awards-en { display: none; }
+  /* Bouton actif sans attendre le JS */
+  html.lang-active-en .lang-btn[data-lang="en"],
+  html.lang-active-fr .lang-btn[data-lang="fr"] {
+    background: var(--accent, #b8860b);
+    color: white;
+    border-color: var(--accent, #b8860b);
+  }
+  html.lang-active-en .lang-btn[data-lang="fr"],
+  html.lang-active-fr .lang-btn[data-lang="en"] {
+    background: none;
+    color: inherit;
+    border-color: transparent;
+  }
+</style>
+<script>
+  (function(){
+    var lang = localStorage.getItem('martinat_lang') || 'fr';
+    document.documentElement.classList.add('lang-active-' + lang);
+    document.documentElement.lang = lang;
+  })();
+</script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <meta name="description" content="Château Les Donats, 100% Merlot en Blaye Côtes de Bordeaux. Vin charmeur, souple et généreux, aux tanins fondus. À déguster dès son plus jeune âge. Le vin des copains !">
@@ -18,18 +46,7 @@
 
   <title>Château Les Donats | Château Martinat — Grand Vin de Bordeaux, Côtes de Bourg</title>
 
-  <script>
-    (function(){
-      var lang = localStorage.getItem('martinat_lang') || 'fr';
-      document.documentElement.lang = lang;
-      function applyEarly() {
-        document.querySelectorAll('.lang-fr').forEach(function(el){ el.style.display = lang === 'fr' ? '' : 'none'; });
-        document.querySelectorAll('.lang-en').forEach(function(el){ el.style.display = lang === 'en' ? '' : 'none'; });
-      }
-      if (document.readyState === 'loading') { document.addEventListener('DOMContentLoaded', applyEarly); }
-      else { applyEarly(); }
-    })();
-  </script>
+  
   <link rel="stylesheet" href="../css/reset.css">
   <link rel="stylesheet" href="../css/variables.css">
   <link rel="stylesheet" href="../css/main.css">
@@ -83,7 +100,7 @@
     <header class="wine-header">
       <h1 class="wine-title">
         <span class="lang-fr">Château Les Donats</span>
-        <span class="lang-en" style="display:none;">Château Les Donats</span>
+        <span class="lang-en">Château Les Donats</span>
       </h1>
       <p class="wine-subtitle">GRAND VIN DE BORDEAUX</p>
     </header>
@@ -104,13 +121,13 @@
         <div class="wine-title-wrapper">
           <h2>
             <span class="lang-fr">Château Les Donats</span>
-            <span class="lang-en" style="display:none;">Château Les Donats</span>
+            <span class="lang-en">Château Les Donats</span>
           </h2>
           <p class="wine-appellation">Blaye Côtes de Bordeaux</p>
         </div>
 
         <p class="lang-fr">Vin charmeur, souple et généreux, avec une bouche fruitée et gourmande, des tanins fondus. Les Donats peut se déguster dès son plus jeune âge. « Le vin des copains » !</p>
-        <p class="lang-en" style="display:none;">A charming, supple and generous wine with a fruity, moreish palate and rounded tannins. Les Donats can be enjoyed from a young age. 'The friends' wine'!</p>
+        <p class="lang-en">A charming, supple and generous wine with a fruity, moreish palate and rounded tannins. Les Donats can be enjoyed from a young age. 'The friends' wine'!</p>
         
         <div class="wine-awards">
           <h3 class="awards-title" data-i18n="wine.awards">Distinctions</h3>
@@ -118,7 +135,7 @@
           <li><span class="award-year">2022</span><span class="award-text">Médaille d'Or – Concours des Vins de Bordeaux</span></li>
           <li><span class="award-year">2020</span><span class="award-text">Cité au Guide Hachette des Vins</span></li>
           </ul>
-          <ul class="awards-list awards-en" style="display:none;">
+          <ul class="awards-list awards-en">
           <li><span class="award-year">2022</span><span class="award-text">Gold Medal – Bordeaux Wine Competition</span></li>
           <li><span class="award-year">2020</span><span class="award-text">Listed in the Hachette Wine Guide</span></li>
           </ul>
@@ -129,7 +146,7 @@
     <div class="wine-actions">
       <a href="../technical-specifications/chateau-les-donats.pdf" class="btn-download lang-fr" download
          aria-label="Télécharger la fiche technique (PDF)">Télécharger la fiche technique</a>
-      <a href="../technical-specifications/chateau-les-donats-en.pdf" class="btn-download lang-en" style="display:none;" download
+      <a href="../technical-specifications/chateau-les-donats-en.pdf" class="btn-download lang-en" download
          aria-label="Download technical sheet (PDF)">Download technical sheet</a>
     </div>
 

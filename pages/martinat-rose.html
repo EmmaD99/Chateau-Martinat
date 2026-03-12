@@ -2,6 +2,34 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
+<style>
+  /* Anti-flash boutons langue — appliqué avant tout rendu */
+  .lang-en, .awards-en { display: none; }
+  html.lang-active-en .lang-en, html.lang-active-en .awards-en { display: revert; }
+  html.lang-active-en .lang-fr, html.lang-active-en .awards-fr { display: none; }
+  html.lang-active-fr .lang-fr, html.lang-active-fr .awards-fr { display: revert; }
+  html.lang-active-fr .lang-en, html.lang-active-fr .awards-en { display: none; }
+  /* Bouton actif sans attendre le JS */
+  html.lang-active-en .lang-btn[data-lang="en"],
+  html.lang-active-fr .lang-btn[data-lang="fr"] {
+    background: var(--accent, #b8860b);
+    color: white;
+    border-color: var(--accent, #b8860b);
+  }
+  html.lang-active-en .lang-btn[data-lang="fr"],
+  html.lang-active-fr .lang-btn[data-lang="en"] {
+    background: none;
+    color: inherit;
+    border-color: transparent;
+  }
+</style>
+<script>
+  (function(){
+    var lang = localStorage.getItem('martinat_lang') || 'fr';
+    document.documentElement.classList.add('lang-active-' + lang);
+    document.documentElement.lang = lang;
+  })();
+</script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <meta name="description" content="Martinat Rosé, vin rosé de Château Martinat élaboré à partir de Cabernet Sauvignon et Merlot. Robe rose pâle et brillante, bouche fruitée et gourmande. Idéal pour l'été.">
@@ -18,18 +46,7 @@
 
   <title>Martinat Rosé | Château Martinat — Grand Vin de Bordeaux, Côtes de Bourg</title>
 
-  <script>
-    (function(){
-      var lang = localStorage.getItem('martinat_lang') || 'fr';
-      document.documentElement.lang = lang;
-      function applyEarly() {
-        document.querySelectorAll('.lang-fr').forEach(function(el){ el.style.display = lang === 'fr' ? '' : 'none'; });
-        document.querySelectorAll('.lang-en').forEach(function(el){ el.style.display = lang === 'en' ? '' : 'none'; });
-      }
-      if (document.readyState === 'loading') { document.addEventListener('DOMContentLoaded', applyEarly); }
-      else { applyEarly(); }
-    })();
-  </script>
+  
   <link rel="stylesheet" href="../css/reset.css">
   <link rel="stylesheet" href="../css/variables.css">
   <link rel="stylesheet" href="../css/main.css">
@@ -83,7 +100,7 @@
     <header class="wine-header">
       <h1 class="wine-title">
         <span class="lang-fr">Martinat Rosé</span>
-        <span class="lang-en" style="display:none;">Martinat Rosé</span>
+        <span class="lang-en">Martinat Rosé</span>
       </h1>
       <p class="wine-subtitle">GRAND VIN DE BORDEAUX</p>
     </header>
@@ -104,13 +121,13 @@
         <div class="wine-title-wrapper">
           <h2>
             <span class="lang-fr">Martinat Rosé</span>
-            <span class="lang-en" style="display:none;">Martinat Rosé</span>
+            <span class="lang-en">Martinat Rosé</span>
           </h2>
           <p class="wine-appellation">Rosé – Bordeaux</p>
         </div>
 
         <p class="lang-fr">Un vin à la robe rose pâle et brillante qui se caractérise par une bouche fruitée et gourmande ; un vin vif et friand qui accompagnera joyeusement vos repas d'été…</p>
-        <p class="lang-en" style="display:none;">A wine with a pale, brilliant pink robe characterised by a fruity, moreish palate; a lively and appetising wine that will happily accompany your summer meals…</p>
+        <p class="lang-en">A wine with a pale, brilliant pink robe characterised by a fruity, moreish palate; a lively and appetising wine that will happily accompany your summer meals…</p>
         
       </div>
     </div>
@@ -118,7 +135,7 @@
     <div class="wine-actions">
       <a href="../technical-specifications/martinat-rose.pdf" class="btn-download lang-fr" download
          aria-label="Télécharger la fiche technique (PDF)">Télécharger la fiche technique</a>
-      <a href="../technical-specifications/martinat-rose-en.pdf" class="btn-download lang-en" style="display:none;" download
+      <a href="../technical-specifications/martinat-rose-en.pdf" class="btn-download lang-en" download
          aria-label="Download technical sheet (PDF)">Download technical sheet</a>
     </div>
 

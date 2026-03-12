@@ -2,6 +2,34 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
+<style>
+  /* Anti-flash boutons langue — appliqué avant tout rendu */
+  .lang-en, .awards-en { display: none; }
+  html.lang-active-en .lang-en, html.lang-active-en .awards-en { display: revert; }
+  html.lang-active-en .lang-fr, html.lang-active-en .awards-fr { display: none; }
+  html.lang-active-fr .lang-fr, html.lang-active-fr .awards-fr { display: revert; }
+  html.lang-active-fr .lang-en, html.lang-active-fr .awards-en { display: none; }
+  /* Bouton actif sans attendre le JS */
+  html.lang-active-en .lang-btn[data-lang="en"],
+  html.lang-active-fr .lang-btn[data-lang="fr"] {
+    background: var(--accent, #b8860b);
+    color: white;
+    border-color: var(--accent, #b8860b);
+  }
+  html.lang-active-en .lang-btn[data-lang="fr"],
+  html.lang-active-fr .lang-btn[data-lang="en"] {
+    background: none;
+    color: inherit;
+    border-color: transparent;
+  }
+</style>
+<script>
+  (function(){
+    var lang = localStorage.getItem('martinat_lang') || 'fr';
+    document.documentElement.classList.add('lang-active-' + lang);
+    document.documentElement.lang = lang;
+  })();
+</script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Château Martinat, vignerons indépendants en Côtes de Bourg à Lansac. Découvrez nos Grands Vins de Bordeaux : rouge, blanc, rosé, Malbec 100%, Epicurea. Certification HVE 4.">
   <meta name="robots" content="index, follow">
@@ -34,18 +62,7 @@
   }
   </script>
   <title>Château Martinat | Vignerons indépendants — Grand Vin de Bordeaux, Côtes de Bourg</title>
-  <script>
-    (function(){
-      var lang = localStorage.getItem('martinat_lang') || 'fr';
-      document.documentElement.lang = lang;
-      function applyEarly() {
-        document.querySelectorAll('.lang-fr').forEach(function(el){ el.style.display = lang === 'fr' ? '' : 'none'; });
-        document.querySelectorAll('.lang-en').forEach(function(el){ el.style.display = lang === 'en' ? '' : 'none'; });
-      }
-      if (document.readyState === 'loading') { document.addEventListener('DOMContentLoaded', applyEarly); }
-      else { applyEarly(); }
-    })();
-  </script>
+  
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -281,19 +298,19 @@
           </figure>
           <div class="gift-card-body">
             <div class="gift-price lang-fr">25 €</div>
-            <div class="gift-price lang-en" style="display:none;">€25</div>
+            <div class="gift-price lang-en">€25</div>
             <ul class="gift-list lang-fr">
               <li>Dégustation privée de 3 cuvées pour 2 personnes</li>
               <li>Assortiment de fromages et pains</li>
               <li>Réservation obligatoire (mail ou tél.)</li>
             </ul>
-            <ul class="gift-list lang-en" style="display:none;">
+            <ul class="gift-list lang-en">
               <li>Private tasting of 3 cuvées for 2 people</li>
               <li>Cheese and bread selection</li>
               <li>Reservation required (email or phone)</li>
             </ul>
             <p class="gift-validity lang-fr">Valable 6 mois · Non remboursable</p>
-            <p class="gift-validity lang-en" style="display:none;">Valid 6 months · Non-refundable</p>
+            <p class="gift-validity lang-en">Valid 6 months · Non-refundable</p>
           </div>
         </article>
         <article class="gift-card">
@@ -306,19 +323,19 @@
               <div class="gift-coffret-row"><span class="gift-coffret-name">« Côtes à Côtes »</span><span class="gift-coffret-price">64 €</span><p>3 Côtes de Bourg + 3 Blaye Côtes de Bordeaux</p></div>
               <div class="gift-coffret-row"><span class="gift-coffret-name">« Cépages »</span><span class="gift-coffret-price">70 €</span><p>2× Merlot 100% + 2× Malbec 100% + 2× assemblage</p></div>
             </div>
-            <div class="gift-coffret lang-en" style="display:none;">
+            <div class="gift-coffret lang-en">
               <div class="gift-coffret-row"><span class="gift-coffret-name">"Côtes à Côtes"</span><span class="gift-coffret-price">€64</span><p>3 Côtes de Bourg + 3 Blaye Côtes de Bordeaux</p></div>
               <div class="gift-coffret-row"><span class="gift-coffret-name">"Cépages"</span><span class="gift-coffret-price">€70</span><p>2× Merlot 100% + 2× Malbec 100% + 2× blend</p></div>
             </div>
             <p class="gift-validity lang-fr">Caisse bois en option +10 € · Valable 12 mois</p>
-            <p class="gift-validity lang-en" style="display:none;">Wooden case option +€10 · Valid 12 months</p>
+            <p class="gift-validity lang-en">Wooden case option +€10 · Valid 12 months</p>
           </div>
         </article>
       </div>
       <div class="gift-cta">
         <a href="#contact" class="btn-primary">
           <span class="lang-fr">Commander un bon cadeau</span>
-          <span class="lang-en" style="display:none;">Order a gift voucher</span>
+          <span class="lang-en">Order a gift voucher</span>
         </a>
       </div>
     </div>
@@ -338,8 +355,8 @@
             <div class="contact-item">
               <h3 data-i18n="contact.email">Email</h3>
               <p>
-                <a href="mailto:l.donze@chateau-martinat.com">l.donze@chateau-martinat.com</a><br>
-                <a href="mailto:s.donze@chateau-martinat.com">s.donze@chateau-martinat.com</a>
+                <a href="/cdn-cgi/l/email-protection#c3afeda7acadb9a683a0aba2b7a6a2b6eeaea2b1b7aaada2b7eda0acae"><span class="__cf_email__" data-cfemail="701c5e141f1e0a1530131811041511055d1d110204191e11045e131f1d">[email&#160;protected]</span></a><br>
+                <a href="/cdn-cgi/l/email-protection#5d2e7339323327381d3e353c29383c2870303c2f2934333c29733e3230"><span class="__cf_email__" data-cfemail="7b08551f1415011e3b18131a0f1e1a0e56161a090f12151a0f55181416">[email&#160;protected]</span></a>
               </p>
             </div>
             <div class="contact-item">
