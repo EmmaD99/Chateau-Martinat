@@ -41,6 +41,7 @@
   <link rel="stylesheet" href="../css/sections/contact.css">
 
   <style>
+    /* ── Back button ── */
     .back-btn {
       width: 40px; height: 40px;
       display: flex; align-items: center; justify-content: center;
@@ -54,11 +55,13 @@
 
     p { text-align: justify; text-justify: inter-word; line-height: 1.8; }
 
+    /* ── Hero ── */
     .property-hero {
       position: relative;
       height: 60vh; min-height: 400px;
       background: linear-gradient(var(--overlay), var(--overlay)),
                   url('../pictures/general/vineyards.jpg') center/cover no-repeat;
+      background-attachment: scroll; /* iOS safe */
       display: flex; align-items: center; justify-content: center; text-align: center;
       margin-top: var(--header-height);
     }
@@ -69,6 +72,7 @@
       letter-spacing: 2px;
     }
 
+    /* ── Sections ── */
     .property-section { padding: var(--spacing-3xl) 0; }
     #galerie.property-section { padding: 0; }
     #galerie.property-section .container { max-width: 100%; padding: 0; width: 100%; }
@@ -86,17 +90,14 @@
     .property-section.section-bordeaux .vineyard-stat { border-color: rgba(255,255,255,0.15); }
     .property-section.section-bordeaux .philosophy-card { background: rgba(255,255,255,0.07); border-color: rgba(184,134,11,0.3); }
     .property-section.section-bordeaux .philosophy-card h3 { color: var(--accent-light); }
-    .property-section.section-bordeaux .region-card { background: rgba(255,255,255,0.06); }
-    .property-section.section-bordeaux .region-card h3 { color: var(--accent-light); }
     .property-section.section-bordeaux .philosophy-highlight p { color: var(--text-dark); }
-    .property-section.section-bordeaux .region-info p { color: var(--text-gray); }
-    .property-section.section-bordeaux .region-info h3 { color: var(--primary); }
 
     .property-section.section-white .section-title { color: var(--primary); }
     .property-section.section-white .section-title::after { background-color: var(--accent); }
     .property-section.section-white p,
     .property-section.section-white li { color: var(--text-dark); }
 
+    /* ── Team ── */
     .team-intro-section {
       display: grid; grid-template-columns: 1.3fr 1fr;
       gap: var(--spacing-2xl); align-items: start; margin-bottom: var(--spacing-3xl);
@@ -119,6 +120,7 @@
     .team-photo-name { font-size: var(--font-size-sm); font-weight: 600; margin-bottom: 2px; line-height: 1.3; }
     .team-photo-role { font-size: var(--font-size-xs); opacity: 0.9; line-height: 1.2; }
 
+    /* ── Carousel ── */
     .carousel-container {
       position: relative; max-width: 100%;
       margin: var(--spacing-2xl) auto 0;
@@ -159,6 +161,7 @@
     }
     .carousel-indicator.active { background: white; width: 30px; border-radius: 6px; }
 
+    /* ── Vineyard ── */
     .vineyard-content {
       display: grid; grid-template-columns: 1.2fr 1fr;
       gap: var(--spacing-3xl); align-items: center; margin-top: var(--spacing-xl);
@@ -174,6 +177,7 @@
     .stat-number { font-size: var(--font-size-sm); font-weight: 700; color: var(--accent); font-family: var(--font-primary); line-height: 1.4; }
     .stat-label { color: var(--text-dark) !important; margin-top: var(--spacing-xs); font-size: var(--font-size-sm); }
 
+    /* ── Philosophy ── */
     .philosophy-content { max-width: 900px; margin: var(--spacing-xl) auto 0; text-align: center; }
     .philosophy-highlight {
       background: white; padding: var(--spacing-xl);
@@ -183,11 +187,13 @@
     .philosophy-highlight strong { color: var(--accent); font-size: var(--font-size-lg); display: block; margin-bottom: var(--spacing-sm); }
     .philosophy-highlight p { hyphens: auto; -webkit-hyphens: auto; line-height: 1.6; }
 
+    /* ── Cellar ── */
     .cellar-content {
       display: grid; grid-template-columns: 1fr 1.2fr;
       gap: var(--spacing-3xl); align-items: center; margin-top: var(--spacing-xl);
     }
 
+    /* ── Region cards avec photos ── */
     .region-content { max-width: 1000px; margin: var(--spacing-xl) auto 0; }
     .region-grid {
       display: grid; grid-template-columns: repeat(3, 1fr);
@@ -199,22 +205,42 @@
       transition: all var(--transition-normal);
     }
     .region-card:hover { transform: translateY(-5px); box-shadow: var(--shadow-lg); }
+
+    /* Photo container remplace l'emoji */
     .region-image {
-      height: 140px;
-      background: var(--background-dark);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: var(--font-size-3xl);
+      height: 160px;
+      overflow: hidden;
+      position: relative;
     }
+    .region-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform var(--transition-slow);
+    }
+    .region-card:hover .region-image img {
+      transform: scale(1.08);
+    }
+    /* Overlay léger pour lisibilité */
+    .region-image::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(44,24,16,0.18), transparent 60%);
+      pointer-events: none;
+    }
+
     .region-info { padding: var(--spacing-md) var(--spacing-md) var(--spacing-sm); }
     .region-info h3 { color: var(--primary); margin-bottom: var(--spacing-xs); font-size: var(--font-size-md); }
     .region-info p { color: var(--text-gray); font-size: var(--font-size-sm); line-height: 1.5; text-align: justify; text-justify: inter-word; hyphens: auto; -webkit-hyphens: auto; margin: 0; }
 
+    /* ── Section image ── */
     .section-image { border-radius: var(--radius-lg); overflow: hidden; box-shadow: var(--shadow-md); }
     .section-image img { width: 100%; height: 100%; object-fit: cover; transition: transform var(--transition-slow); }
     .section-image:hover img { transform: scale(1.05); }
 
+    /* ── Responsive ── */
     @media (max-width: 968px) {
       .team-intro-section, .vineyard-content, .cellar-content { grid-template-columns: 1fr; gap: var(--spacing-xl); }
       .region-grid { grid-template-columns: repeat(2, 1fr); }
@@ -227,16 +253,21 @@
     @media (max-width: 768px) {
       .property-hero { height: 50vh; min-height: 300px; }
       .property-section { padding: var(--spacing-2xl) 0; }
-      .region-grid { grid-template-columns: 1fr; }
-      .vineyard-stats { grid-template-columns: 1fr; }
-      .team-photos-grid { grid-template-columns: 1fr; }
+      .region-grid { grid-template-columns: repeat(2, 1fr); gap: var(--spacing-md); }
+      .region-image { height: 130px; }
+      .vineyard-stats { grid-template-columns: 1fr 1fr; }
+      .team-photos-grid { grid-template-columns: 1fr 1fr; }
       .carousel-slide img { height: 300px; }
       .carousel-btn, .back-btn { width: 36px; height: 36px; }
       .back-arrow { font-size: var(--font-size-lg); }
     }
     @media (max-width: 480px) {
+      .region-grid { grid-template-columns: 1fr; }
+      .region-image { height: 180px; }
+      .team-photos-grid { grid-template-columns: 1fr 1fr; }
       .carousel-caption h3 { font-size: var(--font-size-lg); }
       .carousel-slide img { height: 250px; }
+      .vineyard-stats { grid-template-columns: 1fr; }
     }
   </style>
 </head>
@@ -250,26 +281,12 @@
 
     <div class="lang-switcher">
       <button class="lang-btn active" data-lang="fr" aria-label="Passer en français">
-        <svg class="lang-flag" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 3 2" aria-hidden="true">
-          <rect width="1" height="2" fill="#002395"/>
-          <rect x="1" width="1" height="2" fill="#fff"/>
-          <rect x="2" width="1" height="2" fill="#ED2939"/>
-        </svg>
+        <img class="lang-flag" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAzIDIiPjxyZWN0IHdpZHRoPSIxIiBoZWlnaHQ9IjIiIGZpbGw9IiMwMDIzOTUiLz48cmVjdCB4PSIxIiB3aWR0aD0iMSIgaGVpZ2h0PSIyIiBmaWxsPSIjZmZmIi8+PHJlY3QgeD0iMiIgd2lkdGg9IjEiIGhlaWdodD0iMiIgZmlsbD0iI0VEMjkzOSIvPjwvc3ZnPg==" alt="" aria-hidden="true" width="20" height="13">
         <span>FR</span>
       </button>
       <div class="lang-divider" aria-hidden="true"></div>
       <button class="lang-btn" data-lang="en" aria-label="Switch to English">
-        <svg class="lang-flag" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 30" aria-hidden="true">
-          <clipPath id="a"><path d="M0 0v30h60V0z"/></clipPath>
-          <clipPath id="b"><path d="M30 15h30v15zv15H0zH0V0zV0h30z"/></clipPath>
-          <g clip-path="url(#a)">
-            <path d="M0 0v30h60V0z" fill="#012169"/>
-            <path d="M0 0l60 30m0-30L0 30" stroke="#fff" stroke-width="6"/>
-            <path d="M0 0l60 30m0-30L0 30" clip-path="url(#b)" stroke="#C8102E" stroke-width="4"/>
-            <path d="M30 0v30M0 15h60" stroke="#fff" stroke-width="10"/>
-            <path d="M30 0v30M0 15h60" stroke="#C8102E" stroke-width="6"/>
-          </g>
-        </svg>
+        <img class="lang-flag" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2MCAzMCI+PHJlY3Qgd2lkdGg9IjYwIiBoZWlnaHQ9IjMwIiBmaWxsPSIjMDEyMTY5Ii8+PHBhdGggZD0iTTAsMCBMNjAsMzAgTTYwLDAgTDAsMzAiIHN0cm9rZT0iI2ZmZiIgc3Ryb2tlLXdpZHRoPSI2Ii8+PHBhdGggZD0iTTAsMCBMNjAsMzAgTTYwLDAgTDAsMzAiIHN0cm9rZT0iI0M4MTAyRSIgc3Ryb2tlLXdpZHRoPSI0Ii8+PHJlY3QgeD0iMjUiIHdpZHRoPSIxMCIgaGVpZ2h0PSIzMCIgZmlsbD0iI2ZmZiIvPjxyZWN0IHk9IjEwIiB3aWR0aD0iNjAiIGhlaWdodD0iMTAiIGZpbGw9IiNmZmYiLz48cmVjdCB4PSIyNyIgd2lkdGg9IjYiIGhlaWdodD0iMzAiIGZpbGw9IiNDODEwMkUiLz48cmVjdCB5PSIxMiIgd2lkdGg9IjYwIiBoZWlnaHQ9IjYiIGZpbGw9IiNDODEwMkUiLz48L3N2Zz4=" alt="" aria-hidden="true" width="20" height="13">
         <span>EN</span>
       </button>
     </div>
@@ -280,7 +297,7 @@
   </div>
 
   <div class="topbar-right">
-    <a href="https://www.instagram.com/chateau_martinat" target="_blank" rel="noopener noreferrer"
+    <a href="https://www.instagram.com/chateau_martinat/" target="_blank" rel="noopener noreferrer"
        class="ig-link" aria-label="Instagram Château Martinat (nouvelle fenêtre)">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true">
         <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
@@ -297,6 +314,7 @@
     <h1 data-i18n="prop.hero.title">Notre Propriété</h1>
   </section>
 
+  <!-- ÉQUIPE -->
   <section id="equipe" class="property-section section-bordeaux">
     <div class="container">
       <h2 class="section-title" data-i18n="prop.team.title">Notre Équipe</h2>
@@ -317,7 +335,7 @@
           </div>
           <div class="team-photo-card">
             <img src="../pictures/workers/stephane-donze.jpg"
-                 alt="Stéphane Donze, viticulteur — Château Martinat"
+                 alt="Stéphane Donze, Viticulteur — Château Martinat"
                  width="300" height="300" loading="lazy">
             <div class="team-photo-overlay">
               <div class="team-photo-name">Stéphane Donze</div>
@@ -345,6 +363,7 @@
     </div>
   </section>
 
+  <!-- GALERIE CAROUSEL -->
   <section id="galerie" class="property-section section-white">
     <div class="container">
       <div class="carousel-container" role="region" aria-label="Galerie photos du domaine">
@@ -378,8 +397,8 @@
               </div>
             </div>
             <div class="carousel-slide">
-              <img src="../pictures/general/vineyards.jpg"
-                   alt="Vignes certifiées HVE — Château Martinat, viticulture raisonnée"
+              <img src="../pictures/general/sign.jpg"
+                   alt="Panneau Château Martinat — Lansac, Côtes de Bourg"
                    width="1200" height="680" loading="lazy">
               <div class="carousel-caption">
                 <h3 data-i18n="prop.carousel.slide4.title">Viticulture Raisonnée</h3>
@@ -395,6 +414,7 @@
     </div>
   </section>
 
+  <!-- VIGNOBLE -->
   <section id="vignoble" class="property-section section-bordeaux">
     <div class="container">
       <h2 class="section-title" data-i18n="prop.vineyard.title">Les Vignes</h2>
@@ -421,6 +441,7 @@
     </div>
   </section>
 
+  <!-- PHILOSOPHIE -->
   <section id="philosophie" class="property-section section-white">
     <div class="container">
       <h2 class="section-title" data-i18n="prop.philosophy.title">Philosophie</h2>
@@ -434,6 +455,7 @@
     </div>
   </section>
 
+  <!-- CHAI -->
   <section id="chai" class="property-section section-bordeaux">
     <div class="container">
       <h2 class="section-title" data-i18n="prop.cellar.title">Notre Chai</h2>
@@ -450,59 +472,92 @@
     </div>
   </section>
 
+  <!-- RÉGION — PHOTOS à la place des emojis -->
   <section id="region" class="property-section section-white">
     <div class="container">
       <h2 class="section-title" data-i18n="prop.region.title">Découvrir notre Région</h2>
       <div class="region-content">
         <p style="text-align:center; margin-bottom:var(--spacing-xl); line-height:1.8; font-size:var(--font-size-md); max-width:800px; margin-left:auto; margin-right:auto;" data-i18n="prop.region.intro">Située sur la rive droite de la Dordogne et de la Gironde, à environ 35 km au nord de Bordeaux, l'appellation Côtes de Bourg est l'une des plus anciennes et des plus pittoresques de la région. Surnommée la « Petite Suisse Girondaise », elle offre un terroir de caractère au cœur d'un patrimoine exceptionnel.</p>
         <div class="region-grid">
+
           <div class="region-card">
-            <div class="region-image" aria-hidden="true">🏰</div>
+            <div class="region-image">
+              <img src="../pictures/general/martinat.jpg"
+                   alt="Citadelle de Bourg surplombant l'estuaire de la Gironde"
+                   width="400" height="160" loading="lazy">
+            </div>
             <div class="region-info">
               <h3 data-i18n="prop.region.card1.title">Citadelle de Bourg</h3>
               <p data-i18n="prop.region.card1.desc">Monument historique surplombant l'estuaire, offrant une vue panoramique exceptionnelle sur la Gironde et ses environs.</p>
             </div>
           </div>
+
           <div class="region-card">
-            <div class="region-image" aria-hidden="true">🍷</div>
+            <div class="region-image">
+              <img src="../pictures/general/vineyards.jpg"
+                   alt="Route des vins en Côtes de Bourg — vignobles de Bordeaux"
+                   width="400" height="160" loading="lazy">
+            </div>
             <div class="region-info">
               <h3 data-i18n="prop.region.card2.title">Route des Vins</h3>
               <p data-i18n="prop.region.card2.desc">Parcourez la Route des Châteaux et découvrez les domaines viticoles de l'appellation Côtes de Bourg.</p>
             </div>
           </div>
+
           <div class="region-card">
-            <div class="region-image" aria-hidden="true">⚙️</div>
+            <div class="region-image">
+              <img src="../pictures/general/sign.jpg"
+                   alt="Moulin de Lansac — monument emblématique de la commune de Lansac"
+                   width="400" height="160" loading="lazy">
+            </div>
             <div class="region-info">
               <h3 data-i18n="prop.region.card3.title">Moulin de Lansac</h3>
               <p data-i18n="prop.region.card3.desc">Moulin à vent historique emblématique de Lansac, offrant un panorama remarquable sur les vignes de Côtes de Bourg et la vallée de la Gironde.</p>
             </div>
           </div>
+
           <div class="region-card">
-            <div class="region-image" aria-hidden="true">🏛️</div>
+            <div class="region-image">
+              <img src="../pictures/general/barrel.jpg"
+                   alt="Bordeaux — capitale mondiale du vin, patrimoine UNESCO"
+                   width="400" height="160" loading="lazy">
+            </div>
             <div class="region-info">
               <h3 data-i18n="prop.region.card4.title">Bordeaux</h3>
               <p data-i18n="prop.region.card4.desc">À 45 minutes, découvrez la capitale mondiale du vin, classée au patrimoine UNESCO pour son architecture.</p>
             </div>
           </div>
+
           <div class="region-card">
-            <div class="region-image" aria-hidden="true">🌊</div>
+            <div class="region-image">
+              <img src="../pictures/general/vineyards.jpg"
+                   alt="Côte Atlantique — plages à moins d'une heure de Lansac"
+                   width="400" height="160" loading="lazy">
+            </div>
             <div class="region-info">
               <h3 data-i18n="prop.region.card5.title">Côte Atlantique</h3>
               <p data-i18n="prop.region.card5.desc">Les plages de l'Atlantique sont à moins d'une heure, parfaites pour une escapade en bord de mer.</p>
             </div>
           </div>
+
           <div class="region-card">
-            <div class="region-image" aria-hidden="true">🍴</div>
+            <div class="region-image">
+              <img src="../pictures/general/wood.jpeg"
+                   alt="Gastronomie bordelaise — spécialités de la région de Bordeaux"
+                   width="400" height="160" loading="lazy">
+            </div>
             <div class="region-info">
               <h3 data-i18n="prop.region.card6.title">Gastronomie locale</h3>
               <p data-i18n="prop.region.card6.desc">Savourez les spécialités bordelaises : lamproie, entrecôte, cannelés et les huîtres d'Arcachon.</p>
             </div>
           </div>
+
         </div>
       </div>
     </div>
   </section>
 
+  <!-- CONTACT -->
   <section id="contact" class="section contact-section">
     <div class="container">
       <h2 class="section-title" data-i18n="prop.contact.title">Nous Contacter</h2>
@@ -582,7 +637,7 @@
               <option value="" data-i18n="contact.form.subject.placeholder">— Choisir un objet —</option>
               <option value="commande"   data-i18n="contact.form.subject.order">Commande de vins</option>
               <option value="tarifs"     data-i18n="contact.form.subject.prices">Demande de tarifs</option>
-              <option value="visite"     data-i18n="contact.form.subject.visit">Visite et dégustation</option>
+              <option value="visite"     data-i18n="contactete.form.subject.visit">Visite et dégustation</option>
               <option value="primeurs"   data-i18n="contact.form.subject.futures">Réservation primeurs</option>
               <option value="bon-cadeau" data-i18n="contact.form.subject.gift">Bon cadeau</option>
               <option value="pro"        data-i18n="contact.form.subject.pro">Professionnel / importateur</option>
@@ -630,6 +685,7 @@
 <script src="../js/contact-form.js"></script>
 <script src="../js/main.js"></script>
 <script>
+  /* ── Carousel ── */
   (function () {
     const track        = document.getElementById('carouselTrack');
     const prevBtn      = document.getElementById('prevBtn');
@@ -640,22 +696,22 @@
     const total        = slides.length;
     let autoplay;
 
-    slides.forEach((_, i) => {
+    slides.forEach(function(_, i) {
       const btn = document.createElement('button');
       btn.classList.add('carousel-indicator');
       btn.setAttribute('role', 'tab');
-      btn.setAttribute('aria-label', `Slide ${i + 1}`);
+      btn.setAttribute('aria-label', 'Slide ' + (i + 1));
       btn.setAttribute('aria-selected', i === 0 ? 'true' : 'false');
       if (i === 0) btn.classList.add('active');
-      btn.addEventListener('click', () => goTo(i));
+      btn.addEventListener('click', function() { goTo(i); });
       indContainer.appendChild(btn);
     });
 
     const dots = document.querySelectorAll('.carousel-indicator');
 
     function update() {
-      track.style.transform = `translateX(${-currentIndex * 100}%)`;
-      dots.forEach((d, i) => {
+      track.style.transform = 'translateX(' + (-currentIndex * 100) + '%)';
+      dots.forEach(function(d, i) {
         d.classList.toggle('active', i === currentIndex);
         d.setAttribute('aria-selected', i === currentIndex ? 'true' : 'false');
       });
@@ -668,38 +724,23 @@
     function stop()   { clearInterval(autoplay); }
     function reset()  { stop(); start(); }
 
-    nextBtn.addEventListener('click', () => { next(); reset(); });
-    prevBtn.addEventListener('click', () => { prev(); reset(); });
+    nextBtn.addEventListener('click', function() { next(); reset(); });
+    prevBtn.addEventListener('click', function() { prev(); reset(); });
 
     const wrap = document.querySelector('.carousel-container');
     wrap.addEventListener('mouseenter', stop);
     wrap.addEventListener('mouseleave', start);
 
-    let tx = 0;
-    wrap.addEventListener('touchstart', e => { tx = e.changedTouches[0].screenX; stop(); }, { passive: true });
-    wrap.addEventListener('touchend',   e => {
-      const dx = e.changedTouches[0].screenX - tx;
+    var tx = 0;
+    wrap.addEventListener('touchstart', function(e) { tx = e.changedTouches[0].screenX; stop(); }, { passive: true });
+    wrap.addEventListener('touchend', function(e) {
+      var dx = e.changedTouches[0].screenX - tx;
       if (Math.abs(dx) > 50) { dx < 0 ? next() : prev(); reset(); }
       start();
     }, { passive: true });
 
     update();
     start();
-  })();
-
-  (function () {
-    function syncLangClasses(lang) {
-      document.querySelectorAll('.lang-fr').forEach(el => el.style.display = lang === 'fr' ? '' : 'none');
-      document.querySelectorAll('.lang-en').forEach(el => el.style.display = lang === 'en' ? '' : 'none');
-    }
-    const saved = localStorage.getItem('martinat_lang') || 'fr';
-    syncLangClasses(saved);
-
-    document.querySelectorAll('.lang-btn').forEach(btn => {
-      btn.addEventListener('click', function () {
-        syncLangClasses(this.dataset.lang);
-      });
-    });
   })();
 </script>
 
