@@ -44,7 +44,7 @@ const translations = {
     'prop.team.title':           'Notre Équipe',
     'prop.team.p1':              'Deux collaborateurs font partie du « Martinat team » : Cyrille Baillou et Sophie Baraillé. Chaque année, nous faisons également appel à une petite équipe pour les travaux de la vigne et notamment pour les vendanges.',
     'prop.team.p2':              'Notre équipe passionnée met son savoir-faire au service de la qualité de nos vins, dans le respect des traditions viticoles et de notre terroir exceptionnel.',
-    'prop.team.lucie.role':      'Vigneronne',
+    'prop.team.lucie.role':      'Viticultrice',
     'prop.team.stephane.role':   'Viticulteur',
 
     /* Carousel */
@@ -198,7 +198,7 @@ const translations = {
     'prop.team.p1':              '"Martinat team" consists of two collaborators: Cyrille Baillou and Sophie Baraillé. Each year, we also call on a small team for vineyard work, especially during harvest.',
     'prop.team.p2':              'Our passionate team applies their expertise to the quality of our wines, respecting winemaking traditions and our exceptional terroir.',
     'prop.team.lucie.role':      'Winemaker',
-    'prop.team.stephane.role':   'Viticulturist',
+    'prop.team.stephane.role':   'Winemaker',
 
     /* Carousel */
     'prop.carousel.slide1.title': 'Our Vineyard',
