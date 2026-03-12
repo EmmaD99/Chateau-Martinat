@@ -274,3 +274,42 @@
   .form-rgpd { max-width: 100%; }
   .contact-form-wrapper { padding: var(--spacing-lg); }
 }
+
+/* ── Phone input with country selector ── */
+.phone-input-wrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  gap: 0;
+  width: 100%;
+}
+.phone-country-select {
+  flex: 0 0 auto;
+  width: 160px;
+  border-radius: var(--radius-md) 0 0 var(--radius-md) !important;
+  border-right: 1px solid rgba(255,255,255,.08) !important;
+  padding-right: 1.8rem !important;
+  background-position: right 0.5rem center !important;
+  font-size: var(--font-size-sm);
+  cursor: pointer;
+}
+.phone-input-wrapper input[type="tel"] {
+  flex: 1;
+  border-radius: 0 var(--radius-md) var(--radius-md) 0 !important;
+  border-left: none !important;
+}
+.phone-input-wrapper .phone-country-select:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(184,134,11,.2);
+  z-index: 1;
+}
+.phone-input-wrapper input[type="tel"]:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(184,134,11,.2);
+  z-index: 1;
+}
+@media (max-width: 480px) {
+  .phone-country-select {
+    width: 130px;
+  }
+}
