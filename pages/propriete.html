@@ -2,38 +2,10 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
-<style>
-  .lang-en, .awards-en { display: none; }
-  html.lang-active-en .lang-en, html.lang-active-en .awards-en { display: revert; }
-  html.lang-active-en .lang-fr, html.lang-active-en .awards-fr { display: none; }
-  html.lang-active-fr .lang-fr, html.lang-active-fr .awards-fr { display: revert; }
-  html.lang-active-fr .lang-en, html.lang-active-fr .awards-en { display: none; }
-  html.lang-active-en .lang-btn[data-lang="en"],
-  html.lang-active-fr .lang-btn[data-lang="fr"] {
-    background: var(--accent, #b8860b);
-    color: white;
-    border-color: var(--accent, #b8860b);
-  }
-  html.lang-active-en .lang-btn[data-lang="fr"],
-  html.lang-active-fr .lang-btn[data-lang="en"] {
-    background: none;
-    color: inherit;
-    border-color: transparent;
-  }
-</style>
-<script>
-  (function(){
-    var lang = localStorage.getItem('martinat_lang') || 'fr';
-    document.documentElement.classList.add('lang-active-' + lang);
-    document.documentElement.lang = lang;
-  })();
-</script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
   <meta name="description" content="Découvrez la propriété Château Martinat : notre équipe, notre vignoble de 11 hectares certifié HVE 4, notre chai et la région des Côtes de Bourg à Lansac, Gironde.">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://www.chateau-martinat.com/pages/propriete.html">
-
   <meta property="og:title" content="Notre Propriété | Château Martinat — Côtes de Bourg">
   <meta property="og:description" content="Vignoble familial certifié HVE 4 au cœur de l'appellation Côtes de Bourg. Découvrez notre terroir, notre équipe et notre philosophie.">
   <meta property="og:type" content="website">
@@ -41,12 +13,21 @@
   <meta property="og:url" content="https://www.chateau-martinat.com/pages/propriete.html">
   <meta property="og:locale" content="fr_FR">
   <meta property="og:locale:alternate" content="en_GB">
-
   <title>Notre Propriété | Château Martinat — Vignerons en Côtes de Bourg, Lansac</title>
+
+  <!-- Lang flicker prevention -->
+  <script>
+    (function(){
+      var lang = localStorage.getItem('martinat_lang') || 'fr';
+      document.documentElement.classList.add('lang-active-' + lang);
+      document.documentElement.lang = lang;
+    })();
+  </script>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+
   <link rel="stylesheet" href="../css/reset.css">
   <link rel="stylesheet" href="../css/variables.css">
   <link rel="stylesheet" href="../css/main.css">
@@ -55,6 +36,27 @@
   <link rel="stylesheet" href="../css/sections/contact.css">
 
   <style>
+    /* ── Lang switcher ── */
+    .lang-en, .awards-en { display: none; }
+    html.lang-active-en .lang-en, html.lang-active-en .awards-en { display: revert; }
+    html.lang-active-en .lang-fr, html.lang-active-en .awards-fr { display: none; }
+    html.lang-active-fr .lang-fr, html.lang-active-fr .awards-fr { display: revert; }
+    html.lang-active-fr .lang-en, html.lang-active-fr .awards-en { display: none; }
+
+    html.lang-active-en .lang-btn[data-lang="en"],
+    html.lang-active-fr .lang-btn[data-lang="fr"] {
+      background: var(--accent, #b8860b);
+      color: white;
+      border-color: var(--accent, #b8860b);
+    }
+    html.lang-active-en .lang-btn[data-lang="fr"],
+    html.lang-active-fr .lang-btn[data-lang="en"] {
+      background: none;
+      color: inherit;
+      border-color: transparent;
+    }
+
+    /* ── Back button ── */
     .back-btn {
       width: 40px; height: 40px;
       display: flex; align-items: center; justify-content: center;
@@ -66,14 +68,15 @@
     .back-btn:hover { background: var(--accent-light); transform: translateX(-3px); }
     .back-arrow { color: white; font-size: var(--font-size-xl); font-weight: bold; line-height: 1; }
 
+    /* ── General ── */
     p { text-align: justify; text-justify: inter-word; line-height: 1.8; }
 
+    /* ── Hero ── */
     .property-hero {
       position: relative;
       height: 60vh; min-height: 400px;
       background: linear-gradient(var(--overlay), var(--overlay)),
                   url('../pictures/general/vineyards.jpg') center/cover no-repeat;
-      background-attachment: scroll;
       display: flex; align-items: center; justify-content: center; text-align: center;
       margin-top: var(--header-height);
     }
@@ -84,30 +87,31 @@
       letter-spacing: 2px;
     }
 
+    /* ── Sections ── */
     .property-section { padding: var(--spacing-3xl) 0; }
-    #galerie.property-section { padding: 0; }
-    #galerie.property-section .container { max-width: 100%; padding: 0; width: 100%; }
-    #galerie .carousel-container { margin: 0; border-radius: 0; box-shadow: none; }
-    #galerie .carousel-slide img { height: clamp(300px, 60vh, 680px); width: 100%; object-fit: cover; display: block; }
-    .property-section.section-bordeaux { background: var(--background-bordeaux); }
-    .property-section.section-white { background: var(--background-white); }
 
+    .property-section.section-bordeaux { background: var(--background-bordeaux); }
     .property-section.section-bordeaux .section-title { color: #ffffff; }
     .property-section.section-bordeaux .section-title::after { background-color: var(--accent); }
     .property-section.section-bordeaux p,
     .property-section.section-bordeaux li,
     .property-section.section-bordeaux .stat-value,
     .property-section.section-bordeaux .stat-label { color: var(--text-light); }
-    .property-section.section-bordeaux .vineyard-stat { border-color: rgba(255,255,255,0.15); }
     .property-section.section-bordeaux .philosophy-card { background: rgba(255,255,255,0.07); border-color: rgba(184,134,11,0.3); }
     .property-section.section-bordeaux .philosophy-card h3 { color: var(--accent-light); }
     .property-section.section-bordeaux .philosophy-highlight p { color: var(--text-dark); }
 
+    .property-section.section-white { background: var(--background-white); }
     .property-section.section-white .section-title { color: var(--primary); }
     .property-section.section-white .section-title::after { background-color: var(--accent); }
     .property-section.section-white p,
     .property-section.section-white li { color: var(--text-dark); }
 
+    /* ── Galerie (full-bleed, no padding) ── */
+    #galerie.property-section { padding: 0; }
+    #galerie .container { max-width: 100%; padding: 0; width: 100%; }
+
+    /* ── Team ── */
     .team-intro-section {
       display: grid; grid-template-columns: 1.3fr 1fr;
       gap: var(--spacing-2xl); align-items: start; margin-bottom: var(--spacing-3xl);
@@ -130,46 +134,49 @@
     .team-photo-name { font-size: var(--font-size-sm); font-weight: 600; margin-bottom: 2px; line-height: 1.3; }
     .team-photo-role { font-size: var(--font-size-xs); opacity: 0.9; line-height: 1.2; }
 
+    /* ── Carousel ── */
     .carousel-container {
-      position: relative; max-width: 100%;
-      margin: var(--spacing-2xl) auto 0;
-      background: white; border-radius: var(--radius-lg);
-      overflow: hidden; box-shadow: var(--shadow-lg);
+      position: relative; width: 100%; overflow: hidden;
+      background: #000;
     }
     .carousel-wrapper { position: relative; width: 100%; overflow: hidden; }
-    .carousel-track { display: flex; transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1); }
+    .carousel-track { display: flex; transition: transform 0.55s cubic-bezier(0.4, 0, 0.2, 1); }
     .carousel-slide { min-width: 100%; position: relative; }
-    .carousel-slide img { width: 100%; height: 500px; object-fit: cover; display: block; }
-    .carousel-caption {
-      position: absolute; bottom: 0; left: 0; right: 0;
-      background: linear-gradient(to top, rgba(0,0,0,0.9), transparent);
-      color: white; padding: var(--spacing-xl) var(--spacing-lg); text-align: center;
+    .carousel-slide img {
+      width: 100%;
+      height: clamp(300px, 65vh, 700px);
+      object-fit: cover;
+      display: block;
     }
-    .carousel-caption h3 { font-size: var(--font-size-xl); font-weight: 600; margin-bottom: var(--spacing-xs); }
-    .carousel-caption p { font-size: var(--font-size-sm); opacity: 0.9; }
+
+    /* Navigation buttons */
     .carousel-btn {
       position: absolute; top: 50%; transform: translateY(-50%);
-      background: rgba(255,255,255,0.9); border: none;
-      width: 50px; height: 50px; border-radius: 50%;
+      background: rgba(255,255,255,0.88); border: none;
+      width: 52px; height: 52px; border-radius: 50%;
       cursor: pointer; display: flex; align-items: center; justify-content: center;
-      font-size: var(--font-size-xl); color: var(--primary);
-      transition: all var(--transition-fast); z-index: 10; box-shadow: var(--shadow-md);
+      font-size: 1.5rem; color: var(--primary);
+      transition: all var(--transition-fast); z-index: 10;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.25);
     }
     .carousel-btn:hover { background: white; transform: translateY(-50%) scale(1.1); }
     .carousel-btn-prev { left: var(--spacing-lg); }
     .carousel-btn-next { right: var(--spacing-lg); }
+
+    /* Dot indicators — bottom centre, no text overlap */
     .carousel-indicators {
       position: absolute; bottom: var(--spacing-lg);
       left: 50%; transform: translateX(-50%);
       display: flex; gap: var(--spacing-sm); z-index: 10;
     }
     .carousel-indicator {
-      width: 12px; height: 12px; border-radius: 50%;
-      background: rgba(255,255,255,0.5); border: none;
+      width: 10px; height: 10px; border-radius: 50%;
+      background: rgba(255,255,255,0.55); border: none;
       cursor: pointer; transition: all var(--transition-fast); padding: 0;
     }
-    .carousel-indicator.active { background: white; width: 30px; border-radius: 6px; }
+    .carousel-indicator.active { background: white; width: 28px; border-radius: 5px; }
 
+    /* ── Vignoble ── */
     .vineyard-content {
       display: grid; grid-template-columns: 1.2fr 1fr;
       gap: var(--spacing-3xl); align-items: center; margin-top: var(--spacing-xl);
@@ -185,6 +192,7 @@
     .stat-number { font-size: var(--font-size-sm); font-weight: 700; color: var(--accent); font-family: var(--font-primary); line-height: 1.4; }
     .stat-label { color: var(--text-dark) !important; margin-top: var(--spacing-xs); font-size: var(--font-size-sm); }
 
+    /* ── Philosophie ── */
     .philosophy-content { max-width: 900px; margin: var(--spacing-xl) auto 0; text-align: center; }
     .philosophy-highlight {
       background: white; padding: var(--spacing-xl);
@@ -194,11 +202,13 @@
     .philosophy-highlight strong { color: var(--accent); font-size: var(--font-size-lg); display: block; margin-bottom: var(--spacing-sm); }
     .philosophy-highlight p { hyphens: auto; -webkit-hyphens: auto; line-height: 1.6; }
 
+    /* ── Chai ── */
     .cellar-content {
       display: grid; grid-template-columns: 1fr 1.2fr;
       gap: var(--spacing-3xl); align-items: center; margin-top: var(--spacing-xl);
     }
 
+    /* ── Région ── */
     .region-content { max-width: 1000px; margin: var(--spacing-xl) auto 0; }
     .region-grid {
       display: grid; grid-template-columns: repeat(3, 1fr);
@@ -210,54 +220,35 @@
       transition: all var(--transition-normal);
     }
     .region-card:hover { transform: translateY(-5px); box-shadow: var(--shadow-lg); }
-
-    .region-image {
-      height: 220px;
-      overflow: hidden;
-      position: relative;
-    }
-    .region-image img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
-      transition: transform var(--transition-slow);
-    }
-    .region-card:hover .region-image img {
-      transform: scale(1.08);
-    }
+    .region-image { height: 220px; overflow: hidden; position: relative; }
+    .region-image img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform var(--transition-slow); }
+    .region-card:hover .region-image img { transform: scale(1.08); }
     .region-image::after {
-      content: '';
-      position: absolute;
-      inset: 0;
+      content: ''; position: absolute; inset: 0;
       background: linear-gradient(to top, rgba(44,24,16,0.18), transparent 60%);
       pointer-events: none;
     }
-
     .region-info { padding: var(--spacing-md) var(--spacing-md) var(--spacing-sm); }
     .region-info h3 { color: var(--primary); margin-bottom: var(--spacing-xs); font-size: var(--font-size-md); }
     .region-info p,
     .property-section.section-white .region-info p {
       color: var(--text-gray) !important;
-      font-size: var(--font-size-sm);
-      line-height: 1.5;
-      text-align: justify;
-      text-justify: inter-word;
-      hyphens: auto;
-      -webkit-hyphens: auto;
-      margin: 0;
+      font-size: var(--font-size-sm); line-height: 1.5;
+      text-align: justify; text-justify: inter-word;
+      hyphens: auto; -webkit-hyphens: auto; margin: 0;
     }
 
+    /* ── Section image ── */
     .section-image { border-radius: var(--radius-lg); overflow: hidden; box-shadow: var(--shadow-md); }
     .section-image img { width: 100%; height: 100%; object-fit: cover; transition: transform var(--transition-slow); }
     .section-image:hover img { transform: scale(1.05); }
 
+    /* ── Responsive ── */
     @media (max-width: 968px) {
       .team-intro-section, .vineyard-content, .cellar-content { grid-template-columns: 1fr; gap: var(--spacing-xl); }
       .region-grid { grid-template-columns: repeat(2, 1fr); }
       .vineyard-stats { grid-template-columns: repeat(2, 1fr); }
-      .carousel-slide img { height: 400px; }
-      .carousel-btn { width: 40px; height: 40px; font-size: var(--font-size-lg); }
+      .carousel-btn { width: 42px; height: 42px; font-size: 1.2rem; }
       .carousel-btn-prev { left: var(--spacing-md); }
       .carousel-btn-next { right: var(--spacing-md); }
     }
@@ -268,36 +259,47 @@
       .region-image { height: 180px; }
       .vineyard-stats { grid-template-columns: 1fr 1fr; }
       .team-photos-grid { grid-template-columns: 1fr 1fr; }
-      .carousel-slide img { height: 300px; }
-      .carousel-btn, .back-btn { width: 36px; height: 36px; }
-      .back-arrow { font-size: var(--font-size-lg); }
+      .carousel-btn { width: 38px; height: 38px; }
     }
     @media (max-width: 480px) {
       .region-grid { grid-template-columns: 1fr; }
       .region-image { height: 210px; }
-      .team-photos-grid { grid-template-columns: 1fr 1fr; }
-      .carousel-caption h3 { font-size: var(--font-size-lg); }
-      .carousel-slide img { height: 250px; }
       .vineyard-stats { grid-template-columns: 1fr; }
     }
   </style>
 </head>
 <body>
 
+<!-- ═══════════════════════════════════════════
+     HEADER
+═══════════════════════════════════════════ -->
 <header class="topbar">
   <div class="topbar-left">
     <a href="../index.html" class="back-btn" aria-label="Retour à l'accueil">
       <span class="back-arrow" aria-hidden="true">←</span>
     </a>
-
     <div class="lang-switcher">
-      <button class="lang-btn active" data-lang="fr" aria-label="Passer en français">
-        <img class="lang-flag" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAzIDIiPjxyZWN0IHdpZHRoPSIxIiBoZWlnaHQ9IjIiIGZpbGw9IiMwMDIzOTUiLz48cmVjdCB4PSIxIiB3aWR0aD0iMSIgaGVpZ2h0PSIyIiBmaWxsPSIjZmZmIi8+PHJlY3QgeD0iMiIgd2lkdGg9IjEiIGhlaWdodD0iMiIgZmlsbD0iI0VEMjkzOSIvPjwvc3ZnPg==" alt="" aria-hidden="true" width="20" height="13">
+      <button class="lang-btn" data-lang="fr" aria-label="Passer en français">
+        <svg class="lang-flag" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 3 2" aria-hidden="true">
+          <rect width="1" height="2" fill="#002395"/>
+          <rect x="1" width="1" height="2" fill="#fff"/>
+          <rect x="2" width="1" height="2" fill="#ED2939"/>
+        </svg>
         <span>FR</span>
       </button>
       <div class="lang-divider" aria-hidden="true"></div>
       <button class="lang-btn" data-lang="en" aria-label="Switch to English">
-        <img class="lang-flag" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2MCAzMCI+PHJlY3Qgd2lkdGg9IjYwIiBoZWlnaHQ9IjMwIiBmaWxsPSIjMDEyMTY5Ii8+PHBhdGggZD0iTTAsMCBMNjAsMzAgTTYwLDAgTDAsMzAiIHN0cm9rZT0iI2ZmZiIgc3Ryb2tlLXdpZHRoPSI2Ii8+PHBhdGggZD0iTTAsMCBMNjAsMzAgTTYwLDAgTDAsMzAiIHN0cm9rZT0iI0M4MTAyRSIgc3Ryb2tlLXdpZHRoPSI0Ii8+PHJlY3QgeD0iMjUiIHdpZHRoPSIxMCIgaGVpZ2h0PSIzMCIgZmlsbD0iI2ZmZiIvPjxyZWN0IHk9IjEwIiB3aWR0aD0iNjAiIGhlaWdodD0iMTAiIGZpbGw9IiNmZmYiLz48cmVjdCB4PSIyNyIgd2lkdGg9IjYiIGhlaWdodD0iMzAiIGZpbGw9IiNDODEwMkUiLz48cmVjdCB5PSIxMiIgd2lkdGg9IjYwIiBoZWlnaHQ9IjYiIGZpbGw9IiNDODEwMkUiLz48L3N2Zz4=" alt="" aria-hidden="true" width="20" height="13">
+        <svg class="lang-flag" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 30" aria-hidden="true">
+          <clipPath id="a"><path d="M0 0v30h60V0z"/></clipPath>
+          <clipPath id="b"><path d="M30 15h30v15zv15H0zH0V0zV0h30z"/></clipPath>
+          <g clip-path="url(#a)">
+            <path d="M0 0v30h60V0z" fill="#012169"/>
+            <path d="M0 0l60 30m0-30L0 30" stroke="#fff" stroke-width="6"/>
+            <path d="M0 0l60 30m0-30L0 30" clip-path="url(#b)" stroke="#C8102E" stroke-width="4"/>
+            <path d="M30 0v30M0 15h60" stroke="#fff" stroke-width="10"/>
+            <path d="M30 0v30M0 15h60" stroke="#C8102E" stroke-width="6"/>
+          </g>
+        </svg>
         <span>EN</span>
       </button>
     </div>
@@ -319,12 +321,17 @@
   </div>
 </header>
 
+<!-- ═══════════════════════════════════════════
+     MAIN
+═══════════════════════════════════════════ -->
 <main>
 
+  <!-- Hero -->
   <section class="property-hero" aria-label="Notre Propriété">
     <h1 data-i18n="prop.hero.title">Notre Propriété</h1>
   </section>
 
+  <!-- ── Équipe ── -->
   <section id="equipe" class="property-section section-bordeaux">
     <div class="container">
       <h2 class="section-title" data-i18n="prop.team.title">Notre Équipe</h2>
@@ -373,56 +380,85 @@
     </div>
   </section>
 
+  <!-- ── Galerie — 10 slides, NO text overlay ── -->
   <section id="galerie" class="property-section section-white">
     <div class="container">
       <div class="carousel-container" role="region" aria-label="Galerie photos du domaine">
         <div class="carousel-wrapper">
           <div class="carousel-track" id="carouselTrack">
+
             <div class="carousel-slide">
               <img src="../pictures/general/vineyards.jpg"
-                   alt="Vue d'ensemble du vignoble de Château Martinat, Côtes de Bourg"
-                   width="1200" height="680" loading="lazy">
-              <div class="carousel-caption">
-                <h3 data-i18n="prop.carousel.slide1.title">Notre Vignoble</h3>
-                <p data-i18n="prop.carousel.slide1.sub">11 hectares de vignes sur un terroir d'exception</p>
-              </div>
+                   alt="Vue d'ensemble du vignoble de Château Martinat en été, Côtes de Bourg"
+                   width="1400" height="700" loading="eager">
             </div>
+
             <div class="carousel-slide">
               <img src="../pictures/general/wine-cellar.jpg"
-                   alt="Cave de vieillissement avec fûts de chêne — Château Martinat"
-                   width="1200" height="680" loading="lazy">
-              <div class="carousel-caption">
-                <h3 data-i18n="prop.carousel.slide2.title">Notre Chai</h3>
-                <p data-i18n="prop.carousel.slide2.sub">Élevage traditionnel en barriques de chêne français</p>
-              </div>
+                   alt="Cave de vieillissement — rangées de barriques de chêne français, Château Martinat"
+                   width="1400" height="700" loading="lazy">
             </div>
+
             <div class="carousel-slide">
               <img src="../pictures/general/martinat.jpg"
-                   alt="Château Martinat — façade de la propriété viticole"
-                   width="1200" height="680" loading="lazy">
-              <div class="carousel-caption">
-                <h3 data-i18n="prop.carousel.slide3.title">Château Martinat</h3>
-                <p data-i18n="prop.carousel.slide3.sub">Une propriété familiale depuis plusieurs générations</p>
-              </div>
+                   alt="Façade du Château Martinat entourée de son jardin fleuri, Lansac"
+                   width="1400" height="700" loading="lazy">
             </div>
+
+            <div class="carousel-slide">
+              <img src="../pictures/general/barrel.jpg"
+                   alt="Fût de chêne en gros plan dans le chai de Château Martinat"
+                   width="1400" height="700" loading="lazy">
+            </div>
+
             <div class="carousel-slide">
               <img src="../pictures/general/sign.jpg"
-                   alt="Panneau Château Martinat — Lansac, Côtes de Bourg"
-                   width="1200" height="680" loading="lazy">
-              <div class="carousel-caption">
-                <h3 data-i18n="prop.carousel.slide4.title">Viticulture Raisonnée</h3>
-                <p data-i18n="prop.carousel.slide4.sub">Certification HVE 4 — Haute Valeur Environnementale</p>
-              </div>
+                   alt="Panneau Château Martinat — Côtes de Bourg, Lansac"
+                   width="1400" height="700" loading="lazy">
             </div>
-          </div>
-        </div>
-        <button class="carousel-btn carousel-btn-prev" id="prevBtn" aria-label="Slide précédent">‹</button>
-        <button class="carousel-btn carousel-btn-next" id="nextBtn" aria-label="Slide suivant">›</button>
-        <div class="carousel-indicators" id="carouselIndicators" role="tablist"></div>
-      </div>
+
+            <div class="carousel-slide">
+              <img src="../pictures/general/vineyards.jpg"
+                   alt="Rangées de vignes au coucher du soleil — terroir argilo-graveleux des Côtes de Bourg"
+                   width="1400" height="700" loading="lazy">
+            </div>
+
+            <div class="carousel-slide">
+              <img src="../pictures/general/wine-cellar.jpg"
+                   alt="Bouteille de Château Martinat présentée sur un fût dans la cave d'élevage"
+                   width="1400" height="700" loading="lazy">
+            </div>
+
+            <div class="carousel-slide">
+              <img src="../pictures/general/martinat.jpg"
+                   alt="Le Château Martinat sous un ciel d'été, propriété viticole familiale"
+                   width="1400" height="700" loading="lazy">
+            </div>
+
+            <div class="carousel-slide">
+              <img src="../pictures/general/barrel.jpg"
+                   alt="Détail d'un fût de chêne — élevage 14 à 18 mois selon les cuvées"
+                   width="1400" height="700" loading="lazy">
+            </div>
+
+            <div class="carousel-slide">
+              <img src="../pictures/general/vineyards.jpg"
+                   alt="Vignoble de Château Martinat — 11 hectares en appellation Côtes de Bourg"
+                   width="1400" height="700" loading="lazy">
+            </div>
+
+          </div><!-- /carousel-track -->
+        </div><!-- /carousel-wrapper -->
+
+        <button class="carousel-btn carousel-btn-prev" id="prevBtn" aria-label="Slide précédent">&#8249;</button>
+        <button class="carousel-btn carousel-btn-next" id="nextBtn" aria-label="Slide suivant">&#8250;</button>
+        <div class="carousel-indicators" id="carouselIndicators" role="tablist" aria-label="Navigation du carrousel"></div>
+
+      </div><!-- /carousel-container -->
     </div>
   </section>
 
+  <!-- ── Vignoble ── -->
   <section id="vignoble" class="property-section section-bordeaux">
     <div class="container">
       <h2 class="section-title" data-i18n="prop.vineyard.title">Les Vignes</h2>
@@ -449,6 +485,7 @@
     </div>
   </section>
 
+  <!-- ── Philosophie ── -->
   <section id="philosophie" class="property-section section-white">
     <div class="container">
       <h2 class="section-title" data-i18n="prop.philosophy.title">Philosophie</h2>
@@ -462,6 +499,7 @@
     </div>
   </section>
 
+  <!-- ── Chai ── -->
   <section id="chai" class="property-section section-bordeaux">
     <div class="container">
       <h2 class="section-title" data-i18n="prop.cellar.title">Notre Chai</h2>
@@ -478,6 +516,7 @@
     </div>
   </section>
 
+  <!-- ── Région ── -->
   <section id="region" class="property-section section-white">
     <div class="container">
       <h2 class="section-title" data-i18n="prop.region.title">Découvrir notre Région</h2>
@@ -562,6 +601,7 @@
     </div>
   </section>
 
+  <!-- ── Contact ── -->
   <section id="contact" class="section contact-section">
     <div class="container">
       <h2 class="section-title" data-i18n="prop.contact.title">Nous Contacter</h2>
@@ -576,8 +616,8 @@
             <div class="contact-item">
               <h3 data-i18n="prop.contact.email">Email</h3>
               <p>
-                <a href="/cdn-cgi/l/email-protection#412d6f252e2f3b2401222920352420346c2c203335282f20356f222e2c"><span class="__cf_email__" data-cfemail="f29edc969d9c8897b2919a9386979387df9f9380869b9c9386dc919d9f">[email&#160;protected]</span></a><br>
-                <a href="/cdn-cgi/l/email-protection#e497ca808b8a9e81a4878c8590818591c9898596908d8a8590ca878b89"><span class="__cf_email__" data-cfemail="780b561c1716021d381b10190c1d190d5515190a0c1116190c561b1715">[email&#160;protected]</span></a>
+                <a href="mailto:l.donze@chateau-martinat.com">l.donze@chateau-martinat.com</a><br>
+                <a href="mailto:s.donze@chateau-martinat.com">s.donze@chateau-martinat.com</a>
               </p>
             </div>
             <div class="contact-item">
@@ -604,7 +644,8 @@
         </div>
 
         <div class="contact-map">
-          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3271.170246967585!2d-0.5515331847682614!3d45.063120979098756!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x48002b926c5fc42f%3A0xce54150184a7dcd4!2sSCEV%20Marsaux%20Donze%20%2F%20Ch%C3%A2teau%20Martinat!5e0!3m2!1sfr!2sfr!4v1706946912345!5m2!1sfr!2sfr"
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3271.170246967585!2d-0.5515331847682614!3d45.063120979098756!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x48002b926c5fc42f%3A0xce54150184a7dcd4!2sSCEV%20Marsaux%20Donze%20%2F%20Ch%C3%A2teau%20Martinat!5e0!3m2!1sfr!2sfr!4v1706946912345!5m2!1sfr!2sfr"
             width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"
             referrerpolicy="no-referrer-when-downgrade"
             title="Localisation du Château Martinat — Lansac, Côtes de Bourg"
@@ -645,187 +686,6 @@
                 <option value="+39">🇮🇹 +39</option>
                 <option value="+351">🇵🇹 +351</option>
                 <option value="+31">🇳🇱 +31</option>
-                <option value="+93">🇦🇫 +93</option>
-                <option value="+355">🇦🇱 +355</option>
-                <option value="+213">🇩🇿 +213</option>
-                <option value="+376">🇦🇩 +376</option>
-                <option value="+244">🇦🇴 +244</option>
-                <option value="+1268">🇦🇬 +1268</option>
-                <option value="+966">🇸🇦 +966</option>
-                <option value="+54">🇦🇷 +54</option>
-                <option value="+374">🇦🇲 +374</option>
-                <option value="+61">🇦🇺 +61</option>
-                <option value="+43">🇦🇹 +43</option>
-                <option value="+994">🇦🇿 +994</option>
-                <option value="+1242">🇧🇸 +1242</option>
-                <option value="+973">🇧🇭 +973</option>
-                <option value="+880">🇧🇩 +880</option>
-                <option value="+1246">🇧🇧 +1246</option>
-                <option value="+501">🇧🇿 +501</option>
-                <option value="+975">🇧🇹 +975</option>
-                <option value="+375">🇧🇾 +375</option>
-                <option value="+591">🇧🇴 +591</option>
-                <option value="+387">🇧🇦 +387</option>
-                <option value="+267">🇧🇼 +267</option>
-                <option value="+673">🇧🇳 +673</option>
-                <option value="+55">🇧🇷 +55</option>
-                <option value="+359">🇧🇬 +359</option>
-                <option value="+226">🇧🇫 +226</option>
-                <option value="+257">🇧🇮 +257</option>
-                <option value="+229">🇧🇯 +229</option>
-                <option value="+855">🇰🇭 +855</option>
-                <option value="+237">🇨🇲 +237</option>
-                <option value="+1">🇨🇦 +1</option>
-                <option value="+238">🇨🇻 +238</option>
-                <option value="+236">🇨🇫 +236</option>
-                <option value="+56">🇨🇱 +56</option>
-                <option value="+86">🇨🇳 +86</option>
-                <option value="+357">🇨🇾 +357</option>
-                <option value="+57">🇨🇴 +57</option>
-                <option value="+269">🇰🇲 +269</option>
-                <option value="+242">🇨🇬 +242</option>
-                <option value="+243">🇨🇩 +243</option>
-                <option value="+850">🇰🇵 +850</option>
-                <option value="+82">🇰🇷 +82</option>
-                <option value="+506">🇨🇷 +506</option>
-                <option value="+385">🇭🇷 +385</option>
-                <option value="+53">🇨🇺 +53</option>
-                <option value="+225">🇨🇮 +225</option>
-                <option value="+45">🇩🇰 +45</option>
-                <option value="+253">🇩🇯 +253</option>
-                <option value="+503">🇸🇻 +503</option>
-                <option value="+372">🇪🇪 +372</option>
-                <option value="+268">🇸🇿 +268</option>
-                <option value="+679">🇫🇯 +679</option>
-                <option value="+358">🇫🇮 +358</option>
-                <option value="+241">🇬🇦 +241</option>
-                <option value="+220">🇬🇲 +220</option>
-                <option value="+233">🇬🇭 +233</option>
-                <option value="+1473">🇬🇩 +1473</option>
-                <option value="+30">🇬🇷 +30</option>
-                <option value="+502">🇬🇹 +502</option>
-                <option value="+224">🇬🇳 +224</option>
-                <option value="+240">🇬🇶 +240</option>
-                <option value="+245">🇬🇼 +245</option>
-                <option value="+592">🇬🇾 +592</option>
-                <option value="+995">🇬🇪 +995</option>
-                <option value="+509">🇭🇹 +509</option>
-                <option value="+504">🇭🇳 +504</option>
-                <option value="+36">🇭🇺 +36</option>
-                <option value="+91">🇮🇳 +91</option>
-                <option value="+62">🇮🇩 +62</option>
-                <option value="+964">🇮🇶 +964</option>
-                <option value="+98">🇮🇷 +98</option>
-                <option value="+353">🇮🇪 +353</option>
-                <option value="+354">🇮🇸 +354</option>
-                <option value="+972">🇮🇱 +972</option>
-                <option value="+1876">🇯🇲 +1876</option>
-                <option value="+81">🇯🇵 +81</option>
-                <option value="+962">🇯🇴 +962</option>
-                <option value="+7">🇰🇿 +7</option>
-                <option value="+254">🇰🇪 +254</option>
-                <option value="+996">🇰🇬 +996</option>
-                <option value="+686">🇰🇮 +686</option>
-                <option value="+383">🇽🇰 +383</option>
-                <option value="+965">🇰🇼 +965</option>
-                <option value="+856">🇱🇦 +856</option>
-                <option value="+266">🇱🇸 +266</option>
-                <option value="+371">🇱🇻 +371</option>
-                <option value="+961">🇱🇧 +961</option>
-                <option value="+218">🇱🇾 +218</option>
-                <option value="+231">🇱🇷 +231</option>
-                <option value="+423">🇱🇮 +423</option>
-                <option value="+370">🇱🇹 +370</option>
-                <option value="+389">🇲🇰 +389</option>
-                <option value="+261">🇲🇬 +261</option>
-                <option value="+60">🇲🇾 +60</option>
-                <option value="+265">🇲🇼 +265</option>
-                <option value="+960">🇲🇻 +960</option>
-                <option value="+223">🇲🇱 +223</option>
-                <option value="+356">🇲🇹 +356</option>
-                <option value="+212">🇲🇦 +212</option>
-                <option value="+230">🇲🇺 +230</option>
-                <option value="+222">🇲🇷 +222</option>
-                <option value="+52">🇲🇽 +52</option>
-                <option value="+691">🇫🇲 +691</option>
-                <option value="+373">🇲🇩 +373</option>
-                <option value="+377">🇲🇨 +377</option>
-                <option value="+976">🇲🇳 +976</option>
-                <option value="+382">🇲🇪 +382</option>
-                <option value="+258">🇲🇿 +258</option>
-                <option value="+95">🇲🇲 +95</option>
-                <option value="+264">🇳🇦 +264</option>
-                <option value="+674">🇳🇷 +674</option>
-                <option value="+505">🇳🇮 +505</option>
-                <option value="+227">🇳🇪 +227</option>
-                <option value="+234">🇳🇬 +234</option>
-                <option value="+47">🇳🇴 +47</option>
-                <option value="+64">🇳🇿 +64</option>
-                <option value="+977">🇳🇵 +977</option>
-                <option value="+968">🇴🇲 +968</option>
-                <option value="+256">🇺🇬 +256</option>
-                <option value="+998">🇺🇿 +998</option>
-                <option value="+92">🇵🇰 +92</option>
-                <option value="+680">🇵🇼 +680</option>
-                <option value="+507">🇵🇦 +507</option>
-                <option value="+675">🇵🇬 +675</option>
-                <option value="+595">🇵🇾 +595</option>
-                <option value="+63">🇵🇭 +63</option>
-                <option value="+48">🇵🇱 +48</option>
-                <option value="+51">🇵🇪 +51</option>
-                <option value="+974">🇶🇦 +974</option>
-                <option value="+40">🇷🇴 +40</option>
-                <option value="+7">🇷🇺 +7</option>
-                <option value="+250">🇷🇼 +250</option>
-                <option value="+1809">🇩🇴 +1809</option>
-                <option value="+1869">🇰🇳 +1869</option>
-                <option value="+378">🇸🇲 +378</option>
-                <option value="+1784">🇻🇨 +1784</option>
-                <option value="+1758">🇱🇨 +1758</option>
-                <option value="+677">🇸🇧 +677</option>
-                <option value="+685">🇼🇸 +685</option>
-                <option value="+381">🇷🇸 +381</option>
-                <option value="+248">🇸🇨 +248</option>
-                <option value="+232">🇸🇱 +232</option>
-                <option value="+65">🇸🇬 +65</option>
-                <option value="+421">🇸🇰 +421</option>
-                <option value="+386">🇸🇮 +386</option>
-                <option value="+252">🇸🇴 +252</option>
-                <option value="+249">🇸🇩 +249</option>
-                <option value="+211">🇸🇸 +211</option>
-                <option value="+94">🇱🇰 +94</option>
-                <option value="+597">🇸🇷 +597</option>
-                <option value="+46">🇸🇪 +46</option>
-                <option value="+963">🇸🇾 +963</option>
-                <option value="+239">🇸🇹 +239</option>
-                <option value="+221">🇸🇳 +221</option>
-                <option value="+992">🇹🇯 +992</option>
-                <option value="+255">🇹🇿 +255</option>
-                <option value="+235">🇹🇩 +235</option>
-                <option value="+420">🇨🇿 +420</option>
-                <option value="+66">🇹🇭 +66</option>
-                <option value="+670">🇹🇱 +670</option>
-                <option value="+228">🇹🇬 +228</option>
-                <option value="+676">🇹🇴 +676</option>
-                <option value="+1868">🇹🇹 +1868</option>
-                <option value="+216">🇹🇳 +216</option>
-                <option value="+993">🇹🇲 +993</option>
-                <option value="+90">🇹🇷 +90</option>
-                <option value="+688">🇹🇻 +688</option>
-                <option value="+380">🇺🇦 +380</option>
-                <option value="+598">🇺🇾 +598</option>
-                <option value="+678">🇻🇺 +678</option>
-                <option value="+379">🇻🇦 +379</option>
-                <option value="+58">🇻🇪 +58</option>
-                <option value="+84">🇻🇳 +84</option>
-                <option value="+967">🇾🇪 +967</option>
-                <option value="+260">🇿🇲 +260</option>
-                <option value="+263">🇿🇼 +263</option>
-                <option value="+20">🇪🇬 +20</option>
-                <option value="+971">🇦🇪 +971</option>
-                <option value="+593">🇪🇨 +593</option>
-                <option value="+291">🇪🇷 +291</option>
-                <option value="+251">🇪🇹 +251</option>
               </select>
               <input type="tel" id="cfp-phone" name="telephone" autocomplete="tel" placeholder="6 00 00 00 00" style="flex:1;min-width:0;height:48px;font-size:1rem;">
             </div>
@@ -872,6 +732,9 @@
 
 </main>
 
+<!-- ═══════════════════════════════════════════
+     FOOTER
+═══════════════════════════════════════════ -->
 <footer class="footer">
   <div class="container">
     <div class="footer-content">
@@ -881,64 +744,84 @@
   </div>
 </footer>
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="../js/i18n.js"></script>
+<!-- ═══════════════════════════════════════════
+     SCRIPTS
+═══════════════════════════════════════════ -->
+<script src="../js/i18n.js"></script>
 <script src="../js/contact-form.js"></script>
-<script src="../js/main.js"></script>
+<script src="../js/wine.js"></script>
+
 <script>
-  (function () {
-    const track        = document.getElementById('carouselTrack');
-    const prevBtn      = document.getElementById('prevBtn');
-    const nextBtn      = document.getElementById('nextBtn');
-    const indContainer = document.getElementById('carouselIndicators');
-    const slides       = document.querySelectorAll('.carousel-slide');
-    let currentIndex   = 0;
-    const total        = slides.length;
-    let autoplay;
+(function () {
+  'use strict';
 
-    slides.forEach(function(_, i) {
-      const btn = document.createElement('button');
-      btn.classList.add('carousel-indicator');
-      btn.setAttribute('role', 'tab');
-      btn.setAttribute('aria-label', 'Slide ' + (i + 1));
-      btn.setAttribute('aria-selected', i === 0 ? 'true' : 'false');
-      if (i === 0) btn.classList.add('active');
-      btn.addEventListener('click', function() { goTo(i); });
-      indContainer.appendChild(btn);
+  var track        = document.getElementById('carouselTrack');
+  var prevBtn      = document.getElementById('prevBtn');
+  var nextBtn      = document.getElementById('nextBtn');
+  var indContainer = document.getElementById('carouselIndicators');
+  var slides       = document.querySelectorAll('.carousel-slide');
+  var total        = slides.length;
+  var current      = 0;
+  var timer;
+
+  /* Build dot indicators */
+  slides.forEach(function (_, i) {
+    var dot = document.createElement('button');
+    dot.className = 'carousel-indicator' + (i === 0 ? ' active' : '');
+    dot.setAttribute('role', 'tab');
+    dot.setAttribute('aria-label', 'Slide ' + (i + 1));
+    dot.setAttribute('aria-selected', i === 0 ? 'true' : 'false');
+    dot.addEventListener('click', function () { goTo(i); });
+    indContainer.appendChild(dot);
+  });
+
+  var dots = indContainer.querySelectorAll('.carousel-indicator');
+
+  function update() {
+    track.style.transform = 'translateX(' + (-current * 100) + '%)';
+    dots.forEach(function (d, i) {
+      var active = i === current;
+      d.classList.toggle('active', active);
+      d.setAttribute('aria-selected', active ? 'true' : 'false');
     });
+  }
 
-    const dots = document.querySelectorAll('.carousel-indicator');
+  function goTo(i)  { current = (i + total) % total; update(); reset(); }
+  function next()   { current = (current + 1) % total; update(); }
+  function prev()   { current = (current - 1 + total) % total; update(); }
+  function start()  { timer = setInterval(next, 7000); }
+  function stop()   { clearInterval(timer); }
+  function reset()  { stop(); start(); }
 
-    function update() {
-      track.style.transform = 'translateX(' + (-currentIndex * 100) + '%)';
-      dots.forEach(function(d, i) {
-        d.classList.toggle('active', i === currentIndex);
-        d.setAttribute('aria-selected', i === currentIndex ? 'true' : 'false');
-      });
-    }
+  nextBtn.addEventListener('click', function () { next(); reset(); });
+  prevBtn.addEventListener('click', function () { prev(); reset(); });
 
-    function goTo(i)  { currentIndex = i; update(); reset(); }
-    function next()   { currentIndex = (currentIndex + 1) % total; update(); }
-    function prev()   { currentIndex = (currentIndex - 1 + total) % total; update(); }
-    function start()  { autoplay = setInterval(next, 8000); }
-    function stop()   { clearInterval(autoplay); }
-    function reset()  { stop(); start(); }
+  /* Keyboard navigation */
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'ArrowRight') { next(); reset(); }
+    if (e.key === 'ArrowLeft')  { prev(); reset(); }
+  });
 
-    nextBtn.addEventListener('click', function() { next(); reset(); });
-    prevBtn.addEventListener('click', function() { prev(); reset(); });
+  /* Pause on hover */
+  var container = document.querySelector('.carousel-container');
+  container.addEventListener('mouseenter', stop);
+  container.addEventListener('mouseleave', start);
 
-    const wrap = document.querySelector('.carousel-container');
-    wrap.addEventListener('mouseenter', stop);
-    wrap.addEventListener('mouseleave', start);
-    var tx = 0;
-    wrap.addEventListener('touchstart', function(e) { tx = e.changedTouches[0].screenX; stop(); }, { passive: true });
-    wrap.addEventListener('touchend', function(e) {
-      var dx = e.changedTouches[0].screenX - tx;
-      if (Math.abs(dx) > 50) { dx < 0 ? next() : prev(); reset(); }
-      start();
-    }, { passive: true });
-    update();
-    start();
-  })();
+  /* Touch / swipe */
+  var touchStartX = 0;
+  container.addEventListener('touchstart', function (e) {
+    touchStartX = e.changedTouches[0].screenX;
+    stop();
+  }, { passive: true });
+  container.addEventListener('touchend', function (e) {
+    var dx = e.changedTouches[0].screenX - touchStartX;
+    if (Math.abs(dx) > 50) { dx < 0 ? next() : prev(); }
+    reset();
+  }, { passive: true });
+
+  update();
+  start();
+})();
 </script>
 
 </body>
