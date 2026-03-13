@@ -1,8 +1,7 @@
 (function () {
   'use strict';
 
-  const FORMSPREE = 'https://formspree.io/f/REMPLACE_PAR_TON_ID';
-  const RECIPIENTS = ['l.donze@chateau-martinat.com', 's.donze@chateau-martinat.com'];
+  const FORMSPREE = 'https://www.chateau-martinat.com/contact.php';
 
   const MSG = {
     fr: {
