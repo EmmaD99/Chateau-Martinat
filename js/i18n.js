@@ -1,3 +1,10 @@
+/*
+ * i18n.js — Château Martinat
+ * Système de traduction FR / EN
+ * Les objets `translations` et `i18n` sont intentionnellement globaux
+ * pour être accessibles depuis js_main.js, js_wine.js et js_contact-form.js.
+ */
+
 const translations = {
   fr: {
     'nav.home':       'Accueil',
@@ -9,12 +16,12 @@ const translations = {
 
     'age.title':    'Êtes-vous âgé(e) de 18 ans ou plus ?',
     'age.subtitle': "L'abus d'alcool est dangereux pour la santé. À consommer avec modération.",
-    'age.yes':      'Oui, j\'ai 18 ans ou plus',
+    'age.yes':      "Oui, j'ai 18 ans ou plus",
     'age.no':       'Non',
     'age.refused':  'Vous devez avoir 18 ans ou plus pour accéder à ce site.',
 
     'hero.subtitle': 'Vignerons indépendants en Côtes de Bourg',
-    'hero.banner':   '🍷 Certification HVE - Haute Valeur Environnementale',
+    'hero.banner':   '🍷 Certification HVE — Haute Valeur Environnementale',
 
     'wines.title':   'Nos Vins',
     'wines.intro':   "Découvrez notre collection de vins d'exception, fruits d'un terroir unique et d'un savoir-faire transmis de génération en génération.",
@@ -22,29 +29,20 @@ const translations = {
     'wines.belair':  "Château Belair l'Escudier",
 
     'property.title': 'Propriété',
-    'property.p1':    "Le vignoble de Château Martinat est situé sur la commune de Lansac, au cœur de l'appellation Côtes de Bourg, dans un paysage vallonné à proximité du fleuve de la Gironde. Cette situation géographique offre au domaine un climat tempéré et un ensoleillement favorable. Une belle veine de grave blanche traverse la propriété et enrichie le terroir de cette propriété.",
+    'property.p1':    "Le vignoble de Château Martinat est situé sur la commune de Lansac, au cœur de l'appellation Côtes de Bourg, dans un paysage vallonné à proximité du fleuve de la Gironde. Cette situation géographique offre au domaine un climat tempéré et un ensoleillement favorable. Une belle veine de grave blanche traverse la propriété et enrichit le terroir.",
     'property.p2':    "Reprise en 1994 avec l'ambition de révéler tout le potentiel de son terroir, la propriété est aujourd'hui certifiée <strong>HVE 4</strong> (Haute Valeur Environnementale).",
     'property.btn':   'En savoir plus sur le domaine',
 
     'prop.hero.title': 'Notre Propriété',
 
     'prop.team.title':           'Notre Équipe',
-    'prop.team.p1':              'Deux collaborateurs font partie du « Martinat team » : Cyrille Baillou et Sophie Baraillé. Chaque année, nous faisons également appel à une petite équipe pour les travaux de la vigne et notamment pour les vendanges.',
+    'prop.team.p1':              'Deux collaborateurs font partie de l\'équipe Martinat : Cyrille Baillou et Sophie Baraillé. Chaque année, nous faisons également appel à une petite équipe pour les travaux de la vigne et notamment pour les vendanges.',
     'prop.team.p2':              'Notre équipe passionnée met son savoir-faire au service de la qualité de nos vins, dans le respect des traditions viticoles et de notre terroir exceptionnel.',
     'prop.team.lucie.role':      'Viticultrice',
     'prop.team.stephane.role':   'Viticulteur',
 
-    'prop.carousel.slide1.title': 'Notre Vignoble',
-    'prop.carousel.slide1.sub':   "11 hectares de vignes sur un terroir d'exception",
-    'prop.carousel.slide2.title': 'Notre Chai',
-    'prop.carousel.slide2.sub':   'Élevage traditionnel en barriques de chêne français',
-    'prop.carousel.slide3.title': 'Château Martinat',
-    'prop.carousel.slide3.sub':   'Une propriété familiale depuis plusieurs générations',
-    'prop.carousel.slide4.title': 'Viticulture Raisonnée',
-    'prop.carousel.slide4.sub':   'Certification HVE — Haute Valeur Environnementale',
-
     'prop.vineyard.title':        'Les Vignes',
-    'prop.vineyard.p1':           "Château Martinat regroupe 11 hectares au centre de l'appellation Côtes de Bourg, sur un terroir particulier caractérisé par la présence de veines de petites graves et d'argiles rouges et brunes — un atout qualitatif précieux pour la maturité de nos raisins et la densité de nos vins. L'âge des vignes est de 35 ans en moyenne. L'encépagement est à dominante Merlot (70 %), Cabernet franc (5 %) et Malbec (25 %). Nous respectons à tout moment notre terroir et perpétuons l'ébourgeonnage, les vendanges en vert, l'effeuillage et les vendanges manuelles.",
+    'prop.vineyard.p1':           "Château Martinat regroupe 11 hectares au cœur de l'appellation Côtes de Bourg, sur un terroir particulier caractérisé par la présence de veines de petites graves et d'argiles rouges et brunes — un atout qualitatif précieux pour la maturité de nos raisins et la densité de nos vins. L'âge moyen des vignes est de 35 ans. L'encépagement est à dominante Merlot (70 %), Cabernet Franc (5 %) et Malbec (25 %). Nous respectons à tout moment notre terroir et perpétuons l'ébourgeonnage, les vendanges en vert, l'effeuillage et les vendanges manuelles.",
     'prop.vineyard.stat1.num':    'Merlot 70% · Malbec 25% · Cab. Franc 5%',
     'prop.vineyard.stat1.label':  'Encépagement',
     'prop.vineyard.stat2.num':    '35 ans en moyenne',
@@ -52,7 +50,7 @@ const translations = {
 
     'prop.philosophy.title': 'Philosophie',
     'prop.philosophy.name':  'Château Martinat',
-    'prop.philosophy.quote': "Apprendre le métier… Comprendre les cycles de la vigne. Raisonner la tenue du vignoble, s'adapter aux caprices du ciel ! Se remettre en question… et puis vendanger avec cœur et raison, vinifier avec minutie et ambition ! Et enfin patienter avec humilité pour que les vins soient fins et gourmands. Nous vous souhaitons de belles dégustations avec nos Flacons !",
+    'prop.philosophy.quote': "Apprendre le métier… Comprendre les cycles de la vigne. Raisonner la tenue du vignoble, s'adapter aux caprices du ciel ! Se remettre en question… et puis vendanger avec cœur et raison, vinifier avec minutie et ambition ! Et enfin patienter avec humilité pour que les vins soient fins et gourmands. Nous vous souhaitons de belles dégustations avec nos flacons !",
     'prop.philosophy.sig':   '— Lucie et Stéphane',
 
     'prop.cellar.title': 'Notre Chai',
@@ -79,7 +77,7 @@ const translations = {
     'prop.contact.phone':     'Téléphone',
     'prop.contact.gps':       'GPS',
     'prop.contact.hours':     'Horaires',
-    'prop.contact.hours.val': 'Lundi – Samedi : 10h – 18h<br>Fermé 1<sup>re</sup> quinzaine de janvier<br>et 2<sup>e</sup> quinzaine d\'août<br>Visite sur rendez-vous',
+    'prop.contact.hours.val': "Lundi – Samedi : 10h – 18h<br>Fermé 1<sup>re</sup> quinzaine de janvier<br>et 2<sup>e</sup> quinzaine d'août<br>Visite sur rendez-vous",
     'prop.contact.cta':       'Demander nos tarifs',
 
     'news.title':  'Actualités et Presse',
@@ -87,12 +85,10 @@ const translations = {
     'news.p2':     "Chaque événement et chaque parution témoigne de la passion que nous mettons dans nos vins.",
     'news.p3':     'Pour plus d\'informations, vous pouvez <a href="#contact">nous contacter</a>.',
 
-    'gift.title':        'Bon Cadeau',
-    'gift.intro':        'Offrez une expérience unique au Château Martinat',
-    'gift.card1.title':  'Dégustation Gourmande',
-    'gift.card1.desc':   "Ce bon donne droit à une dégustation privée de nos vins (3 cuvées) pour 2 personnes, avec assortiment de fromages et pains.<br>Réservation obligatoire (mail ou tel).<br>Valeur 25.00€.<br>Validité : 6 mois. Non remboursable.",
-    'gift.card2.title':  'Coffret Flacons Martinat',
-    'gift.card2.desc':   "Assortiment de 6 bouteilles de vins.<br>Le coffret « Côtes à Côtes ».<br>3 Côtes de Bourg + 3 Blayes Côtes de Bordeaux 64.00€.<br>Le coffret « Cépages ».<br>2 bouteilles 100% Merlot + 2 bouteilles 100% Malbec + 2 bouteilles assemblage merlot/malbec 70.00€.<br>Possibilité caisse bois +10.00€. Bon valable 12 mois.",
+    'gift.title':       'Bon Cadeau',
+    'gift.intro':       'Offrez une expérience unique au Château Martinat',
+    'gift.card1.title': 'Dégustation Gourmande',
+    'gift.card2.title': 'Coffret Flacons Martinat',
 
     'contact.title':   'Contact',
     'contact.address': 'Adresse',
@@ -101,28 +97,28 @@ const translations = {
     'contact.gps':     'Coordonnées GPS',
     'contact.cta':     'Nous écrire',
 
-    'contact.form.title':                'Envoyer un message',
-    'contact.form.firstname':            'Prénom',
+    'contact.form.title':                 'Envoyer un message',
+    'contact.form.firstname':             'Prénom',
     'contact.form.firstname.placeholder': 'Prénom',
-    'contact.form.lastname':             'Nom',
-    'contact.form.lastname.placeholder': 'Nom',
-    'contact.form.email':                'Email',
-    'contact.form.email.placeholder':    'exemple@email.com',
-    'contact.form.phone':                'Téléphone',
-    'contact.form.subject':              'Objet',
-    'contact.form.subject.placeholder':  '— Choisir un objet —',
-    'contact.form.subject.order':        'Commande de vins',
-    'contact.form.subject.prices':       'Demande de tarifs',
-    'contact.form.subject.visit':        'Visite & dégustation',
-    'contact.form.subject.futures':      'Réservation primeurs',
-    'contact.form.subject.gift':         'Bon cadeau',
-    'contact.form.subject.pro':          'Professionnel / importateur',
-    'contact.form.subject.press':        'Presse & médias',
-    'contact.form.subject.other':        'Autre',
-    'contact.form.message':              'Message',
-    'contact.form.message.placeholder':  'Votre message…',
-    'contact.form.send':                 'Envoyer le message',
-    'contact.form.rgpd':                 'Vos données sont utilisées uniquement pour répondre à votre demande et ne sont jamais transmises à des tiers.',
+    'contact.form.lastname':              'Nom',
+    'contact.form.lastname.placeholder':  'Nom',
+    'contact.form.email':                 'Email',
+    'contact.form.email.placeholder':     'exemple@email.com',
+    'contact.form.phone':                 'Téléphone',
+    'contact.form.subject':               'Objet',
+    'contact.form.subject.placeholder':   '— Choisir un objet —',
+    'contact.form.subject.order':         'Commande de vins',
+    'contact.form.subject.prices':        'Demande de tarifs',
+    'contact.form.subject.visit':         'Visite et dégustation',
+    'contact.form.subject.futures':       'Réservation primeurs',
+    'contact.form.subject.gift':          'Bon cadeau',
+    'contact.form.subject.pro':           'Professionnel / importateur',
+    'contact.form.subject.press':         'Presse et médias',
+    'contact.form.subject.other':         'Autre',
+    'contact.form.message':               'Message',
+    'contact.form.message.placeholder':   'Votre message…',
+    'contact.form.send':                  'Envoyer le message',
+    'contact.form.rgpd':                  'Vos données sont utilisées uniquement pour répondre à votre demande et ne sont jamais transmises à des tiers.',
 
     'footer.rights': '© 2026 Château Martinat – Tous droits réservés',
     'footer.legal':  "L'abus d'alcool est dangereux pour la santé. À consommer avec modération.",
@@ -148,7 +144,7 @@ const translations = {
     'age.refused':  'You must be 18 or over to access this website.',
 
     'hero.subtitle': 'Independent winemakers in Côtes de Bourg',
-    'hero.banner':   '🍷 HVE Certified – High Environmental Value',
+    'hero.banner':   '🍷 HVE Certified — High Environmental Value',
 
     'wines.title':   'Our Wines',
     'wines.intro':   'Discover our exceptional wine collection, the fruit of a unique terroir and expertise passed down through generations.',
@@ -163,22 +159,13 @@ const translations = {
     'prop.hero.title': 'Our Estate',
 
     'prop.team.title':           'Our Team',
-    'prop.team.p1':              '"Martinat team" consists of two collaborators: Cyrille Baillou and Sophie Baraillé. Each year, we also call on a small team for vineyard work, especially during harvest.',
+    'prop.team.p1':              'Two collaborators are part of the Martinat team: Cyrille Baillou and Sophie Baraillé. Each year, we also call on a small team for vineyard work, especially during harvest.',
     'prop.team.p2':              'Our passionate team applies their expertise to the quality of our wines, respecting winemaking traditions and our exceptional terroir.',
     'prop.team.lucie.role':      'Winemaker',
     'prop.team.stephane.role':   'Winemaker',
 
-    'prop.carousel.slide1.title': 'Our Vineyard',
-    'prop.carousel.slide1.sub':   '11 hectares of vines on an exceptional terroir',
-    'prop.carousel.slide2.title': 'Our Cellar',
-    'prop.carousel.slide2.sub':   'Traditional ageing in French oak barrels',
-    'prop.carousel.slide3.title': 'Château Martinat',
-    'prop.carousel.slide3.sub':   'A family estate across several generations',
-    'prop.carousel.slide4.title': 'Sustainable Viticulture',
-    'prop.carousel.slide4.sub':   'HVE Certified – High Environmental Value',
-
     'prop.vineyard.title':        'The Vines',
-    'prop.vineyard.p1':           "Château Martinat covers 11 hectares at the heart of the Côtes de Bourg appellation, on a distinctive terroir characterised by veins of small gravel and red and brown clays — a precious quality asset for the ripeness of our grapes and the density of our wines. The average vine age is 35 years. The grape varieties are predominantly Merlot (70%), Cabernet Franc (5%) and Malbec (25%). We respect our terroir at all times and continue hand-harvesting, green harvesting, bud removal and leaf thinning.",
+    'prop.vineyard.p1':           "Château Martinat covers 11 hectares at the heart of the Côtes de Bourg appellation, on a distinctive terroir characterised by veins of small gravel and red and brown clays — a precious quality asset for the ripeness of our grapes and the density of our wines. The average vine age is 35 years. The grape varieties are predominantly Merlot (70%), Cabernet Franc (5%) and Malbec (25%). We respect our terroir at all times and continue bud removal, green harvesting, leaf thinning and hand-harvesting.",
     'prop.vineyard.stat1.num':    'Merlot 70% · Malbec 25% · Cab. Franc 5%',
     'prop.vineyard.stat1.label':  'Grape varieties',
     'prop.vineyard.stat2.num':    '35 years on average',
@@ -193,7 +180,7 @@ const translations = {
     'prop.cellar.p1':    "Our cellar houses the ageing of our red wines in French oak barrels for 14 to 18 months depending on the cuvée. Malolactic fermentation is carried out in barrel for our Epicurea cuvée, bringing roundness and complexity. Each vintage is monitored with the greatest care to reveal the full expression of our clay-gravel terroir.",
 
     'prop.region.title':       'Discover our Region',
-    'prop.region.intro':       "Situated on the right bank of the Dordogne and the Gironde, approximately 35 km north of Bordeaux, the Côtes de Bourg appellation is one of the oldest and most picturesque in the region. Nicknamed the \"Little Swiss Gironde\", it offers a terroir of character at the heart of an exceptional heritage.",
+    'prop.region.intro':       'Situated on the right bank of the Dordogne and the Gironde, approximately 35 km north of Bordeaux, the Côtes de Bourg appellation is one of the oldest and most picturesque in the region. Nicknamed the "Little Swiss Gironde", it offers a terroir of character at the heart of an exceptional heritage.',
     'prop.region.card1.title': 'Citadel of Bourg',
     'prop.region.card1.desc':  'A historic monument overlooking the estuary, offering an exceptional panoramic view of the Gironde and its surroundings.',
     'prop.region.card2.title': 'Wine Route',
@@ -205,7 +192,7 @@ const translations = {
     'prop.region.card5.title': 'Atlantic Coast',
     'prop.region.card5.desc':  'The Atlantic beaches are less than an hour away, perfect for a seaside escape.',
     'prop.region.card6.title': 'Local Gastronomy',
-    'prop.region.card6.desc':  "Enjoy Bordeaux specialities: lamprey, entrecôte, cannelés and oysters from Arcachon.",
+    'prop.region.card6.desc':  'Enjoy Bordeaux specialities: lamprey, entrecôte, cannelés and oysters from Arcachon.',
 
     'prop.contact.title':     'Contact Us',
     'prop.contact.address':   'Address',
@@ -221,12 +208,10 @@ const translations = {
     'news.p2':     'Each event and each publication reflects the passion we put into our wines.',
     'news.p3':     'For more information, please <a href="#contact">contact us</a>.',
 
-    'gift.title':        'Gift Vouchers',
-    'gift.intro':        'Give the gift of a unique experience at Château Martinat',
-    'gift.card1.title':  'Gourmet Tasting',
-    'gift.card1.desc':   'This voucher entitles the holder to a private tasting of our wines (3 cuvées) for 2 people, with a selection of cheeses and breads.<br>Reservation required (email or phone).<br>Value €25.00.<br>Validity: 6 months. Non-refundable.',
-    'gift.card2.title':  'Martinat Wine Box',
-    'gift.card2.desc':   "Assortment of 6 bottles.<br>The 'Côtes à Côtes' box: 3 Côtes de Bourg + 3 Blaye Côtes de Bordeaux €64.00.<br>The 'Cépages' box: 2 bottles 100% Merlot + 2 bottles 100% Malbec + 2 bottles Merlot/Malbec blend €70.00.<br>Wooden case option +€10.00. Voucher valid 12 months.",
+    'gift.title':       'Gift Vouchers',
+    'gift.intro':       'Give the gift of a unique experience at Château Martinat',
+    'gift.card1.title': 'Gourmet Tasting',
+    'gift.card2.title': 'Martinat Wine Box',
 
     'contact.title':   'Contact',
     'contact.address': 'Address',
@@ -235,28 +220,28 @@ const translations = {
     'contact.gps':     'GPS Coordinates',
     'contact.cta':     'Send us a message',
 
-    'contact.form.title':                'Send a message',
-    'contact.form.firstname':            'First name',
+    'contact.form.title':                 'Send a message',
+    'contact.form.firstname':             'First name',
     'contact.form.firstname.placeholder': 'First name',
-    'contact.form.lastname':             'Last name',
-    'contact.form.lastname.placeholder': 'Last name',
-    'contact.form.email':                'Email',
-    'contact.form.email.placeholder':    'example@email.com',
-    'contact.form.phone':                'Phone',
-    'contact.form.subject':              'Subject',
-    'contact.form.subject.placeholder':  '— Choose a subject —',
-    'contact.form.subject.order':        'Wine order',
-    'contact.form.subject.prices':       'Price list request',
-    'contact.form.subject.visit':        'Visit & tasting',
-    'contact.form.subject.futures':      'Futures reservation',
-    'contact.form.subject.gift':         'Gift voucher',
-    'contact.form.subject.pro':          'Professional / importer',
-    'contact.form.subject.press':        'Press & media',
-    'contact.form.subject.other':        'Other',
-    'contact.form.message':              'Message',
-    'contact.form.message.placeholder':  'Your message…',
-    'contact.form.send':                 'Send message',
-    'contact.form.rgpd':                 'Your data is used solely to respond to your enquiry and is never shared with third parties.',
+    'contact.form.lastname':              'Last name',
+    'contact.form.lastname.placeholder':  'Last name',
+    'contact.form.email':                 'Email',
+    'contact.form.email.placeholder':     'example@email.com',
+    'contact.form.phone':                 'Phone',
+    'contact.form.subject':               'Subject',
+    'contact.form.subject.placeholder':   '— Choose a subject —',
+    'contact.form.subject.order':         'Wine order',
+    'contact.form.subject.prices':        'Price list request',
+    'contact.form.subject.visit':         'Visit & tasting',
+    'contact.form.subject.futures':       'Futures reservation',
+    'contact.form.subject.gift':          'Gift voucher',
+    'contact.form.subject.pro':           'Professional / importer',
+    'contact.form.subject.press':         'Press & media',
+    'contact.form.subject.other':         'Other',
+    'contact.form.message':               'Message',
+    'contact.form.message.placeholder':   'Your message…',
+    'contact.form.send':                  'Send message',
+    'contact.form.rgpd':                  'Your data is used solely to respond to your enquiry and is never shared with third parties.',
 
     'footer.rights': '© 2026 Château Martinat – All rights reserved',
     'footer.legal':  'Drink responsibly. Alcohol abuse is dangerous to your health.',
@@ -287,7 +272,6 @@ const i18n = {
     if (save) localStorage.setItem('martinat_lang', lang);
 
     document.documentElement.lang = lang;
-
     document.documentElement.classList.remove('lang-active-fr', 'lang-active-en');
     document.documentElement.classList.add('lang-active-' + lang);
 
@@ -319,7 +303,6 @@ const i18n = {
 };
 
 (function () {
-  const lang = localStorage.getItem('martinat_lang') || 'fr';
   if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', () => i18n.init());
   } else {
