@@ -35,7 +35,7 @@ const translations = {
     'prop.team.stephane.role':   'Viticulteur',
 
     'prop.carousel.slide1.title': 'Notre Vignoble',
-    'prop.carousel.slide1.sub':   "10 hectares de vignes sur un terroir d'exception",
+    'prop.carousel.slide1.sub':   "11 hectares de vignes sur un terroir d'exception",
     'prop.carousel.slide2.title': 'Notre Chai',
     'prop.carousel.slide2.sub':   'Élevage traditionnel en barriques de chêne français',
     'prop.carousel.slide3.title': 'Château Martinat',
@@ -44,10 +44,10 @@ const translations = {
     'prop.carousel.slide4.sub':   'Certification HVE — Haute Valeur Environnementale',
 
     'prop.vineyard.title':        'Les Vignes',
-    'prop.vineyard.p1':           "Château Martinat regroupe 10 hectares au centre de l'appellation Côtes de Bourg, sur un terroir particulier caractérisé par la présence de veines de petites graves et d'argiles rouges et brunes — un atout qualitatif précieux pour la maturité de nos raisins et la densité de nos vins. L'âge des vignes est de 30 ans en moyenne. L'encépagement est à dominante Merlot (70 %), Cabernet franc (5 %) et Malbec (25 %). Nous respectons à tout moment notre terroir et perpétuons l'ébourgeonnage, les vendanges en vert, l'effeuillage et les vendanges manuelles.",
+    'prop.vineyard.p1':           "Château Martinat regroupe 11 hectares au centre de l'appellation Côtes de Bourg, sur un terroir particulier caractérisé par la présence de veines de petites graves et d'argiles rouges et brunes — un atout qualitatif précieux pour la maturité de nos raisins et la densité de nos vins. L'âge des vignes est de 35 ans en moyenne. L'encépagement est à dominante Merlot (70 %), Cabernet franc (5 %) et Malbec (25 %). Nous respectons à tout moment notre terroir et perpétuons l'ébourgeonnage, les vendanges en vert, l'effeuillage et les vendanges manuelles.",
     'prop.vineyard.stat1.num':    'Merlot 70% · Malbec 25% · Cab. Franc 5%',
     'prop.vineyard.stat1.label':  'Encépagement',
-    'prop.vineyard.stat2.num':    '30 ans en moyenne',
+    'prop.vineyard.stat2.num':    '35 ans en moyenne',
     'prop.vineyard.stat2.label':  'Âge des vignes',
 
     'prop.philosophy.title': 'Philosophie',
@@ -56,7 +56,7 @@ const translations = {
     'prop.philosophy.sig':   '— Lucie et Stéphane',
 
     'prop.cellar.title': 'Notre Chai',
-    'prop.cellar.p1':    "Le vignoble de Château Martinat est situé sur la commune de Lansac, au cœur de l'appellation Côtes de Bourg. Située sur la rive droite de la Dordogne et de la Gironde, à environ 35 km au nord de Bordeaux, l'appellation Côtes de Bourg est l'une des plus anciennes et des plus pittoresques de la région. Surnommée la « Petite Suisse Girondaise » en raison de ses paysages vallonnés, elle offre un terroir de caractère exceptionnel.",
+    'prop.cellar.p1':    "Notre chai accueille l'élevage de nos vins rouges en fûts de chêne français pendant 14 à 18 mois selon les cuvées. La fermentation malolactique est effectuée en fût pour notre cuvée Epicurea, apportant rondeur et complexité. Chaque millésime est suivi avec la plus grande attention pour révéler toute l'expression de notre terroir argilo-graveleux.",
 
     'prop.region.title':       'Découvrir notre Région',
     'prop.region.intro':       "Située sur la rive droite de la Dordogne et de la Gironde, à environ 35 km au nord de Bordeaux, l'appellation Côtes de Bourg est l'une des plus anciennes et des plus pittoresques de la région. Surnommée la « Petite Suisse Girondaise », elle offre un terroir de caractère au cœur d'un patrimoine exceptionnel.",
@@ -169,7 +169,7 @@ const translations = {
     'prop.team.stephane.role':   'Winemaker',
 
     'prop.carousel.slide1.title': 'Our Vineyard',
-    'prop.carousel.slide1.sub':   '10 hectares of vines on an exceptional terroir',
+    'prop.carousel.slide1.sub':   '11 hectares of vines on an exceptional terroir',
     'prop.carousel.slide2.title': 'Our Cellar',
     'prop.carousel.slide2.sub':   'Traditional ageing in French oak barrels',
     'prop.carousel.slide3.title': 'Château Martinat',
@@ -178,10 +178,10 @@ const translations = {
     'prop.carousel.slide4.sub':   'HVE Certified – High Environmental Value',
 
     'prop.vineyard.title':        'The Vines',
-    'prop.vineyard.p1':           "Château Martinat covers 10 hectares at the heart of the Côtes de Bourg appellation, on a distinctive terroir characterised by veins of small gravel and red and brown clays — a precious quality asset for the ripeness of our grapes and the density of our wines. The average vine age is 30 years. The grape varieties are predominantly Merlot (70%), Cabernet Franc (5%) and Malbec (25%). We respect our terroir at all times and continue hand-harvesting, green harvesting, bud removal and leaf thinning.",
+    'prop.vineyard.p1':           "Château Martinat covers 11 hectares at the heart of the Côtes de Bourg appellation, on a distinctive terroir characterised by veins of small gravel and red and brown clays — a precious quality asset for the ripeness of our grapes and the density of our wines. The average vine age is 35 years. The grape varieties are predominantly Merlot (70%), Cabernet Franc (5%) and Malbec (25%). We respect our terroir at all times and continue hand-harvesting, green harvesting, bud removal and leaf thinning.",
     'prop.vineyard.stat1.num':    'Merlot 70% · Malbec 25% · Cab. Franc 5%',
     'prop.vineyard.stat1.label':  'Grape varieties',
-    'prop.vineyard.stat2.num':    '30 years on average',
+    'prop.vineyard.stat2.num':    '35 years on average',
     'prop.vineyard.stat2.label':  'Vine age',
 
     'prop.philosophy.title': 'Philosophy',
@@ -190,7 +190,7 @@ const translations = {
     'prop.philosophy.sig':   '— Lucie and Stéphane',
 
     'prop.cellar.title': 'Our Cellar',
-    'prop.cellar.p1':    "Château Martinat's vineyard is located in the commune of Lansac, at the heart of the Côtes de Bourg appellation. Situated on the right bank of the Dordogne and the Gironde, approximately 35 km north of Bordeaux, the Côtes de Bourg appellation is one of the oldest and most picturesque in the region. Nicknamed the \"Little Swiss Gironde\" due to its rolling landscape, it offers a terroir of exceptional character.",
+    'prop.cellar.p1':    "Our cellar houses the ageing of our red wines in French oak barrels for 14 to 18 months depending on the cuvée. Malolactic fermentation is carried out in barrel for our Epicurea cuvée, bringing roundness and complexity. Each vintage is monitored with the greatest care to reveal the full expression of our clay-gravel terroir.",
 
     'prop.region.title':       'Discover our Region',
     'prop.region.intro':       "Situated on the right bank of the Dordogne and the Gironde, approximately 35 km north of Bordeaux, the Côtes de Bourg appellation is one of the oldest and most picturesque in the region. Nicknamed the \"Little Swiss Gironde\", it offers a terroir of character at the heart of an exceptional heritage.",
