@@ -2,6 +2,32 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
+<style>
+  .lang-en, .awards-en { display: none; }
+  html.lang-active-en .lang-en, html.lang-active-en .awards-en { display: revert; }
+  html.lang-active-en .lang-fr, html.lang-active-en .awards-fr { display: none; }
+  html.lang-active-fr .lang-fr, html.lang-active-fr .awards-fr { display: revert; }
+  html.lang-active-fr .lang-en, html.lang-active-fr .awards-en { display: none; }
+  html.lang-active-en .lang-btn[data-lang="en"],
+  html.lang-active-fr .lang-btn[data-lang="fr"] {
+    background: var(--accent, #b8860b);
+    color: white;
+    border-color: var(--accent, #b8860b);
+  }
+  html.lang-active-en .lang-btn[data-lang="fr"],
+  html.lang-active-fr .lang-btn[data-lang="en"] {
+    background: none;
+    color: inherit;
+    border-color: transparent;
+  }
+</style>
+<script>
+  (function(){
+    var lang = localStorage.getItem('martinat_lang') || 'fr';
+    document.documentElement.classList.add('lang-active-' + lang);
+    document.documentElement.lang = lang;
+  })();
+</script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Découvrez la propriété Château Martinat : notre équipe, notre vignoble de 11 hectares certifié HVE 4, notre chai et la région des Côtes de Bourg à Lansac, Gironde.">
   <meta name="robots" content="index, follow">
@@ -15,19 +41,9 @@
   <meta property="og:locale:alternate" content="en_GB">
   <title>Notre Propriété | Château Martinat — Vignerons en Côtes de Bourg, Lansac</title>
 
-  <!-- Lang flicker prevention -->
-  <script>
-    (function(){
-      var lang = localStorage.getItem('martinat_lang') || 'fr';
-      document.documentElement.classList.add('lang-active-' + lang);
-      document.documentElement.lang = lang;
-    })();
-  </script>
-
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
-
   <link rel="stylesheet" href="../css/reset.css">
   <link rel="stylesheet" href="../css/variables.css">
   <link rel="stylesheet" href="../css/main.css">
@@ -36,26 +52,6 @@
   <link rel="stylesheet" href="../css/sections/contact.css">
 
   <style>
-    /* ── Lang switcher ── */
-    .lang-en, .awards-en { display: none; }
-    html.lang-active-en .lang-en, html.lang-active-en .awards-en { display: revert; }
-    html.lang-active-en .lang-fr, html.lang-active-en .awards-fr { display: none; }
-    html.lang-active-fr .lang-fr, html.lang-active-fr .awards-fr { display: revert; }
-    html.lang-active-fr .lang-en, html.lang-active-fr .awards-en { display: none; }
-
-    html.lang-active-en .lang-btn[data-lang="en"],
-    html.lang-active-fr .lang-btn[data-lang="fr"] {
-      background: var(--accent, #b8860b);
-      color: white;
-      border-color: var(--accent, #b8860b);
-    }
-    html.lang-active-en .lang-btn[data-lang="fr"],
-    html.lang-active-fr .lang-btn[data-lang="en"] {
-      background: none;
-      color: inherit;
-      border-color: transparent;
-    }
-
     /* ── Back button ── */
     .back-btn {
       width: 40px; height: 40px;
@@ -68,7 +64,6 @@
     .back-btn:hover { background: var(--accent-light); transform: translateX(-3px); }
     .back-arrow { color: white; font-size: var(--font-size-xl); font-weight: bold; line-height: 1; }
 
-    /* ── General ── */
     p { text-align: justify; text-justify: inter-word; line-height: 1.8; }
 
     /* ── Hero ── */
@@ -77,6 +72,7 @@
       height: 60vh; min-height: 400px;
       background: linear-gradient(var(--overlay), var(--overlay)),
                   url('../pictures/general/vineyards.jpg') center/cover no-repeat;
+      background-attachment: scroll;
       display: flex; align-items: center; justify-content: center; text-align: center;
       margin-top: var(--header-height);
     }
@@ -89,27 +85,29 @@
 
     /* ── Sections ── */
     .property-section { padding: var(--spacing-3xl) 0; }
+    #galerie.property-section { padding: 0; }
+    #galerie.property-section .container { max-width: 100%; padding: 0; width: 100%; }
+    #galerie .carousel-container { margin: 0; border-radius: 0; box-shadow: none; }
+    #galerie .carousel-slide img { height: clamp(300px, 60vh, 680px); width: 100%; object-fit: cover; display: block; }
 
     .property-section.section-bordeaux { background: var(--background-bordeaux); }
+    .property-section.section-white { background: var(--background-white); }
+
     .property-section.section-bordeaux .section-title { color: #ffffff; }
     .property-section.section-bordeaux .section-title::after { background-color: var(--accent); }
     .property-section.section-bordeaux p,
     .property-section.section-bordeaux li,
     .property-section.section-bordeaux .stat-value,
     .property-section.section-bordeaux .stat-label { color: var(--text-light); }
+    .property-section.section-bordeaux .vineyard-stat { border-color: rgba(255,255,255,0.15); }
     .property-section.section-bordeaux .philosophy-card { background: rgba(255,255,255,0.07); border-color: rgba(184,134,11,0.3); }
     .property-section.section-bordeaux .philosophy-card h3 { color: var(--accent-light); }
     .property-section.section-bordeaux .philosophy-highlight p { color: var(--text-dark); }
 
-    .property-section.section-white { background: var(--background-white); }
     .property-section.section-white .section-title { color: var(--primary); }
     .property-section.section-white .section-title::after { background-color: var(--accent); }
     .property-section.section-white p,
     .property-section.section-white li { color: var(--text-dark); }
-
-    /* ── Galerie (full-bleed, no padding) ── */
-    #galerie.property-section { padding: 0; }
-    #galerie .container { max-width: 100%; padding: 0; width: 100%; }
 
     /* ── Team ── */
     .team-intro-section {
@@ -136,47 +134,39 @@
 
     /* ── Carousel ── */
     .carousel-container {
-      position: relative; width: 100%; overflow: hidden;
-      background: #000;
+      position: relative; max-width: 100%;
+      margin: var(--spacing-2xl) auto 0;
+      background: white; border-radius: var(--radius-lg);
+      overflow: hidden; box-shadow: var(--shadow-lg);
     }
     .carousel-wrapper { position: relative; width: 100%; overflow: hidden; }
-    .carousel-track { display: flex; transition: transform 0.55s cubic-bezier(0.4, 0, 0.2, 1); }
+    .carousel-track { display: flex; transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1); }
     .carousel-slide { min-width: 100%; position: relative; }
-    .carousel-slide img {
-      width: 100%;
-      height: clamp(300px, 65vh, 700px);
-      object-fit: cover;
-      display: block;
-    }
-
-    /* Navigation buttons */
+    .carousel-slide img { width: 100%; height: 500px; object-fit: cover; display: block; }
     .carousel-btn {
       position: absolute; top: 50%; transform: translateY(-50%);
-      background: rgba(255,255,255,0.88); border: none;
-      width: 52px; height: 52px; border-radius: 50%;
+      background: rgba(255,255,255,0.9); border: none;
+      width: 50px; height: 50px; border-radius: 50%;
       cursor: pointer; display: flex; align-items: center; justify-content: center;
-      font-size: 1.5rem; color: var(--primary);
-      transition: all var(--transition-fast); z-index: 10;
-      box-shadow: 0 2px 12px rgba(0,0,0,0.25);
+      font-size: var(--font-size-xl); color: var(--primary);
+      transition: all var(--transition-fast); z-index: 10; box-shadow: var(--shadow-md);
     }
     .carousel-btn:hover { background: white; transform: translateY(-50%) scale(1.1); }
     .carousel-btn-prev { left: var(--spacing-lg); }
     .carousel-btn-next { right: var(--spacing-lg); }
-
-    /* Dot indicators — bottom centre, no text overlap */
     .carousel-indicators {
       position: absolute; bottom: var(--spacing-lg);
       left: 50%; transform: translateX(-50%);
       display: flex; gap: var(--spacing-sm); z-index: 10;
     }
     .carousel-indicator {
-      width: 10px; height: 10px; border-radius: 50%;
-      background: rgba(255,255,255,0.55); border: none;
+      width: 12px; height: 12px; border-radius: 50%;
+      background: rgba(255,255,255,0.5); border: none;
       cursor: pointer; transition: all var(--transition-fast); padding: 0;
     }
-    .carousel-indicator.active { background: white; width: 28px; border-radius: 5px; }
+    .carousel-indicator.active { background: white; width: 30px; border-radius: 6px; }
 
-    /* ── Vignoble ── */
+    /* ── Vineyard ── */
     .vineyard-content {
       display: grid; grid-template-columns: 1.2fr 1fr;
       gap: var(--spacing-3xl); align-items: center; margin-top: var(--spacing-xl);
@@ -192,7 +182,7 @@
     .stat-number { font-size: var(--font-size-sm); font-weight: 700; color: var(--accent); font-family: var(--font-primary); line-height: 1.4; }
     .stat-label { color: var(--text-dark) !important; margin-top: var(--spacing-xs); font-size: var(--font-size-sm); }
 
-    /* ── Philosophie ── */
+    /* ── Philosophy ── */
     .philosophy-content { max-width: 900px; margin: var(--spacing-xl) auto 0; text-align: center; }
     .philosophy-highlight {
       background: white; padding: var(--spacing-xl);
@@ -202,13 +192,13 @@
     .philosophy-highlight strong { color: var(--accent); font-size: var(--font-size-lg); display: block; margin-bottom: var(--spacing-sm); }
     .philosophy-highlight p { hyphens: auto; -webkit-hyphens: auto; line-height: 1.6; }
 
-    /* ── Chai ── */
+    /* ── Cellar ── */
     .cellar-content {
       display: grid; grid-template-columns: 1fr 1.2fr;
       gap: var(--spacing-3xl); align-items: center; margin-top: var(--spacing-xl);
     }
 
-    /* ── Région ── */
+    /* ── Region ── */
     .region-content { max-width: 1000px; margin: var(--spacing-xl) auto 0; }
     .region-grid {
       display: grid; grid-template-columns: repeat(3, 1fr);
@@ -224,7 +214,8 @@
     .region-image img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform var(--transition-slow); }
     .region-card:hover .region-image img { transform: scale(1.08); }
     .region-image::after {
-      content: ''; position: absolute; inset: 0;
+      content: '';
+      position: absolute; inset: 0;
       background: linear-gradient(to top, rgba(44,24,16,0.18), transparent 60%);
       pointer-events: none;
     }
@@ -233,9 +224,13 @@
     .region-info p,
     .property-section.section-white .region-info p {
       color: var(--text-gray) !important;
-      font-size: var(--font-size-sm); line-height: 1.5;
-      text-align: justify; text-justify: inter-word;
-      hyphens: auto; -webkit-hyphens: auto; margin: 0;
+      font-size: var(--font-size-sm);
+      line-height: 1.5;
+      text-align: justify;
+      text-justify: inter-word;
+      hyphens: auto;
+      -webkit-hyphens: auto;
+      margin: 0;
     }
 
     /* ── Section image ── */
@@ -248,7 +243,8 @@
       .team-intro-section, .vineyard-content, .cellar-content { grid-template-columns: 1fr; gap: var(--spacing-xl); }
       .region-grid { grid-template-columns: repeat(2, 1fr); }
       .vineyard-stats { grid-template-columns: repeat(2, 1fr); }
-      .carousel-btn { width: 42px; height: 42px; font-size: 1.2rem; }
+      .carousel-slide img { height: 400px; }
+      .carousel-btn { width: 40px; height: 40px; font-size: var(--font-size-lg); }
       .carousel-btn-prev { left: var(--spacing-md); }
       .carousel-btn-next { right: var(--spacing-md); }
     }
@@ -259,27 +255,28 @@
       .region-image { height: 180px; }
       .vineyard-stats { grid-template-columns: 1fr 1fr; }
       .team-photos-grid { grid-template-columns: 1fr 1fr; }
-      .carousel-btn { width: 38px; height: 38px; }
+      .carousel-slide img { height: 300px; }
+      .carousel-btn, .back-btn { width: 36px; height: 36px; }
+      .back-arrow { font-size: var(--font-size-lg); }
     }
     @media (max-width: 480px) {
       .region-grid { grid-template-columns: 1fr; }
       .region-image { height: 210px; }
+      .team-photos-grid { grid-template-columns: 1fr 1fr; }
+      .carousel-slide img { height: 250px; }
       .vineyard-stats { grid-template-columns: 1fr; }
     }
   </style>
 </head>
 <body>
 
-<!-- ═══════════════════════════════════════════
-     HEADER
-═══════════════════════════════════════════ -->
 <header class="topbar">
   <div class="topbar-left">
     <a href="../index.html" class="back-btn" aria-label="Retour à l'accueil">
       <span class="back-arrow" aria-hidden="true">←</span>
     </a>
     <div class="lang-switcher">
-      <button class="lang-btn" data-lang="fr" aria-label="Passer en français">
+      <button class="lang-btn active" data-lang="fr" aria-label="Passer en français">
         <svg class="lang-flag" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 3 2" aria-hidden="true">
           <rect width="1" height="2" fill="#002395"/>
           <rect x="1" width="1" height="2" fill="#fff"/>
@@ -321,17 +318,12 @@
   </div>
 </header>
 
-<!-- ═══════════════════════════════════════════
-     MAIN
-═══════════════════════════════════════════ -->
 <main>
 
-  <!-- Hero -->
   <section class="property-hero" aria-label="Notre Propriété">
     <h1 data-i18n="prop.hero.title">Notre Propriété</h1>
   </section>
 
-  <!-- ── Équipe ── -->
   <section id="equipe" class="property-section section-bordeaux">
     <div class="container">
       <h2 class="section-title" data-i18n="prop.team.title">Notre Équipe</h2>
@@ -380,85 +372,70 @@
     </div>
   </section>
 
-  <!-- ── Galerie — 10 slides, NO text overlay ── -->
   <section id="galerie" class="property-section section-white">
     <div class="container">
       <div class="carousel-container" role="region" aria-label="Galerie photos du domaine">
         <div class="carousel-wrapper">
           <div class="carousel-track" id="carouselTrack">
-
             <div class="carousel-slide">
               <img src="../pictures/general/vineyards.jpg"
-                   alt="Vue d'ensemble du vignoble de Château Martinat en été, Côtes de Bourg"
-                   width="1400" height="700" loading="eager">
+                   alt="Vue panoramique des vignes de Château Martinat, Côtes de Bourg"
+                   width="1200" height="680" loading="lazy">
             </div>
-
             <div class="carousel-slide">
               <img src="../pictures/general/wine-cellar.jpg"
-                   alt="Cave de vieillissement — rangées de barriques de chêne français, Château Martinat"
-                   width="1400" height="700" loading="lazy">
+                   alt="Barriques de chêne dans le chai de Château Martinat"
+                   width="1200" height="680" loading="lazy">
             </div>
-
             <div class="carousel-slide">
               <img src="../pictures/general/martinat.jpg"
-                   alt="Façade du Château Martinat entourée de son jardin fleuri, Lansac"
-                   width="1400" height="700" loading="lazy">
+                   alt="Façade du Château Martinat à Lansac, Gironde"
+                   width="1200" height="680" loading="lazy">
             </div>
-
             <div class="carousel-slide">
               <img src="../pictures/general/barrel.jpg"
-                   alt="Fût de chêne en gros plan dans le chai de Château Martinat"
-                   width="1400" height="700" loading="lazy">
+                   alt="Détail d'un fût de chêne — élevage Château Martinat"
+                   width="1200" height="680" loading="lazy">
             </div>
-
             <div class="carousel-slide">
               <img src="../pictures/general/sign.jpg"
-                   alt="Panneau Château Martinat — Côtes de Bourg, Lansac"
-                   width="1400" height="700" loading="lazy">
+                   alt="Panneau d'entrée — Château Martinat, Lansac"
+                   width="1200" height="680" loading="lazy">
             </div>
-
             <div class="carousel-slide">
               <img src="../pictures/general/vineyards.jpg"
-                   alt="Rangées de vignes au coucher du soleil — terroir argilo-graveleux des Côtes de Bourg"
-                   width="1400" height="700" loading="lazy">
+                   alt="Rangées de vignes au lever du soleil — Château Martinat"
+                   width="1200" height="680" loading="lazy">
             </div>
-
             <div class="carousel-slide">
               <img src="../pictures/general/wine-cellar.jpg"
-                   alt="Bouteille de Château Martinat présentée sur un fût dans la cave d'élevage"
-                   width="1400" height="700" loading="lazy">
+                   alt="Vue d'ensemble du chai — fûts alignés, Château Martinat"
+                   width="1200" height="680" loading="lazy">
             </div>
-
             <div class="carousel-slide">
               <img src="../pictures/general/martinat.jpg"
-                   alt="Le Château Martinat sous un ciel d'été, propriété viticole familiale"
-                   width="1400" height="700" loading="lazy">
+                   alt="Château Martinat — propriété viticole certifiée HVE 4"
+                   width="1200" height="680" loading="lazy">
             </div>
-
             <div class="carousel-slide">
               <img src="../pictures/general/barrel.jpg"
-                   alt="Détail d'un fût de chêne — élevage 14 à 18 mois selon les cuvées"
-                   width="1400" height="700" loading="lazy">
+                   alt="Fûts de chêne français — élevage 14 à 18 mois, Château Martinat"
+                   width="1200" height="680" loading="lazy">
             </div>
-
             <div class="carousel-slide">
-              <img src="../pictures/general/vineyards.jpg"
-                   alt="Vignoble de Château Martinat — 11 hectares en appellation Côtes de Bourg"
-                   width="1400" height="700" loading="lazy">
+              <img src="../pictures/general/sign.jpg"
+                   alt="Entrée du domaine Château Martinat — Côtes de Bourg, Lansac"
+                   width="1200" height="680" loading="lazy">
             </div>
-
-          </div><!-- /carousel-track -->
-        </div><!-- /carousel-wrapper -->
-
-        <button class="carousel-btn carousel-btn-prev" id="prevBtn" aria-label="Slide précédent">&#8249;</button>
-        <button class="carousel-btn carousel-btn-next" id="nextBtn" aria-label="Slide suivant">&#8250;</button>
-        <div class="carousel-indicators" id="carouselIndicators" role="tablist" aria-label="Navigation du carrousel"></div>
-
-      </div><!-- /carousel-container -->
+          </div>
+        </div>
+        <button class="carousel-btn carousel-btn-prev" id="prevBtn" aria-label="Slide précédent">‹</button>
+        <button class="carousel-btn carousel-btn-next" id="nextBtn" aria-label="Slide suivant">›</button>
+        <div class="carousel-indicators" id="carouselIndicators" role="tablist"></div>
+      </div>
     </div>
   </section>
 
-  <!-- ── Vignoble ── -->
   <section id="vignoble" class="property-section section-bordeaux">
     <div class="container">
       <h2 class="section-title" data-i18n="prop.vineyard.title">Les Vignes</h2>
@@ -485,7 +462,6 @@
     </div>
   </section>
 
-  <!-- ── Philosophie ── -->
   <section id="philosophie" class="property-section section-white">
     <div class="container">
       <h2 class="section-title" data-i18n="prop.philosophy.title">Philosophie</h2>
@@ -499,7 +475,6 @@
     </div>
   </section>
 
-  <!-- ── Chai ── -->
   <section id="chai" class="property-section section-bordeaux">
     <div class="container">
       <h2 class="section-title" data-i18n="prop.cellar.title">Notre Chai</h2>
@@ -516,14 +491,12 @@
     </div>
   </section>
 
-  <!-- ── Région ── -->
   <section id="region" class="property-section section-white">
     <div class="container">
       <h2 class="section-title" data-i18n="prop.region.title">Découvrir notre Région</h2>
       <div class="region-content">
         <p style="text-align:center; margin-bottom:var(--spacing-xl); line-height:1.8; font-size:var(--font-size-md); max-width:800px; margin-left:auto; margin-right:auto;" data-i18n="prop.region.intro">Située sur la rive droite de la Dordogne et de la Gironde, à environ 35 km au nord de Bordeaux, l'appellation Côtes de Bourg est l'une des plus anciennes et des plus pittoresques de la région. Surnommée la « Petite Suisse Girondaise », elle offre un terroir de caractère au cœur d'un patrimoine exceptionnel.</p>
         <div class="region-grid">
-
           <div class="region-card">
             <div class="region-image">
               <img src="../pictures/region/Citadel-of-Bourg.png"
@@ -535,7 +508,6 @@
               <p data-i18n="prop.region.card1.desc">Monument historique surplombant l'estuaire, offrant une vue panoramique exceptionnelle sur la Gironde et ses environs.</p>
             </div>
           </div>
-
           <div class="region-card">
             <div class="region-image">
               <img src="../pictures/region/Wine-route.png"
@@ -547,7 +519,6 @@
               <p data-i18n="prop.region.card2.desc">Parcourez la Route des Châteaux et découvrez les domaines viticoles de l'appellation Côtes de Bourg.</p>
             </div>
           </div>
-
           <div class="region-card">
             <div class="region-image">
               <img src="../pictures/region/Lansac-mill.png"
@@ -559,7 +530,6 @@
               <p data-i18n="prop.region.card3.desc">Moulin à vent historique emblématique de Lansac, offrant un panorama remarquable sur les vignes de Côtes de Bourg et la vallée de la Gironde.</p>
             </div>
           </div>
-
           <div class="region-card">
             <div class="region-image">
               <img src="../pictures/region/Bordeaux.png"
@@ -571,7 +541,6 @@
               <p data-i18n="prop.region.card4.desc">À 45 minutes, découvrez la capitale mondiale du vin, classée au patrimoine UNESCO pour son architecture.</p>
             </div>
           </div>
-
           <div class="region-card">
             <div class="region-image">
               <img src="../pictures/region/Atlantic-Coast.png"
@@ -583,7 +552,6 @@
               <p data-i18n="prop.region.card5.desc">Les plages de l'Atlantique sont à moins d'une heure, parfaites pour une escapade en bord de mer.</p>
             </div>
           </div>
-
           <div class="region-card">
             <div class="region-image">
               <img src="../pictures/region/Local-cuisine.png"
@@ -595,13 +563,11 @@
               <p data-i18n="prop.region.card6.desc">Savourez les spécialités bordelaises : lamproie, entrecôte, cannelés et les huîtres d'Arcachon.</p>
             </div>
           </div>
-
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ── Contact ── -->
   <section id="contact" class="section contact-section">
     <div class="container">
       <h2 class="section-title" data-i18n="prop.contact.title">Nous Contacter</h2>
@@ -644,8 +610,7 @@
         </div>
 
         <div class="contact-map">
-          <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3271.170246967585!2d-0.5515331847682614!3d45.063120979098756!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x48002b926c5fc42f%3A0xce54150184a7dcd4!2sSCEV%20Marsaux%20Donze%20%2F%20Ch%C3%A2teau%20Martinat!5e0!3m2!1sfr!2sfr!4v1706946912345!5m2!1sfr!2sfr"
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3271.170246967585!2d-0.5515331847682614!3d45.063120979098756!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x48002b926c5fc42f%3A0xce54150184a7dcd4!2sSCEV%20Marsaux%20Donze%20%2F%20Ch%C3%A2teau%20Martinat!5e0!3m2!1sfr!2sfr!4v1706946912345!5m2!1sfr!2sfr"
             width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"
             referrerpolicy="no-referrer-when-downgrade"
             title="Localisation du Château Martinat — Lansac, Côtes de Bourg"
@@ -715,7 +680,7 @@
           <div class="form-submit-row">
             <button type="submit" class="btn-submit">
               <span class="btn-label" data-i18n="contact.form.send">Envoyer le message</span>
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+              <svg class="btn-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
               <span class="btn-loader" aria-hidden="true"></span>
             </button>
             <p class="form-rgpd" data-i18n="contact.form.rgpd">Vos données sont utilisées uniquement pour répondre à votre demande et ne sont jamais transmises à des tiers.</p>
@@ -732,9 +697,6 @@
 
 </main>
 
-<!-- ═══════════════════════════════════════════
-     FOOTER
-═══════════════════════════════════════════ -->
 <footer class="footer">
   <div class="container">
     <div class="footer-content">
@@ -744,79 +706,67 @@
   </div>
 </footer>
 
-<!-- ═══════════════════════════════════════════
-     SCRIPTS
-═══════════════════════════════════════════ -->
 <script src="../js/i18n.js"></script>
 <script src="../js/contact-form.js"></script>
-<script src="../js/wine.js"></script>
-
+<script src="../js/main.js"></script>
 <script>
+'use strict';
 (function () {
-  'use strict';
-
   var track        = document.getElementById('carouselTrack');
   var prevBtn      = document.getElementById('prevBtn');
   var nextBtn      = document.getElementById('nextBtn');
   var indContainer = document.getElementById('carouselIndicators');
   var slides       = document.querySelectorAll('.carousel-slide');
+  var currentIndex = 0;
   var total        = slides.length;
-  var current      = 0;
-  var timer;
+  var autoplay;
 
-  /* Build dot indicators */
-  slides.forEach(function (_, i) {
-    var dot = document.createElement('button');
-    dot.className = 'carousel-indicator' + (i === 0 ? ' active' : '');
-    dot.setAttribute('role', 'tab');
-    dot.setAttribute('aria-label', 'Slide ' + (i + 1));
-    dot.setAttribute('aria-selected', i === 0 ? 'true' : 'false');
-    dot.addEventListener('click', function () { goTo(i); });
-    indContainer.appendChild(dot);
+  slides.forEach(function(_, i) {
+    var btn = document.createElement('button');
+    btn.classList.add('carousel-indicator');
+    btn.setAttribute('role', 'tab');
+    btn.setAttribute('aria-label', 'Slide ' + (i + 1));
+    btn.setAttribute('aria-selected', i === 0 ? 'true' : 'false');
+    if (i === 0) btn.classList.add('active');
+    btn.addEventListener('click', function() { goTo(i); });
+    indContainer.appendChild(btn);
   });
 
-  var dots = indContainer.querySelectorAll('.carousel-indicator');
+  var dots = document.querySelectorAll('.carousel-indicator');
 
   function update() {
-    track.style.transform = 'translateX(' + (-current * 100) + '%)';
-    dots.forEach(function (d, i) {
-      var active = i === current;
-      d.classList.toggle('active', active);
-      d.setAttribute('aria-selected', active ? 'true' : 'false');
+    track.style.transform = 'translateX(' + (-currentIndex * 100) + '%)';
+    dots.forEach(function(d, i) {
+      d.classList.toggle('active', i === currentIndex);
+      d.setAttribute('aria-selected', i === currentIndex ? 'true' : 'false');
     });
   }
 
-  function goTo(i)  { current = (i + total) % total; update(); reset(); }
-  function next()   { current = (current + 1) % total; update(); }
-  function prev()   { current = (current - 1 + total) % total; update(); }
-  function start()  { timer = setInterval(next, 7000); }
-  function stop()   { clearInterval(timer); }
+  function goTo(i)  { currentIndex = i; update(); reset(); }
+  function next()   { currentIndex = (currentIndex + 1) % total; update(); }
+  function prev()   { currentIndex = (currentIndex - 1 + total) % total; update(); }
+  function start()  { autoplay = setInterval(next, 8000); }
+  function stop()   { clearInterval(autoplay); }
   function reset()  { stop(); start(); }
 
-  nextBtn.addEventListener('click', function () { next(); reset(); });
-  prevBtn.addEventListener('click', function () { prev(); reset(); });
+  nextBtn.addEventListener('click', function() { next(); reset(); });
+  prevBtn.addEventListener('click', function() { prev(); reset(); });
 
-  /* Keyboard navigation */
-  document.addEventListener('keydown', function (e) {
-    if (e.key === 'ArrowRight') { next(); reset(); }
+  document.addEventListener('keydown', function(e) {
     if (e.key === 'ArrowLeft')  { prev(); reset(); }
+    if (e.key === 'ArrowRight') { next(); reset(); }
   });
 
-  /* Pause on hover */
-  var container = document.querySelector('.carousel-container');
-  container.addEventListener('mouseenter', stop);
-  container.addEventListener('mouseleave', start);
+  var wrap = document.querySelector('.carousel-container');
+  wrap.addEventListener('mouseenter', stop);
+  wrap.addEventListener('mouseleave', start);
 
-  /* Touch / swipe */
-  var touchStartX = 0;
-  container.addEventListener('touchstart', function (e) {
-    touchStartX = e.changedTouches[0].screenX;
-    stop();
-  }, { passive: true });
-  container.addEventListener('touchend', function (e) {
-    var dx = e.changedTouches[0].screenX - touchStartX;
-    if (Math.abs(dx) > 50) { dx < 0 ? next() : prev(); }
-    reset();
+  var tx = 0;
+  wrap.addEventListener('touchstart', function(e) { tx = e.changedTouches[0].screenX; stop(); }, { passive: true });
+  wrap.addEventListener('touchend', function(e) {
+    var dx = e.changedTouches[0].screenX - tx;
+    if (Math.abs(dx) > 50) { dx < 0 ? next() : prev(); reset(); }
+    else start();
   }, { passive: true });
 
   update();
