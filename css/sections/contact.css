@@ -275,7 +275,6 @@
   .contact-form-wrapper { padding: var(--spacing-lg); }
 }
 
-/* ── Phone input with country selector ── */
 .phone-input-wrapper {
   display: flex;
   flex-direction: row;
@@ -285,7 +284,7 @@
 }
 .phone-country-select {
   flex: 0 0 auto;
-  width: 160px;
+  width: 100px;
   border-radius: var(--radius-md) 0 0 var(--radius-md) !important;
   border-right: 1px solid rgba(255,255,255,.08) !important;
   padding-right: 1.8rem !important;
@@ -310,6 +309,6 @@
 }
 @media (max-width: 480px) {
   .phone-country-select {
-    width: 130px;
+    width: 90px;
   }
 }
