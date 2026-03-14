@@ -52,7 +52,6 @@
   <link rel="stylesheet" href="../css/sections/contact.css">
 
   <style>
-    /* ── Back button ── */
     .back-btn {
       width: 40px; height: 40px;
       display: flex; align-items: center; justify-content: center;
@@ -66,7 +65,6 @@
 
     p { text-align: justify; text-justify: inter-word; line-height: 1.8; }
 
-    /* ── Hero ── */
     .property-hero {
       position: relative;
       height: 60vh; min-height: 400px;
@@ -83,7 +81,6 @@
       letter-spacing: 2px;
     }
 
-    /* ── Sections ── */
     .property-section { padding: var(--spacing-3xl) 0; }
     #galerie.property-section { padding: 0; }
     #galerie.property-section .container { max-width: 100%; padding: 0; width: 100%; }
@@ -109,7 +106,6 @@
     .property-section.section-white p,
     .property-section.section-white li { color: var(--text-dark); }
 
-    /* ── Team ── */
     .team-intro-section {
       display: grid; grid-template-columns: 1.3fr 1fr;
       gap: var(--spacing-2xl); align-items: start; margin-bottom: var(--spacing-3xl);
@@ -132,7 +128,6 @@
     .team-photo-name { font-size: var(--font-size-sm); font-weight: 600; margin-bottom: 2px; line-height: 1.3; }
     .team-photo-role { font-size: var(--font-size-xs); opacity: 0.9; line-height: 1.2; }
 
-    /* ── Carousel ── */
     .carousel-container {
       position: relative; max-width: 100%;
       margin: var(--spacing-2xl) auto 0;
@@ -166,7 +161,6 @@
     }
     .carousel-indicator.active { background: white; width: 30px; border-radius: 6px; }
 
-    /* ── Vineyard ── */
     .vineyard-content {
       display: grid; grid-template-columns: 1.2fr 1fr;
       gap: var(--spacing-3xl); align-items: center; margin-top: var(--spacing-xl);
@@ -182,7 +176,6 @@
     .stat-number { font-size: var(--font-size-sm); font-weight: 700; color: var(--accent); font-family: var(--font-primary); line-height: 1.4; }
     .stat-label { color: var(--text-dark) !important; margin-top: var(--spacing-xs); font-size: var(--font-size-sm); }
 
-    /* ── Philosophy ── */
     .philosophy-content { max-width: 900px; margin: var(--spacing-xl) auto 0; text-align: center; }
     .philosophy-highlight {
       background: white; padding: var(--spacing-xl);
@@ -192,13 +185,11 @@
     .philosophy-highlight strong { color: var(--accent); font-size: var(--font-size-lg); display: block; margin-bottom: var(--spacing-sm); }
     .philosophy-highlight p { hyphens: auto; -webkit-hyphens: auto; line-height: 1.6; }
 
-    /* ── Cellar ── */
     .cellar-content {
       display: grid; grid-template-columns: 1fr 1.2fr;
       gap: var(--spacing-3xl); align-items: center; margin-top: var(--spacing-xl);
     }
 
-    /* ── Region ── */
     .region-content { max-width: 1000px; margin: var(--spacing-xl) auto 0; }
     .region-grid {
       display: grid; grid-template-columns: repeat(3, 1fr);
@@ -233,12 +224,10 @@
       margin: 0;
     }
 
-    /* ── Section image ── */
     .section-image { border-radius: var(--radius-lg); overflow: hidden; box-shadow: var(--shadow-md); }
     .section-image img { width: 100%; height: 100%; object-fit: cover; transition: transform var(--transition-slow); }
     .section-image:hover img { transform: scale(1.05); }
 
-    /* ── Responsive ── */
     @media (max-width: 968px) {
       .team-intro-section, .vineyard-content, .cellar-content { grid-template-columns: 1fr; gap: var(--spacing-xl); }
       .region-grid { grid-template-columns: repeat(2, 1fr); }
