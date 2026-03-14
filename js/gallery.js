@@ -1,7 +1,6 @@
 (function () {
   'use strict';
 
-  // Carrousel
   var track   = document.getElementById('galleryTrack');
   var prevBtn = document.getElementById('galleryPrev');
   var nextBtn = document.getElementById('galleryNext');
@@ -31,7 +30,6 @@
   window.addEventListener('resize', updateCarousel);
   updateCarousel();
 
-  // Lightbox
   var lightbox = document.getElementById('galleryLightbox');
   var lbImg    = document.getElementById('lightboxImg');
   var closeBtn = document.getElementById('lightboxClose');
