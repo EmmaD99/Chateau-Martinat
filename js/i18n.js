@@ -83,8 +83,8 @@ const translations = {
     'prop.contact.cta':       'Demander nos tarifs',
 
     'news.title':  'Actualités et Presse',
-    'news.p1':     "Retrouvez ici toutes les dernières nouvelles du Château Martinat, nos participations aux salons, récompenses et articles dans la presse spécialisée.",
-    'news.p2':     "Chaque événement et chaque parution témoigne de la passion que nous mettons dans nos vins.",
+    'news.p1':     "Retrouvez Château Martinat au salon Vinitaly à Vérone, l’un des rendez-vous majeurs du vin au niveau international.",
+    'news.p2':     "Nous y serons présents avec notre stand afin de faire découvrir nos vins, partager notre savoir-faire et rencontrer professionnels et passionnés autour de notre production.",
     'news.p3':     'Pour plus d\'informations, vous pouvez <a href="#contact">nous contacter</a>.',
 
     'gift.title':        'Bon Cadeau',
@@ -217,8 +217,8 @@ const translations = {
     'prop.contact.cta':       'Request our price list',
 
     'news.title':  'News & Press',
-    'news.p1':     'Find all the latest news from Château Martinat: our appearances at trade fairs, awards and articles in the specialist press.',
-    'news.p2':     'Each event and each publication reflects the passion we put into our wines.',
+    'news.p1':     'Meet Château Martinat at the Vinitaly wine fair in Verona, one of the most important international wine events.',
+    'news.p2':     'Visit our stand to discover our wines, share our expertise and meet professionals and wine lovers around our production.',
     'news.p3':     'For more information, please <a href="#contact">contact us</a>.',
 
     'gift.title':        'Gift Vouchers',
