@@ -75,6 +75,5 @@ try {
 
 } catch (Exception $e) {
     http_response_code(500);
-    echo json_encode(['error' => $mail->ErrorInfo]);
-}
+    echo json_encode(['error' => $mail->ErrorInfo, 'debug' => 'smtp_failed']);}
 ?>
