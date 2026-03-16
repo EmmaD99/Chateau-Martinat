@@ -1,13 +1,14 @@
 <?php
 ini_set('display_errors', 1);
 error_reporting(E_ALL);
+
 header('Content-Type: application/json');
 header('Access-Control-Allow-Origin: https://www.chateau-martinat.com');
 header('Access-Control-Allow-Methods: POST');
 
-require '/www/phpmailer/Exception.php';
-require '/www/phpmailer/PHPMailer.php';
-require '/www/phpmailer/SMTP.php';
+require __DIR__ . '/phpmailer/Exception.php';
+require __DIR__ . '/phpmailer/PHPMailer.php';
+require __DIR__ . '/phpmailer/SMTP.php';
 
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
