@@ -3,6 +3,13 @@ header('Content-Type: application/json');
 header('Access-Control-Allow-Origin: https://www.chateau-martinat.com');
 header('Access-Control-Allow-Methods: POST');
 
+require '/www/phpmailer/Exception.php';
+require '/www/phpmailer/PHPMailer.php';
+require '/www/phpmailer/SMTP.php';
+
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\Exception;
+
 if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
     http_response_code(405);
     echo json_encode(['error' => 'Method not allowed']);
@@ -33,33 +40,41 @@ if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
     exit;
 }
 
-$subject = '[Château Martinat] ' . ($sujet ?: 'Message depuis le site');
+try {
+    $mail = new PHPMailer(true);
 
-$body  = "Nouveau message reçu depuis chateau-martinat.com\n";
-$body .= str_repeat('-', 50) . "\n\n";
-$body .= "Prénom    : $prenom\n";
-$body .= "Nom       : $nom\n";
-$body .= "Email     : $email\n";
-if ($phone) $body .= "Téléphone : $phone\n";
-if ($sujet) $body .= "Sujet     : $sujet\n";
-$body .= "Langue    : " . strtoupper($langue) . "\n\n";
-$body .= "Message :\n$message\n";
-$body .= "\n" . str_repeat('-', 50) . "\n";
-$body .= "Envoyé le : " . date('d/m/Y à H:i') . "\n";
+    $mail->isSMTP();
+    $mail->Host       = 'ssl0.ovh.net';
+    $mail->SMTPAuth   = false;
+    $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;
+    $mail->Port       = 465;
+    $mail->CharSet    = 'UTF-8';
 
-$headers  = "From: no-reply@chateau-martinat.com\r\n";
-$headers .= "Reply-To: $email\r\n";
-$headers .= "MIME-Version: 1.0\r\n";
-$headers .= "Content-Type: text/plain; charset=UTF-8\r\n";
+    $mail->setFrom('no-reply@chateau-martinat.com', 'Château Martinat');
+    $mail->addAddress('l.donze@chateau-martinat.com');
+    $mail->addAddress('s.donze@chateau-martinat.com');
+    $mail->addReplyTo($email, "$prenom $nom");
 
-$sent = mail('l.donze@chateau-martinat.com', $subject, $body, $headers);
-mail('s.donze@chateau-martinat.com', $subject, $body, $headers);
+    $mail->Subject = '[Château Martinat] ' . ($sujet ?: 'Message depuis le site');
+    $mail->Body =
+        "Nouveau message reçu depuis chateau-martinat.com\n" .
+        str_repeat('-', 50) . "\n\n" .
+        "Prénom    : $prenom\n" .
+        "Nom       : $nom\n" .
+        "Email     : $email\n" .
+        ($phone ? "Téléphone : $phone\n" : '') .
+        ($sujet ? "Sujet     : $sujet\n" : '') .
+        "Langue    : " . strtoupper($langue) . "\n\n" .
+        "Message :\n$message\n" .
+        "\n" . str_repeat('-', 50) . "\n" .
+        "Envoyé le : " . date('d/m/Y à H:i') . "\n";
 
-if ($sent) {
+    $mail->send();
     http_response_code(200);
     echo json_encode(['success' => true]);
-} else {
+
+} catch (Exception $e) {
     http_response_code(500);
-    echo json_encode(['error' => 'Mail sending failed']);
+    echo json_encode(['error' => $mail->ErrorInfo]);
 }
 ?>
