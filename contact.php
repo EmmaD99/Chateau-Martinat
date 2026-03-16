@@ -1,4 +1,6 @@
 <?php
+ini_set('display_errors', 1);
+error_reporting(E_ALL);
 header('Content-Type: application/json');
 header('Access-Control-Allow-Origin: https://www.chateau-martinat.com');
 header('Access-Control-Allow-Methods: POST');
@@ -75,5 +77,6 @@ try {
 
 } catch (Exception $e) {
     http_response_code(500);
-    echo json_encode(['error' => $mail->ErrorInfo, 'debug' => 'smtp_failed']);}
+    echo json_encode(['error' => $mail->ErrorInfo]);
+}
 ?>
