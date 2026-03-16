@@ -46,8 +46,8 @@ try {
     $mail->isSMTP();
     $mail->Host       = 'ssl0.ovh.net';
     $mail->SMTPAuth   = false;
-    $mail->SMTPSecure = false;
-    $mail->Port       = 25;
+    $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;
+    $mail->Port       = 465;
     $mail->CharSet    = 'UTF-8';
 
     $mail->setFrom('no-reply@chateau-martinat.com', 'Château Martinat');
