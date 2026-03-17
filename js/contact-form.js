@@ -1,8 +1,6 @@
 (function () {
   'use strict';
-
   const FORMSPREE = 'https://www.chateau-martinat.com/contact.php';
-
   const MSG = {
     fr: {
       success:      'Merci pour votre message ! Nous vous répondrons dans les plus brefs délais.',
@@ -19,18 +17,14 @@
       phone:        'Invalid phone number.',
     }
   };
-
   function lang() { return localStorage.getItem('martinat_lang') || 'fr'; }
   function t(k)   { return MSG[lang()]?.[k] || MSG.fr[k]; }
-
   function validateField(input) {
     const group = input.closest('.form-group');
     const errEl = group && group.querySelector('.form-error-msg');
     let ok = true, msg = '';
-
     input.classList.remove('input-error');
     group && group.classList.remove('has-error');
-
     if (input.required && !input.value.trim()) {
       ok = false; msg = t('required');
     } else if (input.type === 'email' && input.value) {
@@ -38,7 +32,6 @@
     } else if (input.type === 'tel' && input.value) {
       if (!/^[+\d][\d\s\-().]{5,19}$/.test(input.value)) { ok = false; msg = t('phone'); }
     }
-
     if (!ok) {
       input.classList.add('input-error');
       group && group.classList.add('has-error');
@@ -46,14 +39,12 @@
     }
     return ok;
   }
-
   function validateAll(form) {
     var fields = form.querySelectorAll('input[required], select[required], textarea[required]');
     var ok = true;
     fields.forEach(function (f) { if (!validateField(f)) ok = false; });
     return ok;
   }
-
   function showFeedback(form, type, text) {
     var fb = form.querySelector('.form-feedback');
     if (!fb) return;
@@ -62,38 +53,36 @@
     if (span) span.textContent = text;
     fb.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
   }
-
   function hideFeedback(form) {
     var fb = form.querySelector('.form-feedback');
     if (fb) fb.className = 'form-feedback';
   }
-
   async function onSubmit(e) {
     e.preventDefault();
     var form = e.target;
     var btn  = form.querySelector('.btn-submit');
-
     hideFeedback(form);
-
     if (!validateAll(form)) {
       var first = form.querySelector('.input-error');
       if (first) first.focus();
       return;
     }
-
     btn.classList.add('loading');
     btn.disabled = true;
-
     try {
       var data = new FormData(form);
+      // Combine country code + phone number into one field
+      var country = form.querySelector('.phone-country-select');
+      var phone   = form.querySelector('input[name="telephone"]');
+      if (country && phone && phone.value.trim()) {
+        data.set('telephone', country.value + ' ' + phone.value.trim());
+      }
       data.append('_langue', lang());
-
       var res = await fetch(FORMSPREE, {
         method:  'POST',
         body:    data,
         headers: { 'Accept': 'application/json' }
       });
-
       if (res.ok) {
         showFeedback(form, 'success', t('success'));
         form.reset();
@@ -107,7 +96,6 @@
       btn.disabled = false;
     }
   }
-
   document.addEventListener('DOMContentLoaded', function () {
     document.querySelectorAll('.contact-form').forEach(function (form) {
       form.querySelectorAll('input, select, textarea').forEach(function (f) {
