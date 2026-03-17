@@ -347,10 +347,10 @@
 }
 
 .phone-country-select {
-  flex: 0 0 110px;
-  width: 110px !important;
-  min-width: 110px !important;
-  max-width: 110px !important;
+  flex: 0 0 130px;
+  width: 130px !important;
+  min-width: 130px !important;
+  max-width: 130px !important;
   border-radius: var(--radius-md) 0 0 var(--radius-md) !important;
   border-right: 1px solid rgba(255,255,255,.08) !important;
   padding-right: 1.8rem !important;
@@ -384,5 +384,5 @@
 }
 
 @media (max-width: 480px) {
-  .phone-country-select { flex: 0 0 90px; width: 90px !important; min-width: 90px !important; max-width: 90px !important; }
+  .phone-country-select { flex: 0 0 110px; width: 110px !important; min-width: 110px !important; max-width: 110px !important; }
 }
