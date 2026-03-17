@@ -1,7 +1,6 @@
 (function () {
   'use strict';
-  const FORMSPREE = 'https://www.chateau-martinat.com/contact.php';
-  const MSG = {
+  const CONTACT_URL = 'https://www.chateau-martinat.com/contact.php';  const MSG = {
     fr: {
       success:      'Merci pour votre message ! Nous vous répondrons dans les plus brefs délais.',
       errorGeneric: 'Une erreur est survenue. Merci de réessayer ou de nous écrire directement par email.',
