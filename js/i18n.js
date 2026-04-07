@@ -17,7 +17,7 @@ const translations = {
     'hero.banner':   '🍷 Vinitaly — 12-15 Avril 2026  ·  Stand : B2C2',
 
     'wines.title':   'Nos Vins',
-    'wines.intro':   "Découvrez notre collection de vins d'exception, fruits d'un terroir unique et d'un savoir-faire transmis de génération en génération.",
+    'wines.intro':   "Découvrez nos vins, fruit d'un terroir unique.",
     'wines.cta':     'Voir la fiche technique',
     'wines.belair':  "Château Belair l'Escudier",
 
@@ -151,7 +151,7 @@ const translations = {
     'hero.banner':   '🍷 Vinitaly — 12-15 April 2026  ·  Stand: B2C2',
 
     'wines.title':   'Our Wines',
-    'wines.intro':   'Discover our exceptional wine collection, the fruit of a unique terroir and expertise passed down through generations.',
+    'wines.intro':   'Discover our wines, the product of a unique terroir.',
     'wines.cta':     'View technical sheet',
     'wines.belair':  "Château Belair l'Escudier",
 
