@@ -14,7 +14,7 @@ const translations = {
     'age.refused':  'Vous devez avoir 18 ans ou plus pour accéder à ce site.',
 
     'hero.subtitle': 'Vignerons indépendants en Côtes de Bourg',
-    'hero.banner':   '🍷 Vinitaly — 12-15 Avril 2026  ·  Stand : B2C2',
+    'hero.banner':   '🍷 Château Martinat vous ouvre ses portes les  ·  9 & 10 mai',
 
     'wines.title':   'Nos Vins',
     'wines.intro':   "Découvrez nos vins, fruit d'un terroir unique.",
@@ -83,8 +83,8 @@ const translations = {
     'prop.contact.cta':       'Demander nos tarifs',
 
     'news.title':  'Actualités et Presse',
-    'news.p1':     "Retrouvez Château Martinat au salon Vinitaly à Vérone, l’un des rendez-vous majeurs du vin au niveau international.",
-    'news.p2':     "Nous y serons présents avec notre stand afin de faire découvrir nos vins, partager notre savoir-faire et rencontrer professionnels et passionnés autour de notre production.",
+    'news.p1':     "À l'occasion des Portes Ouvertes en Côtes de Bourg, le Château Martinat vous accueille les 9 et 10 mai pour une expérience au cœur du vignoble.",
+    'news.p2':     "Venez découvrir nos vins, parcourir nos chais et échanger directement avec nous dans un cadre convivial et authentique.",
     'news.p3':     'Pour plus d\'informations, vous pouvez <a href="#contact">nous contacter</a>.',
 
     'gift.title':        'Bon Cadeau',
@@ -148,7 +148,7 @@ const translations = {
     'age.refused':  'You must be 18 or over to access this website.',
 
     'hero.subtitle': 'Independent winemakers in Côtes de Bourg',
-    'hero.banner':   '🍷 Vinitaly — 12-15 April 2026  ·  Stand: B2C2',
+    'hero.banner':   '🍷 Château Martinat Opens Its Doors on  ·  May 9 & 10',
 
     'wines.title':   'Our Wines',
     'wines.intro':   'Discover our wines, the product of a unique terroir.',
@@ -217,8 +217,8 @@ const translations = {
     'prop.contact.cta':       'Request our price list',
 
     'news.title':  'News & Press',
-    'news.p1':     'Meet Château Martinat at the Vinitaly wine fair in Verona, one of the most important international wine events.',
-    'news.p2':     'Visit our stand to discover our wines, share our expertise and meet professionals and wine lovers around our production.',
+    'news.p1':     'As part of the Côtes de Bourg Open Days, Château Martinat warmly welcomes you on May 9 and 10 for an experience at the heart of the vineyard.',
+    'news.p2':     'Come and discover our wines, explore our cellars and chat with us in a warm and authentic setting.',
     'news.p3':     'For more information, please <a href="#contact">contact us</a>.',
 
     'gift.title':        'Gift Vouchers',
