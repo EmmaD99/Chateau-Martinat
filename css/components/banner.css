@@ -4,7 +4,7 @@
   left: 0;
   width: 100%;
   background: #ffffff;
-  padding: 0.75rem 0;
+  padding: 1.25rem 0;
   overflow: hidden;
   box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.3);
   z-index: 10;
@@ -27,14 +27,15 @@
   display: inline-flex;
   align-items: center;
   white-space: nowrap;
-  font-family: var(--font-primary);
-  font-size: 0.95rem;
-  font-weight: 600;
-  color: #b8860b; 
+  font-family: var(--font-secondary);
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: #6b2e1f;
   text-transform: uppercase;
-  letter-spacing: 1.5px;
-  padding: 0 1.5rem;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  letter-spacing: 2px;
+  padding: 0 2rem;
+  -webkit-text-stroke: 0.8px #6b2e1f;
+  text-shadow: 0.5px 0 0 #6b2e1f, -0.5px 0 0 #6b2e1f;
 }
 
 @keyframes scroll-banner {
@@ -76,9 +77,9 @@
 
 @media (max-width: 768px) {
   .banner-text {
-    font-size: 0.8rem;
-    letter-spacing: 1px;
-    padding: 0 1rem;
+    font-size: 1.05rem;
+    letter-spacing: 1.5px;
+    padding: 0 1.2rem;
   }
   
   .banner-content {
@@ -87,13 +88,13 @@
   }
   
   .image-banner {
-    padding: 0.6rem 0;
+    padding: 1rem 0;
   }
 }
 
 @media (max-width: 480px) {
   .banner-text {
-    font-size: 0.7rem;
+    font-size: 0.9rem;
   }
   
   .banner-content {
