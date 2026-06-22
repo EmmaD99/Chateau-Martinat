@@ -14,7 +14,7 @@ const translations = {
     'age.refused':  'Vous devez avoir 18 ans ou plus pour accéder à ce site.',
 
     'hero.subtitle': 'Vignerons indépendants en Côtes de Bourg',
-    'hero.banner':   '🍷 London Wine Fair 2026  ·  18 & 20 mai',
+    'hero.banner': '🍷 En Juillet  ·  Invitation à la propriété',
 
     'wines.title':   'Nos Vins',
     'wines.intro':   "Découvrez nos vins, fruit d'un terroir unique.",
@@ -83,9 +83,9 @@ const translations = {
     'prop.contact.cta':       'Demander nos tarifs',
 
     'news.title':  'Actualités et Presse',
-    'news.p1':     "Nous sommes fiers d'annoncer la participation de Château Martinat au London Wine Fair 2026, le salon de référence du négoce des vins et spiritueux au Royaume-Uni, du 18 au 20 mai 2026 à l'Olympia London.",
-    'news.p2':     "Retrouvez-nous sur le stand E37 pour découvrir nos derniers millésimes de Côtes de Bourg, échanger avec notre équipe et partager notre passion pour un terroir d'exception.",
-    'news.p3':     'Pour plus d\'informations, vous pouvez <a href="#contact">nous contacter</a>.',
+    'news.p1': "Château Martinat vous invite à découvrir sa propriété en juillet. Une occasion unique de visiter nos vignes, notre chai et de partager un moment de convivialité autour de nos vins.",
+    'news.p2': "",
+    'news.p3': 'Pour plus d\'informations, vous pouvez <a href="#contact">nous contacter</a> ou pour vous inscrire.',
 
     'gift.title':        'Bon Cadeau',
     'gift.intro':        'Offrez une expérience unique au Château Martinat',
@@ -148,7 +148,7 @@ const translations = {
     'age.refused':  'You must be 18 or over to access this website.',
 
     'hero.subtitle': 'Independent winemakers in Côtes de Bourg',
-    'hero.banner':   '🍷 London Wine Fair 2026 on  ·  May 18 & 20',
+    'hero.banner': '🍷 In July  ·  Estate Visit Invitation',
 
     'wines.title':   'Our Wines',
     'wines.intro':   'Discover our wines, the product of a unique terroir.',
@@ -217,10 +217,9 @@ const translations = {
     'prop.contact.cta':       'Request our price list',
 
     'news.title':  'News & Press',
-    'news.p1':     'We are delighted to announce that Château Martinat will be exhibiting at the London Wine Fair 2026, the UK s leading trade event for wines and spirits, from 18 to 20 May 2026 at Olympia London',
-    'news.p2':     'Come visit us at booth E37 to taste our latest Côtes de Bourg vintages, meet our team and discover the passion behind one of Bordeaux s most authentic terroirs.',
-    'news.p3':     'For more information, please <a href="#contact">contact us</a>.',
-
+    'news.p1': 'Château Martinat invites you to discover its estate in July. A unique opportunity to visit our vineyards, our cellar and share a convivial moment around our wines.',
+    'news.p2': '',
+    'news.p3': 'For more information, please <a href="#contact">contact us</a> or to register.',
     'gift.title':        'Gift Vouchers',
     'gift.intro':        'Give the gift of a unique experience at Château Martinat',
     'gift.card1.title':  'Gourmet Tasting',
