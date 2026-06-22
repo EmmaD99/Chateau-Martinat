@@ -30,12 +30,12 @@
   font-family: var(--font-secondary);
   font-size: 1.35rem;
   font-weight: 800;
-  color: #6b2e1f;
+  color: #2d5a1b;
   text-transform: uppercase;
   letter-spacing: 2px;
   padding: 0 2rem;
-  -webkit-text-stroke: 0.8px #6b2e1f;
-  text-shadow: 0.5px 0 0 #6b2e1f, -0.5px 0 0 #6b2e1f;
+  -webkit-text-stroke: 0.8px #2d5a1b;
+  text-shadow: 0.5px 0 0 #2d5a1b, -0.5px 0 0 #2d5a1b;
 }
 
 @keyframes scroll-banner {
